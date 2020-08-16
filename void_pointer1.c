@@ -31,4 +31,71 @@ int main(){
 	vp = &ch;
 
 	printf("value of (ch) by dereferencing (vp):%c <==> value of (ch):%c\n",*(char *)vp ,ch);
+
+	printf("----------------------------------------\n");
+
+	int *ptr;
+
+	printf("(vp) points to the address = %p\n",vp);	
+	//assign a void pointer to an int  pointer
+	
+	ptr = vp;
+
+	printf("(ptr) points to the address = %p  <==> (vp) points to the address = %p\n",ptr,vp);
+
+	printf("(ptr) = %d <==> (vp) = %d\n",*ptr,*(int *)vp);
+
+	printf("(ptr) = %c <==> (vp) = %c\n",*ptr,*(char *)vp);
+
+	printf("----------------------------------------\n");
+
+	*ptr = 3;
+
+	printf("(ptr) = %d <==> (vp) = %d\n",*ptr,*(int *)vp);
+	
+	printf("-------------------------------------------\n");
+
+	int one_d[5] = {12,19,25,34,46} ;
+
+	int i;
+
+	void *vp2 = one_d;
+
+	printf("address of (one_d) = %p <==>  value of (vp2) = %p\n",&one_d,vp2);
+
+
+	printf("display elements of (one_d) using variable(one_d)\n");
+	
+	for(int i = 0 ; i < 5 ; i++){
+		printf("%d ",one_d[i]);
+	}
+	printf("\n");
+
+	printf("display elements of (one_d) by dereferencing the void pointer (vp2)\n");
+
+	//pointer arithmetic in void pointer 
+	for(int i = 0 ; i < 5 ; i++){
+		printf("%d ",*((int *)vp2 + i)); // ((int *)vp2)[i]
+	}
+	printf("\n");
+
+	printf("-----------------------------------------------\n");
+
+	void *p1;
+
+	int *p2;
+
+	p2 = one_d;
+
+	printf("%d\n",p2[0]);
+
+	p2 = p1;
+
+	printf("(p2) points to the address = %p <==> (p1) points to the address = %p\n",p2,p1);
+
+	//segmentation fault
+	//printf("%d\n",p2[0]);
+	
+
+
 }
