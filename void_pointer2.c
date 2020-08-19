@@ -51,5 +51,59 @@ int main(){
 
 	printf("address of variable pointed by (pi) = %p != address of (i) = %p / value of variable pointed by (pi) = %c\n",pi,&i,*pi);
 
+	printf("-------------------------------------------\n");
 
+
+	char *pc1 = &c;
+
+	int *pi1 = &i;
+
+	float *pf1 = &f;
+	
+	//---------------------------------------------
+	
+	printf("address of variable pointed by (pc1) = %p <==> address of (c) = %p / value of variable pointed by (pc1) = %c\n",pc1,&c,*pc1);
+
+	printf("address of variable pointed by (pi1) = %p <==> address of (i) = %p / value of variable pointed by (pi1) = %d\n",pi1,&i,*pi1);
+
+	printf("address of variable pointed by (pf1) = %p <==> address of (f) = %p / value of variable pointed by (pf1) = %.2f\n",pf1,&f,*pf1);
+
+	printf("-------------------------------------------\n");
+
+	//assign any type of pointer to a void pointer 
+	
+	char ch = 'd';
+
+	void *pv1 = &ch;
+
+	printf("address of variable pointed by (pv1) = %p <==> address of (ch) = %p / value of variable pointed by (pv1) = %c\n",pv1,&ch,*(char *)pv1); 
+
+
+	printf("-------------------------------------------\n");
+	
+	//void points (pv1) points to the same variable pointed by pc1
+	pv1 = pc1 ;
+
+	printf("address of variable pointed by (pc1) = %p <==> address of (c) = %p / value of variable pointed by (pc1) = %c\n",pc1,&c,*pc1);
+
+	printf("address of variable pointed by (pv1) = %p != address of (ch) = %p / value of variable pointed by (pv1) = %c\n",pv1,&ch,*(char *)pv1); 
+
+	printf("---------------------------------------------\n");
+
+	//(pv1) points to the variable pointed by pi1
+	pv1 = pi1;
+
+	printf("address of variable pointed by (pi1) = %p <==> address of (i) = %p / value of variable pointed by (pi1) = %d\n",pi1,&i,*pi1);
+
+	printf("address of variable pointed by (pv1) = %p != address of (ch) = %p / value of variable pointed by (pv1) = %d\n",pv1,&ch,*(int *)pv1); 
+
+
+	printf("---------------------------------------------\n");
+
+	//(pv1) points to the same variable as (pf1)
+	pv1 = pf1;
+
+	printf("address of variable pointed by (pf1) = %p <==> address of (f) = %p / value of variable pointed by (pf1) = %.2f\n",pf1,&f,*pf1);
+
+	printf("address of variable pointed by (pv1) = %p != address of (ch) = %p / value of variable pointed by (pv1) = %.2f\n",pv1,&ch,*(float *)pv1); 
 }
