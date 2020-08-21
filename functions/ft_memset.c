@@ -10,6 +10,14 @@
 #include <string.h>
 #include <stdio.h>
 
+//n ==> how many bytes we want to fill
+void *ft_memset(void *str, int c, size_t n){
+	for (int i = 0 ; i < n ; i++)
+		*((unsigned char *)str + i) = (unsigned char)c;
+
+	return str;
+
+}
 void printArray(int arr[] ,int n){
 	for(int i = 0 ; i < n ;i++)
 		printf("%d ",arr[i]);
@@ -17,19 +25,25 @@ void printArray(int arr[] ,int n){
 }
 int main(){
 	char  str[50]="Hello world !";
-
+	char  str1[50]="Hello world !"; 
 	printf("before memset() str = %s\n",str);
 
 	//fill 4 characters starting from str[1] with '*'
 	memset(&(str[1]) , '*' , 4);
+	ft_memset(&(str1[1]),'*',4);
 
-	printf("after memset() str = %s\n",str);//H**** world !
+	printf("after memset() str     = %s\n",str);//H**** world !
+	printf("after ft_memset() str1 = %s\n",str1);//H**** world !
 
+	printf("--------------------------------------------------\n");
 	//fill 3 characters starting from str[5] with '/'
 	//str +5 points to the character number 5 (the first space). 
 	memset(str+ 5 , '/' , 3);
+	ft_memset(str1 + 5,'/',3);
 
-	printf("str = %s\n",str);//H****///rld
+	printf("str  = %s\n",str);//H****///rld
+	printf("str1 = %s\n",str1);//H****///rld
+
 
 	printf("--------------------------------------------------\n");
 
@@ -44,33 +58,39 @@ int main(){
 	int n = 10;
 
 	int arr[n];
-	
-	printArray(arr,n); 
 
+	int arr1[n];
+
+	printArray(arr,n);
+	printArray(arr1,n);
 	//fill the array with 2;
 	//one byte for 0 is 00000000
 	memset(arr , 0 , n*sizeof(arr[0]));
+	ft_memset(arr1,0, n*sizeof(arr1[0]));
 
-	printf("after memset() = ");
+	printf("after memset() = \n");
 
 	printArray(arr,n);
-
+	printArray(arr1,n);
 	printf("-------------------------------------------------------\n");
 
 	//one byte for 2 is  00000010.
 	//filling every byte with 2 ==> 00000010 00000010 00000010 00000010 ==> 3368018 in decimal 
 	memset(arr , 2 , n*sizeof(arr[0]));
+	ft_memset(arr1 , 2 , n*sizeof(arr1[0]));
 
 	printArray(arr,n);
+	printArray(arr1,n);
 
 	printf("--------------------------------------------------------\n");
 	
 	//one byte for -1 is 11111111
 	//filling every byte with -1 ==> 11111111 11111111 11111111 11111111 ==> -1 in decimal
 	memset(arr, -1 , n *sizeof(arr[0]));
+	ft_memset(arr1, -1 , n *sizeof(arr1[0]));
 
 	printArray(arr,n);
-
+	printArray(arr1,n);
 	//when all bits of a number are 0 , it's value is als 0 .
 	//however, if all bits are 1 the value is -1
 	
@@ -79,14 +99,18 @@ int main(){
 	//one byte  for 1 is 00000001 
 	//filling every byte with 1 ==> 00000001 00000001 00000001 000000001==>16843009 in decimal
 	memset(arr,1,n*sizeof(arr[0]));
+	ft_memset(arr1,1,n*sizeof(arr1[0]));
 
 	printArray(arr,n);
+	printArray(arr1,n);
 
 	//memset works character by character and an integer contains more that one bytes(or characters)
 	
 	printf("----------------------------------------------------------\n");
 
 	memset(arr, -128,n*sizeof(arr[0]));
+	ft_memset(arr1, -128,n*sizeof(arr1[0]));
 
 	printArray(arr,n);
+	printArray(arr1,n);
 }
