@@ -86,9 +86,5 @@ int main(){
 	ft_memset(memory +1 ,'.',3);//$...$$$$
 	printf("memory = %s\n",memory);
 
-	printf("------------------------------------\n");
-
-	ft_memset(memory,-1,8);//-1 -1 -1 -1 -1 -1 -1
-	printf("memory = %s\n",memory);
 	return (EXIT_SUCCESS);
 }
