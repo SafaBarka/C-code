@@ -93,7 +93,9 @@ void *ft_memset6(void *s, int c, size_t len){
 void *ft_memset(void *s, int c, size_t len)
 {
 	while (len--)
-		*((unsigned char *)s++) =(unsigned char) c;
+		//we can't increment the pointer , the value will change
+		//*((unsigned char *)s++) =(unsigned char) c;
+		 ((unsigned char *)s)[len] =(unsigned char)c;
 	return s;
 
 }
@@ -116,13 +118,13 @@ int main(){
         char s[]	= "hello world;";
 	
 	//we get segmentation fault if we use (char *s1 ="hello world;")
-	ft_memset1(s1+2,'.',3);
-	ft_memset2(s2+2,'.',3);
-	ft_memset3(s3+2,'.',3);
-	ft_memset4(s4+2,'.',3);
-	ft_memset5(s5+2,'.',3);
-	ft_memset6(s6+2,'.',3);
-	ft_memset(s+2,'.',3);
+	printf("return value = %s\n",(char *)ft_memset1(s1+2,'.',3));
+	printf("return value = %s\n",(char *)ft_memset2(s2+2,'.',3));
+	printf("return value = %s\n",(char *)ft_memset3(s3+2,'.',3));
+	printf("return value = %s\n",(char *)ft_memset4(s4+2,'.',3));
+	printf("return value = %s\n",(char *)ft_memset5(s5+2,'.',3));
+	printf("return value = %s\n",(char *)ft_memset6(s6+2,'.',3));
+	printf("return value = %s\n",(char *)ft_memset(s+2,'.',3));
 
 	printf("%s\n",s1);
 	printf("%s\n",s2);
