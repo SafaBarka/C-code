@@ -19,21 +19,45 @@
 #include <stdio.h>
 #include <string.h>
 
+void ft_bzero(void *s, size_t n){
+	while(n--)
+		*((unsigned char *)s++) = '\0';
+}
 int main(){
 	char s1[]="hello world!";
+	char s11[]="hello world!";
 
 	bzero(s1,4);
-	
+	ft_bzero(s11,4);
+
 	printf("s1 = %s(end)\n",s1);
+	printf("s11 = %s(end)\n",s11);
 
 	printf("----------------------------------------------\n");
 
 	char s2[]="hello world!";
+	char s22[]="hello world!";
 
 	bzero(s2+2,4);
+	ft_bzero(s22+2,4);
 
-	printf("s2 = %s(end)\n",s2);
+	printf("s2  = %s(end)\n",s2);
+	printf("s22 = %s(end)\n",s22);
 
 	printf("-----------------------------------------------\n");
+	
+	char s3[]="it's do or die";
+	char s33[]="it's do or die";
+	
+	bzero(s3+5,3);
+	ft_bzero(s33+5,3);
 
+	printf("s3  = %s(end)\n",s3);
+	printf("s33 = %s(end)\n",s33);
+
+
+
+	//segmentation  fault  cases
+	//bzero(s2+60,3);	
+	//ft_bzero(s2+60,3);
 }
