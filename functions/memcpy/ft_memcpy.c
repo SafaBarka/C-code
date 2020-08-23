@@ -8,7 +8,7 @@
 //this function returns the pointer to the destination buffer(dst)
 
 //remember the following points before using the memcpy in c.
-//the size of the destination buffer should be greater than the number of butes you want to copy strlen(dst) > n
+//the size of the destination buffer should be greater than the number of bytes you want to copy strlen(dst) > n
 //the memory of the source and destination buffer should not be overlap.
 //memcpy does not chaeck the terminating null character, so carefully using with strings.
 //the behavior of memcpy can be undefined if you try to access the destination and source buffer beyond their length.
