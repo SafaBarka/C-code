@@ -41,5 +41,34 @@ int main(){
 	printf("--------------------------------------------------------\n");
 
 	//the memory of the source and destination buffer should not be overlap.
+	
+	char dst2[]="hello";
+	char *src2 = &(dst2[2]);
+
+	printf("dst2 = %s\n",dst2);
+	printf("src2 = %s\n",src2);
+
+	printf("-------------------------------------------\n");
+
+	dst2[2]='S';
+
+	printf("dst2 = %s\n",dst2);
+	printf("src2 = %s\n",src2);
+
+	printf("-------------------------------------------\n");
+
+	printf("return value : %s\n",(char *)memcpy(dst2,src2,4));	
+	printf("dst2 = %s\n",dst2);
+	printf("src2 = %s\n",src2);
+
+
+	printf("--------------------------------------------\n");
+
+	printf("return value : %s\n",(char *)memcpy(src2,dst2,3));
+	
+	printf("dst2 = %s\n",dst2);
+	printf("src2 = %s\n",src2);
+
+
 
 }
