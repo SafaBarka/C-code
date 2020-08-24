@@ -2,58 +2,75 @@
 
 #include <string.h>
 
+void *ft_memcpy(void *dst, void *src,size_t n){
+
+        int i = -1;
+        int j = n;
+        if (dst == NULL && src == NULL && n== 0)
+                return dst;
+
+        while(++i < j )
+                *((char *)dst + i)=*((char *)src + i);
+        return dst;
+}
+
 int main(){
-	/*
-	//segmentation fault 
+	printf("1-----------------------------------\n\n");
+	
+	printf("segmentation fault case\n");
 	char *src = NULL;
 	char *dst = NULL;
 
-	printf("return value = %s\n",(char *)memcpy(dst,src,3));//null
-	printf("src = %s\n",src);//null
-	printf("dst = %s\n",dst);//null
+	//segmentation fault 
+	
+	/*
+	printf("return value = %s\n",(char *)memcpy(dst,src,3));
+	printf("src = %s\n",src);
+	printf("dst = %s\n",dst);
 
 	*/
-	printf("-----------------------------------\n");
+
+	/*
+	printf("return value = %s\n",(char *)ft_memcpy(dst,src,3));
+	printf("src = %s\n",src);
+	printf("dst = %s\n",dst);
+
+	*/
+
+	printf("2-----------------------------------\n\n");
+
 	//set the size to 0 ==> no segmentation fault
-	char *src = NULL;
-	char *dst = NULL;
 
 	printf("return value = %s\n",(char *)memcpy(dst,src,0));//null
 	printf("src = %s\n",src);//null
 	printf("dst = %s\n",dst);//null
 
-	printf("---------------------------------\n");
-	/*
+	printf("\n");
+
+	printf("return value = %s\n",(char *)ft_memcpy(dst,src,0));//null
+	printf("src = %s\n",src);//null
+	printf("dst = %s\n",dst);//null
+
+	printf("\n");
+
+	printf("3---------------------------------\n\n");
+	
+	printf("segmentation fault case\n");
 	//segmantation fault
-	//number of bytes < strlen(dst) but src = Null
+	//if src or dst is null , and the size != 0 
 	char *src1 = NULL;
 	char dst1[] = "hello";
-
+/*
 	printf("return value = %s\n",(char *)memcpy(dst1,src1,2));
 	printf("src1 = %s\n",src1);
 	printf("dst1 = %s\n",dst1);
-	*/
-
-	printf("-------------------------------------\n");
-	// it works even if strlen(src) < number of bytes
-	char *src1 = "h";
-	char dst1[] = "hello";
-
-	printf("return value = %s\n",(char *)memcpy(dst1,src1,2));
+*/	
+	
+/*	printf("return value = %s\n",(char *)ft_memcpy(dst1,src1,2));
 	printf("src1 = %s\n",src1);
 	printf("dst1 = %s\n",dst1);
+*/	
 
-	printf("---------------------------------------\n");
+	printf("4-------------------------------------\n\n");
 
-	// number of bytes  > strlen(dst)
-	
-	char *src2 = "h";
-
-	char dst2[]="r";
-
-	printf("return value = %s\n",(char *)memcpy(dst2,src2,5));
-	printf("src2 = %s\n",src2);
-	printf("dst2 = %s\n",dst2);
-
-	
 }
