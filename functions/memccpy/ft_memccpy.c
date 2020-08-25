@@ -1,4 +1,4 @@
-//void (void *dest, const void *src, int c, size_t n);
+//void  *memccpy(void *dest, const void *src, int c, size_t n);
 
 //la fonction memccpy() copie au plus n octets de la zone memoire src vers la zone memoire dest.s'arretant des qu'elle rencontre le caractere c.
 
@@ -19,7 +19,20 @@
 
 #include <stdio.h>
 
+void *ft_memccpy(void *dst, const void *src, int c, size_t n){
+
+	int i = 0;
+
+	while (i < n)                                                                           {
+		*((unsigned char *)dst + i) =*((unsigned char *)src + i);
+		i++;
+		if ( ((unsigned char *)src)[i-1] == (unsigned char)c)
+			return  (void *)(dst+ i);
+	}
+	return NULL;
+}
 int main(){
+	printf("1------------------------------------------\n");
 
 	char *dst = NULL;
 
@@ -28,7 +41,11 @@ int main(){
 	printf("return value : %s\n",(char *)memccpy(dst, src ,'c', 0));//null
         printf("dst = %s\n",dst);//null
 
-	printf("-------------------------------------------\n");
+	printf("return value : %s\n",(char *)ft_memccpy(dst, src ,'c', 0));//null
+        printf("dst = %s\n",dst);//null
+
+
+	printf("2-------------------------------------------\n");
 
 	//segfault case
 	printf("segmentation fault case :\n");
@@ -37,7 +54,11 @@ int main(){
         printf("dst = %s\n",dst);
 	*/
 
-	printf("--------------------------------------------\n");
+        /*printf("return value : %s\n",(char *)ft_memccpy(dst, src ,'c', 2));
+        printf("dst = %s\n",dst);
+	*/
+
+	printf("3--------------------------------------------\n");
 	
 	char dst1[]="hello";
 
@@ -46,40 +67,44 @@ int main(){
         printf("return value : %s\n",(char *)memccpy(dst1, src1 ,'c', 0));//null
         printf("dst = %s\n",dst1);//hello
 
-	printf("----------------------------------------------\n");
+        printf("return value : %s\n",(char *)ft_memccpy(dst1, src1 ,'c', 0));//null
+        printf("dst = %s\n",dst1);//hello
+
+
+	printf("4----------------------------------------------\n");
 
 	char dst2[] = "hello";
 
         src1 = "my world";
 
-        printf("return value : %s\n",(char *)memccpy(dst2, src1 ,'c', 3));//null
-        printf("dst = %s\n",dst2);//"my llo"
+        printf("return value : %s\n",(char *)ft_memccpy(dst2, src1 ,'c', 3));//null
+        printf("dst = %s\n",dst2);//"my lo"
 
-	printf("-----------------------------------------------\n");
+	printf("5-----------------------------------------------\n");
 
 	char dst3[] = "hello";
 
         src1 = "my world";
 
-        printf("return value : %s\n",(char *)memccpy(dst3, src1 ,'w', 4));//o
+        printf("return value : %s\n",(char *)ft_memccpy(dst3, src1 ,'w', 4));//o
         printf("dst = %s\n",dst3);//"my wo"
 
-  	printf("-----------------------------------------------\n");
+  	printf("6-----------------------------------------------\n");
 
         char dst4[] = "hello";
 
         char *src4 = "my world";
 
-        printf("return value : %s\n",(char *)memccpy(dst4, src1 ,'r', 4));//null
+        printf("return value : %s\n",(char *)ft_memccpy(dst4, src1 ,'r', 4));//null
         printf("dst = %s\n",dst4);//"my wo"
 
-        printf("-----------------------------------------------\n");
+        printf("7-----------------------------------------------\n");
 
         char dst5[] = "safa barkaa";
 
         char *src5 = "bluecat";
 
-        printf("return value : %s\n",(char *)memccpy(dst5, src5 ,'l', 3));//fa barkaa
+        printf("return value : %s\n",(char *)ft_memccpy(dst5, src5 ,'l', 3));//fa barkaa
         printf("dst = %s\n",dst5);//blfa barkaa
 
 
