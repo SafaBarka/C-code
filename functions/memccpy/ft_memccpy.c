@@ -108,10 +108,17 @@ int main(){
         printf("dst = %s\n",dst5);//blfa barkaa
 
 
+	printf("8------------------------------------------------\n");
+
+	char dst6[]="thank you";
+
+	char *src6 ="thank you";
+
+	printf("return value : %s\n",(char *)ft_memccpy(dst6, src6 ,'k', 7));// you
+        printf("dst = %s\n",dst6);//thank you
 
 
 
 
-       
 
 }
