@@ -22,25 +22,42 @@
 #include <string.h>
 #include <stdlib.h>
 
+char *ft_strdup(const char *str){
+
+	int n = strlen(str);
+
+	char *copy = malloc(sizeof(char) * n);
+	
+	if (!copy)
+		return NULL;
+	else
+	{
+		copy[n] = '\0';
+		while (n--)
+			copy[n] = str[n];
+	}
+	return copy;
+}
+
 int main(){
 	printf("1------------------------------------------------\n");
-	char *str ="hi";
+	char *str ="h"; //str = NULL-> segmentation fault
 
 	char *result;
 
-	result = strdup(str);
+	result = ft_strdup(str);
 
 	//str = "hello world"->return : "hello world"	
 	//str = NULL -> return : segmentation fault
 	
-	printf("the string : %s\n",result);
+	printf("the string :|%s|\n",result);
 
 	printf("2------------------------------------------------\n");
 
-	const char *original ="The original string.";
+	const char *original ="YES";
 
 	//on duplique la chaine de caracteres initiale.
-	char *copy = strdup(original);
+	char *copy = ft_strdup(original);
 
 	//On affiche la chaine .
 	printf("%s\n",copy);
