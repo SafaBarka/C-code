@@ -22,20 +22,51 @@
 //negative value if lhs appears before rhs in lexicographical order.
 //zero if lhs and rhs compare equal, or if count is zero.
 //positive value if  lhs appears after rhs in lexicographical order
+//this function reads object representations,not the object values, and is typically meaningful for byte arrays only.
 #include <stdio.h>
 #include <string.h>
 
+int ft_memcmp(const void *s1, const void *s2, size_t n)
+{
+	unsigned char *s11 = (unsigned char *)s1;
+
+	unsigned char *s22 = (unsigned char *)s2;
+
+	while(n--){
+		if(*s11 != *s22) 
+			return (*s11 - *s22);
+		s11++;
+		s22++;
+	}
+	return 0;
+}
+
+void demo(const char *lhs, const char *rhs, size_t sz)
+{
+	for(size_t n = 0 ; n < sz ; ++n)
+		putchar(lhs[n]);
+
+	int rc = ft_memcmp(lhs, rhs ,sz);
+
+	const char *rel = rc < 0 ? " precedes" : rc > 0 ? " follows " : " compares equal ";
+	fputs(rel,stdout);
+
+	for(size_t n ; n < sz ;++n)
+		putchar(rhs[n]);
+	puts(" in lexicographical order");
+}
 int main(){
+	printf("1------------------------------------------\n");
 	char str1[15];
 
 	char str2[15];
 
 	int ret;
 
-	memcpy(str1, "ABCdef",6);
-	memcpy(str2, "ABcDEF",6);
+	memcpy(str1, "ABcdef",6);
+	memcpy(str2, "ABCDEF",6);
 
-	ret = memcmp(str1, str2, 5);
+	ret = ft_memcmp(str1, str2, 2);
 
 	if (ret > 0)
 		printf("ret = %d -> str2 is less than str1\n",ret);
@@ -43,4 +74,14 @@ int main(){
 		printf("ret = %d -> str1 is less than str2\n",ret);
 	else
 		printf("ret = %d ->str1 is equal to str2\n",ret);
+	printf("2------------------------------------------\n");
+
+	char a1[]={'a','b','c'};
+
+	char a2[sizeof a1]={'a','b','d'};
+
+	demo(a1, a2, sizeof a1);
+	demo(a2, a1, sizeof a1);
+	demo(a1, a1, sizeof a1);
+	
 }
