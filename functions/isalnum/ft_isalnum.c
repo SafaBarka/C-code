@@ -23,13 +23,17 @@
 #include <ctype.h>
 #include <stdio.h>
 
+int ft_isalnum(int c)
+{
+	return ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z') || (c >= '0' && c <= '9'));
+}
 int main(){
 
-	printf("|40 == '('| %s alphanumeric\n",isalnum(40)? "is" : "is not");
-	printf("|48 == '0'| %s alphanumeric\n",isalnum(48)? "is" : "is not");
-	printf("'3'| %s alphanumeric\n",isalnum('3')? "is" : "is not");
-	printf("|65 == 'A'| %s alphanumeric\n",isalnum(65)? "is" : "is not");
-	printf("|0== '/0'| %s alphanumeric\n",isalnum(0)? "is" : "is not");
+	printf("|40 == '('| %s alphanumeric\n",ft_isalnum(40)? "is" : "is not");
+	printf("|48 == '0'| %s alphanumeric\n",ft_isalnum(48)? "is" : "is not");
+	printf("|'3'| %s alphanumeric\n",ft_isalnum('3')? "is" : "is not");
+	printf("|65 == 'A'| %s alphanumeric\n",ft_isalnum(65)? "is" : "is not");
+	printf("|0== '/0'| %s alphanumeric\n",ft_isalnum(0)? "is" : "is not");
 
 }
 
