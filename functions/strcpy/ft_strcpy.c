@@ -35,9 +35,21 @@
 //memcpy should be used if you know well that source contain other than character. for encrypted data or binary data, memcpy is ideal way to go .
 
 //the main difference is that memcpy() always copies teh exact number of bytes you specify; strcpy(), on the other hand, wll copy until it reads NULL (aka 0) byte, and then stop after that .
+
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
+char *ft_strcpy(char *dest, const char *src){
+	
+	int i = 0;
+	while(src[i])
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	dest[i] = '\0';
+	return dest;
+}
 void print(char *str,int n);
 int main(){
 
@@ -48,7 +60,7 @@ int main(){
 	
 	char dst[strlen(src) + 1]; //+1 to accomodate for the null terminator
 
-	strcpy(dst, src);
+	ft_strcpy(dst, src);
 
 	dst[0]='M'; //OK
 
@@ -62,9 +74,9 @@ int main(){
 
 	memset(dest, '\0',sizeof(dest));
 
-	strcpy(s, "THis is me");
+	ft_strcpy(s, "THis is me");
 
-	strcpy(dest,s);
+	ft_strcpy(dest,s);
 
 	printf("Final copied string : %s\n",dest);
 
@@ -81,7 +93,7 @@ int main(){
 
 	memset(strbuff, 0,5);
 
-	strcpy(strbuff,str);
+	ft_strcpy(strbuff,str);
 
 	memcpy(membuff,str,5);
 
@@ -90,6 +102,8 @@ int main(){
 
 	printf("print membuff :\n");
 	print(membuff,5);
+
+	printf("4---------------------------------------------------\n");
 
 }
 
