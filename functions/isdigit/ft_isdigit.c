@@ -17,14 +17,16 @@
 #include <stdio.h>
 #include <ctype.h>
 
+int ft_isdigit(int ch)
+{
+	return (ch >= '0' && ch <= '9');
+}
 int main()
 {
-	printf("|#| %s digit \n",isdigit(35) ? "is" : "is not");
-	printf("|48 <==> '1'| %s digit \n",isdigit(48) ? "is" : "is not");
-	printf("|'9'| %s digit \n",isdigit('9') ? "is" : "is not");
-	printf("|56 == '8'| %s digit \n",isdigit(56) ? "is" : "is not");
-	printf("|47 == '/'| %s digit \n",isdigit(47) ? "is" : "is not");
-
-
+	printf("|#| %s digit \n",ft_isdigit(35) ? "is" : "is not");
+	printf("|48 <==> '1'| %s digit \n",ft_isdigit(48) ? "is" : "is not");
+	printf("|'9'| %s digit \n",ft_isdigit('9') ? "is" : "is not");
+	printf("|56 == '8'| %s digit \n",ft_isdigit(56) ? "is" : "is not");
+	printf("|47 == '/'| %s digit \n",ft_isdigit(47) ? "is" : "is not");
 
 }
