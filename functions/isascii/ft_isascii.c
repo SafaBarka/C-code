@@ -14,15 +14,19 @@
 #include <ctype.h>
 #include <stdio.h>
 
+int ft_isascii(int c)
+{
+	return (c >= 0 && c <=127);
+}
 int main()
 {
 
-	printf("|14 == (SHIFT OUT)| %s ascii\n",isascii(14)? "is" : "is not");
-	printf("|'a'| %s ascii\n",isascii('a')? "is" : "is not");
-	printf("|127 == (DEL)| %s ascii\n",isascii(127)? "is" : "is not");
-	printf("|128| %s ascii\n",isascii(128)? "is" : "is not");
-	printf("|'W'| %s ascii\n",isascii('W')? "is" : "is not");
-	printf("|-1| %s ascii\n",isascii(-1)? "is" : "is not");
-	printf("|0| %s ascii\n",isascii(0)? "is" : "is not");
+	printf("|14 == (SHIFT OUT)| %s ascii\n",ft_isascii(14)? "is" : "is not");
+	printf("|'a'| %s ascii\n",ft_isascii('a')? "is" : "is not");
+	printf("|127 == (DEL)| %s ascii\n",ft_isascii(127)? "is" : "is not");
+	printf("|128| %s ascii\n",ft_isascii(128)? "is" : "is not");
+	printf("|'W'| %s ascii\n",ft_isascii('W')? "is" : "is not");
+	printf("|-1| %s ascii\n",ft_isascii(-1)? "is" : "is not");
+	printf("|0| %s ascii\n",ft_isascii(0)? "is" : "is not");
 
 }
