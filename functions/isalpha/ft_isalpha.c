@@ -13,14 +13,19 @@
 #include <ctype.h>
 #include <stdio.h>
 
-int main(){
-	printf("'2' is alpha ? :%d\n",isalpha('2'));
-	printf("'a' is alpha ? :%d\n",isalpha('a'));
-	printf("'Z' is alpha ? :%d\n",isalpha('Z'));
-	printf("'.' is alpha ? :%d\n",isalpha('.'));
+int ft_isalpha(int c)
+{
+	return ((c >= 65 && c <= 90) || (c >= 97 && c <= 122));
+}
 
-	printf("66('B') is alpha ? :%d\n",isalpha(66));
-	printf("117('u') is alpha ? :%d\n",isalpha(117));
-	printf("123('{') is alpha ? :%d\n",isalpha(123));
+int main(){
+	printf("'2' is alpha ? :%d\n",ft_isalpha('2'));
+	printf("'a' is alpha ? :%d\n",ft_isalpha('a'));
+	printf("'Z' is alpha ? :%d\n",ft_isalpha('Z'));
+	printf("'.' is alpha ? :%d\n",ft_isalpha('.'));
+
+	printf("66('B') is alpha ? :%d\n",ft_isalpha(66));
+	printf("117('u') is alpha ? :%d\n",ft_isalpha(117));
+	printf("123('{') is alpha ? :%d\n",ft_isalpha(123));
 
 }
