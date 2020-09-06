@@ -1,4 +1,9 @@
-
+//void *memcpy(void *dst, const void *src, size_t count);
+//copies count characters from the object pointed to by src to the object pointed to by dest. both objets are interpreted as arrays of unsigned char .
+//the behavior is undefined if access occurs beyond the end of the dest array. if the objects overlap , the behavior is undefined. the behavior is undefined if either dest or src is an invalid or null pointer.	
+//Return value : returns a copy of dest.
+//memcpy may be used to set the eefective type of an object obtained by an allocation function.
+//memcpy is the fatest library routine for memory-to-memory copy. it is usually more efficient than strcpy, which must scan the data it copies or memmove, which must take precautions to handle overlapping inputs.
 #include <string.h>
 
 void *ft_memcpy1(void *dst,const void *src, size_t n){
