@@ -6,9 +6,11 @@
 
 void *ft_memcpy(void *dst, const void *src, size_t len){
 	size_t  i = 0 ;
-	while (i++ < len)
+	while (i < len)
+	{
 		*((unsigned char *)dst + i) = *((unsigned char *)src +i);
-
+		i++;
+	}
 	return dst;
 }
 void *ft_memmove1(void *dst, const void *src ,size_t len){
@@ -159,7 +161,16 @@ void *ft_memmove7(void *dst, const void *src, size_t len){
 
 	return dst;
 }
-int main(){
 
+int main()
+{
+        char dst[]="Hello world";
+
+        char *src=&(dst[3]);
+        printf("return value : |%s|\n",(char *)ft_memmove1(dst, src, 4));//|THis is ane|
+
+        printf("dst = |%s|\n",(char *)(dst));//|THis is ane|
+
+        printf("src = |%s|\n",(char *)(src));//|THis isTHis is ane|
 
 }
