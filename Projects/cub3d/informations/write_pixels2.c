@@ -38,7 +38,7 @@
 //so the very positions in string are 20 ,21, 22, 23 .
 
 //Now how de we get down on the Y axis? thats actually realy simple : we just have to use the following formula :
-//(X position + 4 * Line size * Y position)
+//?? (X position + 4 * Line size * Y position) ??
 
 //Let's take the pixel (0;2) for a window size of 800 x 600 as example :
 //this given us (0 + 4 * 800 * 2) = 6400 , so the pixel  (0;2) will be described by the chars 
@@ -94,7 +94,7 @@
 //Step3 :Fill the image
 //---------------------
 
-//All you have to do is using the formula given above (X position * 4 + 4 * Line_size * Y position)
+//All you have to do is using the formula given above ?? (X position * 4 +  Line_size * Y position) ??
 //to calculate the position of the pixel you want on the char pointer, 
 //then change the 3 first chars according to the color you want to get.
 
