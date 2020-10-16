@@ -8,10 +8,11 @@
 #define WINDOW_HEIGHT 1080
 #define BLUE  0x0000cc
 #define GREEN 0x00b050
-
+#define MALACHITE 0x108070
 void *mlx;
 
 void *mlx_win;
 
 t_data image_win;
 
+Player player;

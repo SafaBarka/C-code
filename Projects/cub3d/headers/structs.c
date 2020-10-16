@@ -17,3 +17,18 @@ typedef struct s_data {
     //endian = 0 or 1 depending of the archetecture of the computer
     int     endian;
 }           t_data;
+
+
+
+typedef struct Player{ //my player is a circle
+
+    float x;
+    float y;
+    float radius;
+    int turnDirection; //-1 for left +1 for right
+    int walkDirection; //-1 for back =1 for front
+    float rotationAngle;
+    float moveSpeed;
+    float rotationSpeed;
+    
+}   Player;

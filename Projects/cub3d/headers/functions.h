@@ -3,3 +3,7 @@
 void ft_initialize_mlx();
 
 void ft_put_pixel_to_image(int x, int y , int color);
+
+void ft_initialize_player();
+
+void  ft_draw_player();
