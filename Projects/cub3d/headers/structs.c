@@ -1,3 +1,4 @@
+
 //image == char pointer
 //pixel = 4 chars
 
@@ -32,3 +33,4 @@ typedef struct Player{ //my player is a circle
     float rotationSpeed;
     
 }   Player;
+

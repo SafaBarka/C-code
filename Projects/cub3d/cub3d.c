@@ -6,16 +6,9 @@ int main()
 
    ft_initialize_player();
 
-    for(int y = 0 ; y <1080; y++)
-   {
-        for (int x = 0 ; x <1920; x++)
-        {
-            printf("(%d, %d)  ",x,y);
-            ft_put_pixel_to_image(x,y,MALACHITE);
-        }
-        printf("\n"); 
-   }
     ft_draw_player(BLUE);
+
+    ft_draw_map(BLUE);
     //Display the image
     //use mlx_put_image_to_window() function.
     //pushing images to a window.
