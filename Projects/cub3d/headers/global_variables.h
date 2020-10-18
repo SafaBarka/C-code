@@ -2,6 +2,7 @@
 #include <math.h>
 #include <stdio.h>
 #include <mlx.h>
+#include <stdlib.h>
 
 #define BLUE  0x0000cc
 #define GREEN 0x00b050

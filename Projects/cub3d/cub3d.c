@@ -1,14 +1,15 @@
 #include "headers/functions.h"
+#include <fcntl.h>
 
 int main()
 {
+  
     ft_initialize_mlx();
 
-   ft_initialize_player();
+    ft_initialize_player();
 
-    ft_draw_player(BLUE);
+    ft_read_from_map();
 
-    ft_draw_map(BLUE);
     //Display the image
     //use mlx_put_image_to_window() function.
     //pushing images to a window.

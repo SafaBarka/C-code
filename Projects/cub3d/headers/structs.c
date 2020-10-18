@@ -34,3 +34,7 @@ typedef struct Player{ //my player is a circle
     
 }   Player;
 
+typedef struct s_list {
+   char *line;
+   struct s_list* next;
+}  t_list;

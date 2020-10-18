@@ -1,0 +1,2 @@
+all:
+	gcc cub3d.c functions/ft_draw_map.c functions/ft_draw_player.c functions/ft_draw_rectangle.c functions/ft_initialize_mlx.c functions/ft_initialize_player.c functions/ft_put_pixel_to_image.c functions/ft_read_from_map.c  get_next_line/get_next_line.c get_next_line/get_next_line_utils.c  functions/ft_lstadd_back.c functions/ft_lstnew.c  functions/ft_print_list.c  functions/ft_lstlast.c -Wall -Wextra -Werror -lmlx -framework OpenGL -framework AppKit -D BUFFER_SIZE=60
