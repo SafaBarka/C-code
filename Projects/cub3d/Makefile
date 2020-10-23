@@ -1,2 +1,25 @@
 all:
-	gcc cub3d.c functions/ft_draw_map.c functions/ft_draw_player.c functions/ft_draw_rectangle.c functions/ft_initialize_mlx.c functions/ft_initialize_player.c functions/ft_put_pixel_to_image.c functions/ft_read_from_map.c  get_next_line/get_next_line.c get_next_line/get_next_line_utils.c  functions/ft_lstadd_back.c functions/ft_lstnew.c  functions/ft_print_list.c  functions/ft_lstlast.c -Wall -Wextra -Werror -lmlx -framework OpenGL -framework AppKit -D BUFFER_SIZE=60
+	gcc   -g -Wall -Wextra -Werror -lmlx -framework OpenGL -framework AppKit -D BUFFER_SIZE=60\
+		cub3d.c\
+		get_next_line/get_next_line.c\
+		get_next_line/get_next_line_utils.c\
+		functions/ft_lstadd_back.c\
+		functions/ft_lstnew.c\
+		functions/ft_print_list.c\
+		functions/ft_lstlast.c \
+		functions/ft_read_file.c \
+		functions/ft_set_configuration.c\
+		functions/ft_split.c\
+		functions/ft_sub.c\
+		functions/ft_initialize_config.c\
+		functions/ft_strncmp.c\
+		functions/ft_check_nbr_splits.c\
+		functions/ft_set_configuration_resolution.c\
+		functions/ft_is_number.c\
+		functions/ft_atoi.c\
+		functions/ft_store_map.c
+		
+	
+
+		
+		 

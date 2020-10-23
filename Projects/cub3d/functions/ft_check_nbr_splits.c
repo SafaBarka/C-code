@@ -1,0 +1,10 @@
+#include "../headers/functions.h"
+
+int ft_check_nbr_splits(char **str)
+{
+    int i = 0;
+  
+    while(str[i])
+        i++;
+    return i;
+}
