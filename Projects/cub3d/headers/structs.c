@@ -5,6 +5,9 @@ typedef struct s_list {
    struct s_list* next;
 }  t_list;
 
+
+
+
 typedef struct config{
     int cpt ; // must be 8 at the end , number of variables in the file "R","NO","WE"....
 

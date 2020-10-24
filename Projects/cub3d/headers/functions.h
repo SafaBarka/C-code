@@ -35,3 +35,6 @@ int ft_store_map_2d();
 
 int ft_lst_size();
 
+char *ft_realloc(char *line, int nbr);
+void ft_print_map_2d(char **map);
+

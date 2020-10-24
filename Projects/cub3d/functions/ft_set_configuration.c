@@ -12,7 +12,7 @@ int ft_set_configuration(char *line)
         //1------------------------------------------
         if (str[0] && ft_strncmp(str[0] ,"R", 2) == 0)
         {
-            printf("R variable\n");
+         
             if(config.r_height != -1 && config.r_height != -1)
             {
                  printf("defining variable  |%s| twice in the file \n",str[0]);
@@ -33,7 +33,7 @@ int ft_set_configuration(char *line)
         //2------------------------------------------
         else if (str[0] && ft_strncmp(str[0] , "NO", 2) == 0)
         {
-            printf("NO variable\n");
+         
             if (config.no != NULL)
             {
                  printf("defining variable  |%s| twice in the file \n",str[0]);
@@ -54,8 +54,7 @@ int ft_set_configuration(char *line)
         //3------------------------------------------
         else if (str[0] && ft_strncmp(str[0] , "SO",2) == 0)
         {
-            printf("SO variable\n");
-
+           
             if(config.so != NULL)
             {
                  printf("defining variable  |%s| twice in the file \n",str[0]);
@@ -75,7 +74,7 @@ int ft_set_configuration(char *line)
         //4------------------------------------------
         else if (str[0] && ft_strncmp(str[0] , "WE",2) == 0)
         {
-                printf("WE variable\n");
+               
                 if(config.we != NULL)
                 {
                          printf("defining variable  |%s| twice in the file \n",str[0]);
@@ -95,7 +94,7 @@ int ft_set_configuration(char *line)
         //5------------------------------------------
         else if (str[0] && ft_strncmp(str[0] , "EA",2) == 0)
         {
-                printf("EA variable\n");
+                
                 if(config.ea != NULL)
                 {
                     printf("defining variable  |%s| twice in the file \n",str[0]);
@@ -115,7 +114,7 @@ int ft_set_configuration(char *line)
         //6--------------------------------------------------
         else if (str[0] && ft_strncmp(str[0] , "S",2) == 0)
         {
-                printf("S variable\n");
+                
                 if(config.s != NULL)
                 {
                         printf("defining variable  |%s| twice in the file \n",str[0]);
@@ -135,7 +134,7 @@ int ft_set_configuration(char *line)
         //7--------------------------------------------------
         else if (str[0] && ft_strncmp(str[0] , "F",2) == 0)
         {
-                printf("F variable\n");
+               
                 if(config.f != NULL)
                 {
                       printf("defining variable  |%s| twice in the file \n",str[0]);
@@ -155,7 +154,7 @@ int ft_set_configuration(char *line)
         //8--------------------------------------------------
         else if (str[0] && ft_strncmp(str[0] , "C",2) == 0)
         {
-                printf("C variable\n");
+       
 
                 if(config.c != NULL)
                 {
@@ -196,6 +195,7 @@ int ft_set_configuration(char *line)
     }
     else if  (config.cpt == 8)
     {
+       
         //map traitment
         if(ft_store_map(line) ==  0)
             return 0;

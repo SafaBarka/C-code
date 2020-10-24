@@ -10,10 +10,11 @@ int ft_read_file(char *filename)
     //if fd <= 0 return error : "not valid file"
     
     ft_initialize_config();
-
-    while(get_next_line(fd,&line))
+   int i = 1;
+    while(i)
     {
-       
+       i = get_next_line(fd,&line);
+
        //set configuration of elements in file
        if(ft_set_configuration(line) == 0)
          return 0;

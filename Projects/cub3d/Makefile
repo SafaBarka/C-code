@@ -19,7 +19,9 @@ all:
 		functions/ft_atoi.c\
 		functions/ft_store_map.c\
 		functions/ft_store_map_2d.c\
-		functions/ft_lst_size.c
+		functions/ft_lst_size.c\
+		functions/ft_realloc.c\
+		functions/ft_print_map_2d.c
 		
 	
 
