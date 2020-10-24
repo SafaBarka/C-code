@@ -17,7 +17,9 @@ all:
 		functions/ft_set_configuration_resolution.c\
 		functions/ft_is_number.c\
 		functions/ft_atoi.c\
-		functions/ft_store_map.c
+		functions/ft_store_map.c\
+		functions/ft_store_map_2d.c\
+		functions/ft_lst_size.c
 		
 	
 

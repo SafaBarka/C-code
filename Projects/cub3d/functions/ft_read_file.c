@@ -19,7 +19,8 @@ int ft_read_file(char *filename)
          return 0;
     }
    // return an error if the close doesn't work well "the file doesn't closed"
-   ft_print_list(config.head);
+   //ft_print_list(config.head);
+
    close(fd);
 
    return 1;

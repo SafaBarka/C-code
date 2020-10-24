@@ -2,6 +2,7 @@
 
 int ft_store_map(char *line)
 {
+   
     int len ;
     len = ft_strlen(line);
     if (config.head == NULL)
@@ -15,6 +16,6 @@ int ft_store_map(char *line)
         ft_lstadd_back(config.head,ft_lstnew(line));
 
     }
-    
+   
     return 1;
 }

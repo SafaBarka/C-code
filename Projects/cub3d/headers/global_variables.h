@@ -8,6 +8,9 @@
 
 Config config;
 
+char **map;
+
+
 
 
 

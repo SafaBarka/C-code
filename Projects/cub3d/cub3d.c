@@ -7,6 +7,8 @@ int main()
         return 0;
     else
     {
+            ft_store_map_2d();
+    
             printf("everything is fine\n");
     }  
     return 1;

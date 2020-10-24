@@ -31,3 +31,7 @@ int		ft_atoi(const char *str);
 
 int ft_store_map(char *line);
 
+int ft_store_map_2d();
+
+int ft_lst_size();
+

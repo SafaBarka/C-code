@@ -10,6 +10,9 @@ typedef struct config{
 
     int r_width;
     int r_height;
+    int nbr_columns;
+    int nbr_rows;
+
     char *no;
     char *so;
     char *we;
@@ -18,6 +21,7 @@ typedef struct config{
     char *c;
     char *f;
     int len_leng_line;
+    int indice_last_line;
     t_list *head;
     
 
