@@ -1,11 +1,14 @@
 
-#include "../headers/functions.h"
+#include "../../headers/functions.h"
 
 int ft_store_map_2d()
 {
     config.nbr_columns = config.len_leng_line;
     config.nbr_rows = ft_lst_size(config.head);
 
+    config.TILE_SIZE_width = config.r_width / config.nbr_columns;
+    config.TILE_SIZE_height = config.r_height /config.nbr_rows;
+    
     int r = 0;
    
 

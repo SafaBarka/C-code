@@ -1,9 +1,15 @@
 
-#include "../headers/functions.h"
+#include "../../headers/functions.h"
 
 int ft_set_configuration(char *line)
 {
     char **str = NULL;
+    //if (config.cpt == 8 && line[0] == '\0')
+    //{
+        
+        //printf("misisng map\n");
+        //return 0;
+    //}
     if (line[0] == '\0')
         return 1;
     if (config.cpt != 8)

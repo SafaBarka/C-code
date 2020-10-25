@@ -38,3 +38,11 @@ int ft_lst_size();
 char *ft_realloc(char *line, int nbr);
 void ft_print_map_2d(char **map);
 
+void ft_display_map(int color);
+
+void ft_draw_rectangle(int x, int y, int color);
+void ft_initialize_mlx();
+void ft_put_pixel_to_image(int x, int y , int color);
+
+
+

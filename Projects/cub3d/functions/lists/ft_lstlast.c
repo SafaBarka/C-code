@@ -1,4 +1,4 @@
-#include "../headers/functions.h"
+#include "../../headers/functions.h"
 
 t_list *ft_lstlast(t_list *lst)
 {

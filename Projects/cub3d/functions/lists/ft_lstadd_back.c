@@ -1,4 +1,4 @@
-#include "../headers/functions.h"
+#include "../../headers/functions.h"
 
 void	ft_lstadd_back(t_list *alst, t_list *new)
 {

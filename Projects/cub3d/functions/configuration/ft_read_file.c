@@ -1,14 +1,14 @@
-#include "../headers/functions.h"
+#include "../../headers/functions.h"
 
 int ft_read_file(char *filename)
 {
     int fd;
     char *line;
-
-    fd = open(filename,O_RDONLY);
-
-    //if fd <= 0 return error : "not valid file"
     
+    if ((fd = open(filename,O_RDONLY)) <= 0){
+       printf("not valid file\n");
+       return 0;
+    }
     ft_initialize_config();
    int i = 1;
     while(i)

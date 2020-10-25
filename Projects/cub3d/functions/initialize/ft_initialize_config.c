@@ -1,5 +1,5 @@
 
-#include "../headers/functions.h"
+#include "../../headers/functions.h"
 
 void ft_initialize_config()
 {

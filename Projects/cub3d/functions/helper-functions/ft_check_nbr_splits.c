@@ -1,4 +1,4 @@
-#include "../headers/functions.h"
+#include "../../headers/functions.h"
 
 int ft_check_nbr_splits(char **str)
 {

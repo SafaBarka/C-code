@@ -1,4 +1,4 @@
-#include "../headers/functions.h"
+#include "../../headers/functions.h"
 
 int ft_lst_size()
 {

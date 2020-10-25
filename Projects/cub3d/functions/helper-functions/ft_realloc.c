@@ -1,5 +1,5 @@
 
-#include "../headers/functions.h"
+#include "../../headers/functions.h"
 
 char *ft_realloc(char *line, int nbr)
 {

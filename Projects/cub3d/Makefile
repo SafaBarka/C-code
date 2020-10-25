@@ -1,27 +1,35 @@
 all:
 	gcc   -g -Wall -Wextra -Werror -lmlx -framework OpenGL -framework AppKit -D BUFFER_SIZE=60\
 		cub3d.c\
-		get_next_line/get_next_line.c\
-		get_next_line/get_next_line_utils.c\
-		functions/ft_lstadd_back.c\
-		functions/ft_lstnew.c\
-		functions/ft_print_list.c\
-		functions/ft_lstlast.c \
-		functions/ft_read_file.c \
-		functions/ft_set_configuration.c\
-		functions/ft_split.c\
-		functions/ft_sub.c\
-		functions/ft_initialize_config.c\
-		functions/ft_strncmp.c\
-		functions/ft_check_nbr_splits.c\
-		functions/ft_set_configuration_resolution.c\
-		functions/ft_is_number.c\
-		functions/ft_atoi.c\
-		functions/ft_store_map.c\
-		functions/ft_store_map_2d.c\
-		functions/ft_lst_size.c\
-		functions/ft_realloc.c\
-		functions/ft_print_map_2d.c
+		functions/lists/ft_lstadd_back.c\
+		functions/lists/ft_lstnew.c\
+		functions/lists/ft_lstlast.c\
+		functions/lists/ft_lst_size.c\
+		functions/initialize/ft_initialize_config.c\
+		functions/initialize/ft_initialize_mlx.c\
+		functions/helper-functions/ft_atoi.c\
+		functions/helper-functions/ft_check_nbr_splits.c\
+		functions/helper-functions/ft_is_number.c\
+		functions/helper-functions/ft_realloc.c\
+		functions/helper-functions/ft_split.c\
+		functions/helper-functions/ft_sub.c\
+		functions/helper-functions/ft_strncmp.c\
+		functions/mlx-draw/ft_put_pixel_to_image.c\
+		functions/mlx-draw/ft_draw_rectangle.c\
+		functions/mlx-draw/ft_display_map.c\
+		functions/configuration/ft_set_configuration_resolution.c\
+		functions/configuration/ft_set_configuration.c\
+		functions/configuration/ft_read_file.c \
+		functions/store/ft_store_map_2d.c\
+		functions/store/ft_store_map.c\
+		functions/print/ft_print_map_2d.c\
+		functions/print/ft_print_list.c\
+		functions/helper-functions/get_next_line/get_next_line.c\
+		functions/helper-functions/get_next_line/get_next_line_utils.c
+
+
+
+
 		
 	
 
