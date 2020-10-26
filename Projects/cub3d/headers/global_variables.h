@@ -8,7 +8,7 @@
 #define BLUE  0x0000cc
 #define GREEN 0x00b050
 Config config;
-
+Player player;
 char **map;
 
 void *mlx;

@@ -1,7 +1,7 @@
 
 #include "../../headers/functions.h"
 
-int ft_store_map_2d()
+int ft_store_map_array()
 {
     config.nbr_columns = config.len_leng_line;
     config.nbr_rows = ft_lst_size(config.head);

@@ -6,12 +6,8 @@ int main()
     if (!ft_read_file("infos.cub"))
         return 0;
     
-    if(! ft_store_map_2d())
-        return 0;
-    
-    ft_print_map_2d(map);
-
     ft_initialize_mlx();
+    
     ft_display_map(BLUE);
 
     //Display the image
@@ -24,6 +20,5 @@ int main()
     //initiate the window rendering 
     mlx_loop(mlx);
 
-
-return 1;
+    return 1;
 }

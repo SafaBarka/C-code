@@ -1,6 +1,6 @@
 #include "../../headers/functions.h"
 
-int ft_store_map(char *line)
+int ft_store_map_list(char *line)
 {
     int len ;
     len = ft_strlen(line);
@@ -15,8 +15,6 @@ int ft_store_map(char *line)
         if (len >= config.len_leng_line)
             config.len_leng_line = len;
         ft_lstadd_back(config.head,ft_lstnew(line));
-    
-
     }
     return 1;
 }

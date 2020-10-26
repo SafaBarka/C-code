@@ -16,7 +16,9 @@ void ft_initialize_config()
     config.c = NULL;
     config.s = NULL;
     config.len_leng_line = 0;
-    config.indice_last_line = 0; // to delete later
+    config.indice_last_line = -1; // to delete later
     config.head = NULL;
+    config.foundMap = -1;
+    config.cptLineMap = 0;
 
 }

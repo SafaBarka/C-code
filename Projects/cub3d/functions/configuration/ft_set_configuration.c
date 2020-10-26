@@ -4,13 +4,12 @@
 int ft_set_configuration(char *line)
 {
     char **str = NULL;
-    //if (config.cpt == 8 && line[0] == '\0')
-    //{
-        
-        //printf("misisng map\n");
-        //return 0;
-    //}
-    if (line[0] == '\0')
+
+    if (line[0] == '\0' && config.foundMap == 1)
+    {
+        printf("line break between elements  of map\n");
+        return 0;
+    } else if (line[0] == '\0')
         return 1;
     if (config.cpt != 8)
     {
@@ -194,17 +193,29 @@ int ft_set_configuration(char *line)
             return 0;
          }
 
-    }else if (config.cpt == 8 && line[0] != '1' && line[0] != ' ')
-    {
-        printf("not valid map\n");
-        return 0;
     }
     else if  (config.cpt == 8)
     {
-       
-        //map traitment
-        if(ft_store_map(line) ==  0)
+        config.cptLineMap++;
+        config.foundMap = 1;
+        if (config.head == NULL)
+        {
+            if (!ft_check_first_last_line(line))
+                return 0;
+        }
+        else if (config.indice_last_line == 1)
+        {
+            if (!ft_check_first_last_line(line))
+                return 0;
+        }
+        else
+        {
+            if (!ft_check_middle_line(line))
+                return 0;
+        }
+        if(ft_store_map_list(line) ==  0)
             return 0;
+        
     }
     
     return 1;

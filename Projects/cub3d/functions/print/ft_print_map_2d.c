@@ -1,7 +1,7 @@
 
 #include "../../headers/functions.h"
 
-void ft_print_map_2d(char **map)
+void ft_print_map_2d()
 {
     int i = 0;
     int j = 0 ;

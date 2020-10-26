@@ -42,7 +42,20 @@ typedef struct config{
     char *f;
     int len_leng_line;
     int indice_last_line;
+    int foundMap ;
+    int cptLineMap;
     t_list *head;
     
 
 }Config;
+
+typedef struct player{
+    float x;
+    int playerNorth;
+    int playerSouth;
+    int playerEast;
+    int playerWest;
+    float y;
+    int playerFound;
+
+} Player;

@@ -29,14 +29,16 @@ int ft_is_number(char *s);
 
 int		ft_atoi(const char *str);
 
-int ft_store_map(char *line);
+int ft_store_map_list(char *line);
 
-int ft_store_map_2d();
+int ft_store_map_array();
+
+int ft_check_first_last_line(char *line);
 
 int ft_lst_size();
 
 char *ft_realloc(char *line, int nbr);
-void ft_print_map_2d(char **map);
+void ft_print_map_2d();
 
 void ft_display_map(int color);
 
@@ -44,5 +46,7 @@ void ft_draw_rectangle(int x, int y, int color);
 void ft_initialize_mlx();
 void ft_put_pixel_to_image(int x, int y , int color);
 
+void ft_initialize_player();
+int ft_check_middle_line(char *line);
 
 
