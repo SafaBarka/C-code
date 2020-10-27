@@ -1,5 +1,5 @@
 all:
-	gcc   -g -Wall -Wextra -Werror -lmlx -framework OpenGL -framework AppKit -D BUFFER_SIZE=60\
+	gcc   -g -lmlx -framework OpenGL -framework AppKit -D BUFFER_SIZE=60\
 		cub3d.c\
 		functions/lists/ft_lstadd_back.c\
 		functions/lists/ft_lstnew.c\
@@ -28,7 +28,9 @@ all:
 		functions/helper-functions/get_next_line/get_next_line_utils.c\
 		functions/initialize/ft_initialize_player.c\
 		functions/map-errors/ft_check_first_last_line.c\
-		functions/map-errors/ft_check_middle_line.c
+		functions/map-errors/ft_check_middle_line.c\
+		functions/mlx-draw/ft_display_player.c\
+		functions/mlx-draw/ft_display_player_orientation.c
 
 
 

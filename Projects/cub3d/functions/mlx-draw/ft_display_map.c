@@ -22,6 +22,14 @@ void ft_display_map(int color)
             {
                 ft_draw_rectangle(x,y,color);
             }
+            else if (map[r][c] == '0')
+            {
+                ft_draw_rectangle(x,y,GREEN);
+
+            }else if (map[r][c] == ' ')
+            {
+                ft_draw_rectangle(x,y,yellow);
+            }
             x = x+config.TILE_SIZE_width   ;
             c++;
         }

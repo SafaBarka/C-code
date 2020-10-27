@@ -14,25 +14,25 @@ int ft_check_middle_line(char *line)
     {
         if (player.playerFound == 0 && line[i] == 'N')
         {
-            player.x = i;
+            player.x = i ;
             player.y = config.cptLineMap;
             player.playerFound = 1;
             player. playerNorth = 1;
         }else if (player.playerFound == 0 && line[i] == 'S')
         {
-            player.x = i;
+             player.x = i ;
             player.y = config.cptLineMap;
             player.playerFound = 1;
             player.playerSouth= 1;
         }else if (player.playerFound == 0 && line[i] == 'W')
         {
-             player.x = i;
+            player.x = i ;
             player.y = config.cptLineMap;
             player.playerFound = 1;
             player.playerWest = 1;
         }else if (player.playerFound == 0 && line[i] == 'E')
         {
-            player.x = i;
+              player.x = i ;
             player.y = config.cptLineMap;
             player.playerFound = 1;
             player.playerEast = 1;

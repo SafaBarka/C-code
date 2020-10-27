@@ -57,5 +57,6 @@ typedef struct player{
     int playerWest;
     float y;
     int playerFound;
+    float radius;
 
 } Player;

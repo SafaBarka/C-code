@@ -7,7 +7,9 @@ int ft_store_map_array()
     config.nbr_rows = ft_lst_size(config.head);
 
     config.TILE_SIZE_width = config.r_width / config.nbr_columns;
+    //config.TILE_SIZE_width = 90;
     config.TILE_SIZE_height = config.r_height /config.nbr_rows;
+    //config.TILE_SIZE_height = 90;
     
     int r = 0;
    

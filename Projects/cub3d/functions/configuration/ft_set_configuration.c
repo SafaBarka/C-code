@@ -18,7 +18,7 @@ int ft_set_configuration(char *line)
         if (str[0] && ft_strncmp(str[0] ,"R", 2) == 0)
         {
          
-            if(config.r_height != -1 && config.r_height != -1)
+            if(config.r_width != -1 && config.r_height != -1)
             {
                  printf("defining variable  |%s| twice in the file \n",str[0]);
                 return 0;

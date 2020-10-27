@@ -8,10 +8,12 @@ int ft_read_file(char *filename)
     i = 1;
 
    //------------------------------------------
+   
     if ((fd = open(filename,O_RDONLY)) <= 0){
        printf("not valid file\n");
        return 0;
     }
+    printf("fd = %d\n",fd);
    //-------------------------------------------
    ft_initialize_config();
    ft_initialize_player();

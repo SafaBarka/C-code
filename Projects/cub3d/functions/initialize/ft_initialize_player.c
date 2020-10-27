@@ -9,4 +9,5 @@ void ft_initialize_player()
     player.playerWest = 0;
     player.playerNorth = 0;
     player.playerSouth = 0;
+    player.radius = 10;
 }

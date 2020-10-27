@@ -49,4 +49,6 @@ void ft_put_pixel_to_image(int x, int y , int color);
 void ft_initialize_player();
 int ft_check_middle_line(char *line);
 
+void ft_display_player(int color);
 
+void ft_display_player_orientation();
