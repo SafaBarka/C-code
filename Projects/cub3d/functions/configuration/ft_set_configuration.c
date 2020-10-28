@@ -218,5 +218,6 @@ int ft_set_configuration(char *line)
         
     }
     
+    
     return 1;
 }

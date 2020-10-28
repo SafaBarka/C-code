@@ -27,12 +27,12 @@ typedef struct s_data {
 typedef struct config{
     int cpt ; // must be 8 at the end , number of variables in the file "R","NO","WE"....
 
-    int r_width;
-    int r_height;
+   double r_width;
+    double r_height;
     int nbr_columns;
     int nbr_rows;
-    int TILE_SIZE_width;
-    int TILE_SIZE_height;
+    double TILE_SIZE_width;
+    double TILE_SIZE_height;
     char *no;
     char *so;
     char *we;
@@ -57,6 +57,12 @@ typedef struct player{
     int playerWest;
     float y;
     int playerFound;
+    
+    int turnDirection;
+    int walkDirection;
+    double rotationAngle;
+    double moveSpeed;
+    double rotationSpeed;
     float radius;
 
 } Player;

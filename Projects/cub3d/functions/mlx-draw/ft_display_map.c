@@ -13,14 +13,14 @@ void ft_display_map(int color)
     r = 0;
     c = 0;
 
-      while (r < config.nbr_rows )
+      while (r < config.nbr_rows)
    	{
           
        while (c < config.nbr_columns)
         {
             if (map[r][c] == '1')
             {
-                ft_draw_rectangle(x,y,color);
+                ft_draw_rectangle(x,y,BLUE);
             }
             else if (map[r][c] == '0')
             {
@@ -28,7 +28,8 @@ void ft_display_map(int color)
 
             }else if (map[r][c] == ' ')
             {
-                ft_draw_rectangle(x,y,yellow);
+                
+                ft_draw_rectangle(x,y,SALMON);
             }
             x = x+config.TILE_SIZE_width   ;
             c++;

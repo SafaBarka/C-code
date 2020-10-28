@@ -10,12 +10,13 @@ void ft_display_player_orientation()
     float tmp ;
     if (player.playerNorth)
     {
+        int distance = 0;
         tmp = y;
-        while (length--)
+        while (distance < length)
         {
-            ft_put_pixel_to_image(x, tmp ,SALMON);
+            ft_put_pixel_to_image((player.x + (cos(player.rotationAngle)* distance)), (player.y + (sin(player.rotationAngle) * distance)),SALMON);
            
-            tmp--;
+            distance++;
 
         }
     }

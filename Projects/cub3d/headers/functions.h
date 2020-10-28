@@ -42,7 +42,7 @@ void ft_print_map_2d();
 
 void ft_display_map(int color);
 
-void ft_draw_rectangle(int x, int y, int color);
+
 void ft_initialize_mlx();
 void ft_put_pixel_to_image(int x, int y , int color);
 
@@ -52,3 +52,15 @@ int ft_check_middle_line(char *line);
 void ft_display_player(int color);
 
 void ft_display_player_orientation();
+
+void ft_draw_rectangle(double x, double y, int color);
+int ft_deal_key(int key, void *param);
+void ft_update_player_position();
+int ft_has_wall(double x , double y);
+
+void ft_delete_window();
+void ft_initialize_turn_walk_directions();
+void ft_update_all();
+
+
+

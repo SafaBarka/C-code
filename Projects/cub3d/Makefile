@@ -30,7 +30,14 @@ all:
 		functions/map-errors/ft_check_first_last_line.c\
 		functions/map-errors/ft_check_middle_line.c\
 		functions/mlx-draw/ft_display_player.c\
-		functions/mlx-draw/ft_display_player_orientation.c
+		functions/mlx-draw/ft_display_player_orientation.c\
+		functions/configuration/ft_deal_key.c\
+		functions/update/ft_update_player_position.c\
+		functions/update/ft_has_wall.c\
+		functions/update/ft_delete_window.c\
+		functions/update/ft_initialize_turn_walk_directions.c\
+		functions/update/ft_update_all.c
+
 
 
 
