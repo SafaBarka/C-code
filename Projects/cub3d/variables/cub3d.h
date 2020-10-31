@@ -24,12 +24,29 @@ int ft_set_configuration(char *line);
 int ft_check_line_break(char c);
 int ft_nbr_split(char **str);
 void ft_free_single(char *ptr);
-
 void ft_free_double(char **ptr);
 char			**ft_split(char const *s, char c);
-void ft_check_errors_r(char **str);
-void ft_set_resolution(char **str);
 int ft_is_number(char *s);
-
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 int		ft_atoi(const char *str);
+int ft_zeros(char *str);
+
+void ft_check_errors_no(char **str);
+void ft_check_errors_c(char **str);
+void ft_check_errors_ea(char **str);
+void ft_check_errors_f(char **str);
+void ft_check_errors_r(char **str);
+void ft_check_errors_s(char **str);
+void ft_check_errors_so(char **str);
+void ft_check_errors_we(char **str);
+void ft_set_resolution(char **str);
+
+void ft_set_no(char **str);
+void ft_set_ea(char **str);
+void ft_set_we(char **str);
+void ft_set_c(char **str);
+void ft_set_f(char **str);
+void ft_set_so(char **str);
+void ft_set_s(char **str);
+
+

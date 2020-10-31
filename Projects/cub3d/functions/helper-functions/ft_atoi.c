@@ -20,7 +20,7 @@ int		ft_atoi(const char *str)
 	while ((*str >= 48 && *str <= 57) && *str != '\0')
 	{
 		nbr = (nbr * 10) + (*str - '0');
-		str++;
+		str++; 
 	}
 	if (nbr > 9223372036854775807)
 		return (n > 0 ? -1 : 0);

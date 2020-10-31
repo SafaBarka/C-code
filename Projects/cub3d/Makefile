@@ -1,5 +1,5 @@
 all :
-	gcc   -Wall -Wextra -Werror -g -lmlx -framework OpenGL -framework AppKit -D BUFFER_SIZE=60\
+	gcc    -g -lmlx -framework OpenGL -framework AppKit -D BUFFER_SIZE=60\
 		  cub3d.c\
 		  functions/configuration/ft_file.c\
 		  functions/initialization/ft_initialize_config.c\
@@ -14,9 +14,25 @@ all :
 		  functions/check-errors/ft_check_line_break.c\
 		  functions/helper-functions/ft_nbr_split.c\
 		  functions/helper-functions/ft_free.c\
-		  functions/check-errors/ft_check_errors_r.c\
-		  functions/configuration/ft_set_resolution.c\
 		  functions/helper-functions/ft_is_number.c\
-		  functions/helper-functions/ft_atoi.c
+		  functions/helper-functions/ft_atoi.c\
+		  functions/helper-functions/ft_zeros.c\
+		  functions/check-errors/ft_check_errors_r.c\
+		  functions/check-errors/ft_check_errors_no.c\
+		  functions/check-errors/ft_check_errors_c.c\
+		  functions/check-errors/ft_check_errors_ea.c\
+		  functions/check-errors/ft_check_errors_f.c\
+		  functions/check-errors/ft_check_errors_s.c\
+		  functions/check-errors/ft_check_errors_so.c\
+		  functions/check-errors/ft_check_errors_we.c\
+		  functions/configuration/ft_set_no.c\
+		  functions/configuration/ft_set_so.c\
+		  functions/configuration/ft_set_we.c\
+		  functions/configuration/ft_set_ea.c\
+		  functions/configuration/ft_set_s.c\
+		  functions/configuration/ft_set_f.c\
+		  functions/configuration/ft_set_c.c\
+		  functions/configuration/ft_set_resolution.c
+	
 
 

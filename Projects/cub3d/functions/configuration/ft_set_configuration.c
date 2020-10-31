@@ -17,171 +17,45 @@ int ft_set_configuration(char *line)
             ft_check_errors_r(str);
             ft_set_resolution(str);
         }
-    }
-   /*    str = ft_split(line,' ');
-        //1------------------------------------------
-        if (str[0] && ft_strncmp(str[0] ,"R", 2) == 0)
-        {
-         
-            if(config.width != -1 && config.height != -1)
-            {
-                 printf("defining variable  |%s| twice in the file \n",str[0]);
-                return 0;
-            }
-            if (ft_check_nbr_splits(str) != 3)
-            {
-                printf("number of parameters are  != 3 (R) \n");
-                return 0;
-            }
-            if (config.width == -1 && config.height == -1 )
-            {
-                config.nbr_variables++;
-                return ft_set_configuration_resolution(str[1], str[2]);
-            }
-            
-        }
-        //2------------------------------------------
         else if (str[0] && ft_strncmp(str[0] , "NO", 2) == 0)
         {
-         
-            if (config.no != NULL)
-            {
-                 printf("defining variable  |%s| twice in the file \n",str[0]);
-                return 0;
-            }
-            if (ft_check_nbr_splits(str) != 2)
-            {
-                  printf("number of parameters are  != 2  (NO)\n");
-                return 0;
-            }
-            if (config.no == NULL)
-            {
-                config.nbr_variables++;
-                config.no = ""; // to change later 
-            }
+              ft_check_errors_no(str);
+              ft_set_no(str);  
         }
-
-        //3------------------------------------------
         else if (str[0] && ft_strncmp(str[0] , "SO",2) == 0)
         {
-           
-            if(config.so != NULL)
-            {
-                 printf("defining variable  |%s| twice in the file \n",str[0]);
-                 return 0;
-            }
-            if (ft_check_nbr_splits(str) != 2)
-            {
-                  printf("number of parameters are  != 2  (SO)\n");
-                return 0;
-            }
-            if (config.so == NULL)
-            {
-                config.nbr_variables++;
-                config.so = ""; // to change later
-            }
+             ft_check_errors_so(str);
+              ft_set_so(str);  
         }
-        //4------------------------------------------
         else if (str[0] && ft_strncmp(str[0] , "WE",2) == 0)
         {
-               
-                if(config.we != NULL)
-                {
-                         printf("defining variable  |%s| twice in the file \n",str[0]);
-                         return 0;
-                }
-                if (ft_check_nbr_splits(str) != 2)
-                {
-                      printf("number of parameters are  != 2 (WE)\n");
-                    return 0;
-                 }
-                 if (config.we == NULL)
-                 {
-                         config.nbr_variables++;
-                         config.we=""; // to change later
-                  }
+             ft_check_errors_we(str);
+              ft_set_we(str);  
         }
-        //5------------------------------------------
+
         else if (str[0] && ft_strncmp(str[0] , "EA",2) == 0)
         {
-                
-                if(config.ea != NULL)
-                {
-                    printf("defining variable  |%s| twice in the file \n",str[0]);
-                    return 0;
-                }
-                if (ft_check_nbr_splits(str) != 2)
-                {
-                      printf("number of parameters are  != 2 (EA)\n");
-                    return 0;
-                 }
-                 if (config.ea == NULL)
-                 {
-                         config.nbr_variables++;
-                         config.ea=""; // to change later
-                 }
+             ft_check_errors_ea(str);
+              ft_set_ea(str); 
         }
-        //6--------------------------------------------------
         else if (str[0] && ft_strncmp(str[0] , "S",2) == 0)
         {
-                
-                if(config.s != NULL)
-                {
-                        printf("defining variable  |%s| twice in the file \n",str[0]);
-                        return 0;
-                }
-                if (ft_check_nbr_splits(str) != 2)
-                {
-                      printf("number of parameters are  != 2 (S)\n");
-                    return 0;
-                 }
-                 if (config.s == NULL)
-                 {
-                         config.nbr_variables++;
-                         config.s=""; // to change later
-                  }
+               ft_check_errors_s(str);
+               ft_set_s(str); 
         }
-        //7--------------------------------------------------
         else if (str[0] && ft_strncmp(str[0] , "F",2) == 0)
         {
-               
-                if(config.f != NULL)
-                {
-                      printf("defining variable  |%s| twice in the file \n",str[0]);
-                      return 0;   
-                }
-                if (ft_check_nbr_splits(str) != 2)
-                {
-                      printf("number of parameters are  != 2 (F)\n");
-                    return 0;
-                 }
-                 if (config.f == NULL)
-                 {
-                         config.nbr_variables++;
-                         config.f=""; // to change later
-                  }
+             ft_check_errors_f(str);
+               ft_set_f(str); 
         }
-        //8--------------------------------------------------
         else if (str[0] && ft_strncmp(str[0] , "C",2) == 0)
         {
-       
-
-                if(config.c != NULL)
-                {
-                    printf("defining variable  |%s| twice in the file \n",str[0]);
-                    return 0;
-                }
-                if (ft_check_nbr_splits(str) != 2)
-                {
-                    printf("number of parameters are  != 2 (C)\n");
-                    return 0;
-                 }
-                 if (config.c == NULL)
-                 {
-                         config.nbr_variables++;
-                         config.c=""; // to change later
-                }
+              ft_check_errors_c(str);
+               ft_set_c(str); 
         }
+    }
+   /*    
+
         //--------------------------------------------------------
         else if (ft_strncmp(str[0],"R",2) != 0 && 
                 ft_strncmp(str[0],"S",2) != 0 && 
