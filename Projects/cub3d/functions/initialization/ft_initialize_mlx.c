@@ -2,6 +2,8 @@
 
 void ft_initialize_mlx()
 {
+    printf("width = %f\n",config.width);
+    printf("height = %f\n",config.height);
     config.mlx = mlx_init();
 
     config.mlx_win = mlx_new_window(config.mlx, config.width, config.height,"cub3d");

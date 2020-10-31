@@ -39,7 +39,10 @@ all :
 		  functions/check-errors/ft_check_map.c\
 		  functions/check-errors/ft_check_map_errors.c\
 		  functions/configuration/ft_lists.c\
-		  functions/configuration/ft_store_map_list.c
+		  functions/configuration/ft_store_map_list.c\
+		  functions/mlx-draw/ft_put_pixel_to_image.c\
+		  functions/mlx-draw/ft_put_rectangle.c\
+		  functions/mlx-draw/ft_put_map.c
 		  
 
 

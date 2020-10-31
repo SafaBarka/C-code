@@ -67,3 +67,6 @@ void ft_store_map_list(char *line);
 void ft_check_first_spaces(char *line);
 void ft_check_middle_lines(char *line);
 void ft_check_last_spaces(char *line);
+void ft_put_pixel_to_image(int x, int y , int color);
+void ft_put_rectangle(int x , int y, int color);
+void ft_display_map(int color);
