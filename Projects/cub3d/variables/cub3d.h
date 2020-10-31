@@ -48,5 +48,16 @@ void ft_set_c(char **str);
 void ft_set_f(char **str);
 void ft_set_so(char **str);
 void ft_set_s(char **str);
+void ft_check_s(char **str);
+void ft_check_f(char **str);
+void ft_check_c(char **str);
+void ft_check_r(char **str);
+void ft_check_no(char **str);
+void ft_check_so(char **str);
+void ft_check_we(char **str);
+void ft_check_ea(char **str);
 
+void ft_check_not_var(char **str);
+void ft_check_map(char *line);
 
+void ft_check_first_last_line(char *line);

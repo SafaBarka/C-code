@@ -32,7 +32,14 @@ all :
 		  functions/configuration/ft_set_s.c\
 		  functions/configuration/ft_set_f.c\
 		  functions/configuration/ft_set_c.c\
-		  functions/configuration/ft_set_resolution.c
+		  functions/configuration/ft_set_resolution.c\
+		  functions/check-errors/ft_check_texture.c\
+		  functions/check-errors/ft_check_variables.c\
+		  functions/check-errors/ft_check_not_var.c\
+		  functions/check-errors/ft_check_map.c\
+		  functions/check-errors/ft_check_map_errors.c
+
+
 	
 
 

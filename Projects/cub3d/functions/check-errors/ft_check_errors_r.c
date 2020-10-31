@@ -9,7 +9,7 @@ void ft_check_errors_r(char **str)
             }
             if (ft_nbr_split(str) != 3)
             {
-                perror("number of parameters are  != 3 (R)");
+                perror("number of parameters are  != 2 (R)");
                 exit(EXIT_FAILURE);
             }
             if (ft_zeros(str[1]) || ft_zeros(str[2]))

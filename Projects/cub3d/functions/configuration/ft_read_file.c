@@ -10,7 +10,7 @@ int ft_read_file(int fd)
 
     while(i)
     {
-      if ((i = get_next_line(fd,&line)) < 0 )
+      if ((i = get_next_line(fd,&line)) <= 0 )
       {
           perror("failed to read file");
           exit(EXIT_FAILURE);
