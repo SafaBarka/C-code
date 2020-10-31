@@ -56,8 +56,14 @@ void ft_check_no(char **str);
 void ft_check_so(char **str);
 void ft_check_we(char **str);
 void ft_check_ea(char **str);
-
 void ft_check_not_var(char **str);
 void ft_check_map(char *line);
-
 void ft_check_first_last_line(char *line);
+t_list *ft_lstlast(t_list *lst);
+int ft_lst_size();
+void	ft_lstadd_back(t_list *alst, t_list *new);
+t_list *ft_lstnew(char *line);
+void ft_store_map_list(char *line);
+void ft_check_first_spaces(char *line);
+void ft_check_middle_lines(char *line);
+void ft_check_last_spaces(char *line);

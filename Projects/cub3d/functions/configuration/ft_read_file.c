@@ -7,10 +7,10 @@ int ft_read_file(int fd)
 
     i = 1;
     line = NULL;
-
+  //empty file to check later ??? 
     while(i)
     {
-      if ((i = get_next_line(fd,&line)) <= 0 )
+      if ((i = get_next_line(fd,&line)) < 0 )
       {
           perror("failed to read file");
           exit(EXIT_FAILURE);
@@ -20,5 +20,7 @@ int ft_read_file(int fd)
        ft_set_configuration(line) ;
         
     }
+      //store_array2d();
+    //check_spaces
     return 1;
 }

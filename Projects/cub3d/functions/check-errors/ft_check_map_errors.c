@@ -2,7 +2,9 @@
 
 void ft_check_first_last_line(char *line)
 {
-    int i  = 0;
+    int i ;
+
+    i = 0;
     while(line[i])
     {
             if (line[i] != ' ' && line[i] != '1')
@@ -16,4 +18,94 @@ void ft_check_first_last_line(char *line)
             }
             i++;
     }
+    
+    
+}
+void ft_check_first_spaces(char *line)
+{
+    int i = 0;
+    while(line[i] == ' ')
+        i++;
+    if ( line[i] != '1')
+    {
+        perror("the map is not closed");
+        exit(EXIT_FAILURE); 
+    }
+}
+
+void ft_check_last_spaces(char *line)
+{
+    int i = ft_strlen(line) - 1 ;
+    while(line[i] == ' ')
+        i--;
+    if ( line[i] != '1')
+    {
+        perror("the map is not closed");
+        exit(EXIT_FAILURE); 
+    }
+}
+void ft_check_middle_lines(char *line)
+{
+    int len ;
+    int i ;
+
+    len = ft_strlen(line);
+    i = 1;
+    
+    if ((line[0] != ' ' && line[0] != '1') || (line[len -1] != ' ' && line[len -1]  != '1'))
+    {
+
+        perror("the line isn't closed");
+        exit(EXIT_FAILURE);
+    }
+   /*   while (i < len -1)
+    {
+        if (player.player_found == 0 && line[i] == 'N')
+        {
+            player.x = i ;
+            player.rotationAngle = (3 * M_PI) / 2 ;// -(M_PI/ 2);
+            player.y = config.nbr_lines;
+            player.player_found = 1;
+            player. player_north = 1;
+
+        }else if (player.player_found == 0 && line[i] == 'S')
+        {
+            player.x = i ;
+            player.rotationAngle = (M_PI / 2);
+            player.y = config.nbr_lines;
+            player.player_found = 1;
+            player.player_south= 1;
+        }else if (player.player_found == 0 && line[i] == 'W')
+        {
+            player.x = i ;
+             player.rotationAngle = 0;
+            player.y = config.nbr_lines;
+          
+            player.player_found = 1;
+            player.player_west = 1;
+        }else if (player.player_found == 0 && line[i] == 'E')
+        {
+              player.x = i ;
+             player.rotationAngle = (M_PI);
+            player.y = config.nbr_lines;
+            player.player_found = 1;
+            player.player_east = 1;
+        }
+        else if (line[i] == 'N' || line[i] == 'S' || line[i] == 'W' || line[i] == 'E')
+        {
+            printf("redefined player in map \n");
+        
+        }else if (line[i] == '2')
+        {
+          //  printf("sprit things\n");
+        }
+        else if (line[i] != '1' && line[i] != ' ' && line[i] != '0')
+        {
+            printf("the element |%c| not valid in map\n",line[i]);
+        
+        }
+       i++;
+    }
+    */
+   
 }
