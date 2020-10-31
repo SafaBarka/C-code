@@ -1,35 +1,9 @@
 
-#include "headers/functions.h"
-
-
-
+#include "variables/cub3d.h"
 
 int main()
 {
-    if (!ft_read_file("infos.cub"))
-        return 0;
-    
-    ft_initialize_mlx();
+   ft_file("infos.cub");
 
-
-    ft_display_map(BLUE);
-
-
-    ft_display_player(SALMON);
-
-    //Display the image
-    //use mlx_put_image_to_window() function.
-    //pushing images to a window.
-    //first 0 is the x position of your image on the window.
-    //the second 0 is the y position.
-      mlx_put_image_to_window(mlx,mlx_win,image_win.img,0,0);
-
-    //for events
-   
-    mlx_hook(mlx_win, 2, 0, ft_deal_key, (void *)0);
-  
-    //initiate the window rendering 
-    mlx_loop(mlx);
-
-    return 1;
+   return EXIT_SUCCESS;
 }

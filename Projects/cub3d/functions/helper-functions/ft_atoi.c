@@ -1,4 +1,4 @@
-#include "../../headers/functions.h"
+#include "../../variables/cub3d.h"
 
 int		ft_atoi(const char *str)
 {

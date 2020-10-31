@@ -1,24 +1,29 @@
 
-#include "../../headers/functions.h"
+#include "../../variables/cub3d.h"
 
 int ft_set_configuration(char *line)
 {
-    char **str = NULL;
-
-    if (line[0] == '\0' && config.foundMap == 1)
-    {
-        printf("line break between elements  of map\n");
-        return 0;
-    } else if (line[0] == '\0')
+    char **str;
+    
+    str = ft_split(line,' ');
+    if (ft_check_line_break(line[0]))
         return 1;
-    if (config.cpt != 8)
+   
+   if (config.nbr_variables != 8)
     {
-        str = ft_split(line,' ');
+       
+       if (str[0] && ft_strncmp(str[0] ,"R", 2) == 0)
+        {
+            ft_check_errors_r(str);
+            ft_set_resolution(str);
+        }
+    }
+   /*    str = ft_split(line,' ');
         //1------------------------------------------
         if (str[0] && ft_strncmp(str[0] ,"R", 2) == 0)
         {
          
-            if(config.r_width != -1 && config.r_height != -1)
+            if(config.width != -1 && config.height != -1)
             {
                  printf("defining variable  |%s| twice in the file \n",str[0]);
                 return 0;
@@ -28,9 +33,9 @@ int ft_set_configuration(char *line)
                 printf("number of parameters are  != 3 (R) \n");
                 return 0;
             }
-            if (config.r_width == -1 && config.r_height == -1 )
+            if (config.width == -1 && config.height == -1 )
             {
-                config.cpt++;
+                config.nbr_variables++;
                 return ft_set_configuration_resolution(str[1], str[2]);
             }
             
@@ -51,7 +56,7 @@ int ft_set_configuration(char *line)
             }
             if (config.no == NULL)
             {
-                config.cpt++;
+                config.nbr_variables++;
                 config.no = ""; // to change later 
             }
         }
@@ -72,7 +77,7 @@ int ft_set_configuration(char *line)
             }
             if (config.so == NULL)
             {
-                config.cpt++;
+                config.nbr_variables++;
                 config.so = ""; // to change later
             }
         }
@@ -92,7 +97,7 @@ int ft_set_configuration(char *line)
                  }
                  if (config.we == NULL)
                  {
-                         config.cpt++;
+                         config.nbr_variables++;
                          config.we=""; // to change later
                   }
         }
@@ -112,7 +117,7 @@ int ft_set_configuration(char *line)
                  }
                  if (config.ea == NULL)
                  {
-                         config.cpt++;
+                         config.nbr_variables++;
                          config.ea=""; // to change later
                  }
         }
@@ -132,7 +137,7 @@ int ft_set_configuration(char *line)
                  }
                  if (config.s == NULL)
                  {
-                         config.cpt++;
+                         config.nbr_variables++;
                          config.s=""; // to change later
                   }
         }
@@ -152,7 +157,7 @@ int ft_set_configuration(char *line)
                  }
                  if (config.f == NULL)
                  {
-                         config.cpt++;
+                         config.nbr_variables++;
                          config.f=""; // to change later
                   }
         }
@@ -173,7 +178,7 @@ int ft_set_configuration(char *line)
                  }
                  if (config.c == NULL)
                  {
-                         config.cpt++;
+                         config.nbr_variables++;
                          config.c=""; // to change later
                 }
         }
@@ -194,16 +199,16 @@ int ft_set_configuration(char *line)
          }
 
     }
-    else if  (config.cpt == 8)
+    else if  (config.nbr_variables == 8)
     {
-        config.cptLineMap++;
-        config.foundMap = 1;
+        config.nbr_lines++;
+        config.found_map = 1;
         if (config.head == NULL)
         {
             if (!ft_check_first_last_line(line))
                 return 0;
         }
-        else if (config.indice_last_line == 1)
+        else if (config.last_line == 1)
         {
             if (!ft_check_first_last_line(line))
                 return 0;
@@ -217,7 +222,7 @@ int ft_set_configuration(char *line)
             return 0;
         
     }
-    
+    */
     
     return 1;
 }

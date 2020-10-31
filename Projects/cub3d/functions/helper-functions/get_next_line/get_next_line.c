@@ -71,7 +71,7 @@ int		check_str(int i, char **str, char **line)
 	free(tmp);
 	return (1);
 }
-#include <stdio.h>
+
 int		get_next_line(int fd, char **line)
 {
 	char			*buff;

@@ -1,4 +1,4 @@
-#include "../../headers/functions.h"
+#include "../../variables/cub3d.h"
 
 char	*ft_sub(char const *s, unsigned int start, size_t len)
 {
