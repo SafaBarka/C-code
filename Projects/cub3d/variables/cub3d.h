@@ -5,7 +5,7 @@
 #include <fcntl.h>
 #include <stdio.h>
 #include "../functions/helper-functions/get_next_line/get_next_line.h"
-#define SALMON  0xFA8072
+#define WHITE  0xFFFFFF
 #define BROWN 0xa52a2a
 #define burlywood  0xdeb887
 #define DarkSalmon  0xe9967a
@@ -69,4 +69,9 @@ void ft_check_middle_lines(char *line);
 void ft_check_last_spaces(char *line);
 void ft_put_pixel_to_image(int x, int y , int color);
 void ft_put_rectangle(int x , int y, int color);
-void ft_display_map(int color);
+void ft_put_map(int color);
+void ft_print_list(t_list *head);
+char *ft_realloc(char *line, int nbr);
+void  ft_set_array_2d();
+void ft_print_array2d();
+

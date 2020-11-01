@@ -17,10 +17,18 @@ int ft_read_file(int fd)
       }
       if (i == 0)
          config.last_line = 1;
-       ft_set_configuration(line) ;
-        
+       ft_set_configuration(line) ;  //STORE MAP IN LINKED LIST 
     }
-      //store_array2d();
-    //check_spaces
+    if (config.found_map == 0 )
+    {
+        perror("the map is missing");
+        exit(EXIT_FAILURE);
+    }
+
+     ft_set_array_2d(); //STORE LINKED LIST IN ARRAY2D
+     //CHECK SPACES  if closed 
+
+     
+
     return 1;
 }

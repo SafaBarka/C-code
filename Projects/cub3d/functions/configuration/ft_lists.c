@@ -47,3 +47,32 @@ t_list *ft_lstnew(char *line)
    element->next = NULL;   
    return (element);
 }
+
+void ft_print_list(t_list *head)
+{
+   t_list *tmp = head;
+   while (tmp != NULL)
+   {
+      printf("|%s|\n",tmp->line);
+      tmp = tmp->next;
+
+   }
+}
+
+void ft_print_array2d()
+{
+    int i = 0;
+    int j = 0 ;
+
+    while(i < config.rows)
+    {
+        j = 0;
+        while(j < config.columns)
+        {   
+            printf("|%c| ",config.map[i][j]);
+            j++;
+        }
+        printf("\n");
+        i++;
+    }
+}

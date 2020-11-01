@@ -22,6 +22,11 @@ void ft_put_map(int color)
             {
                 ft_put_rectangle(x,y,BROWN);
             }
+            else if (config.map[r][c] == '0')
+            {
+                ft_put_rectangle(x,y,WHITE);
+
+            }
             x = x+config.tile_width  ;
             c++;
         }

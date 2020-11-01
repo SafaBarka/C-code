@@ -58,9 +58,9 @@ void ft_check_middle_lines(char *line)
         perror("the line isn't closed");
         exit(EXIT_FAILURE);
     }
-   /*   while (i < len -1)
+     while (i < len -1)
     {
-        if (player.player_found == 0 && line[i] == 'N')
+   /*     if (player.player_found == 0 && line[i] == 'N')
         {
             player.x = i ;
             player.rotationAngle = (3 * M_PI) / 2 ;// -(M_PI/ 2);
@@ -98,14 +98,15 @@ void ft_check_middle_lines(char *line)
         }else if (line[i] == '2')
         {
           //  printf("sprit things\n");
-        }
-        else if (line[i] != '1' && line[i] != ' ' && line[i] != '0')
+        }*/
+        if (line[i] != '1' && line[i] != ' ' && line[i] != '0')
         {
-            printf("the element |%c| not valid in map\n",line[i]);
+            perror("the element not valid in map");
+            exit(EXIT_FAILURE);
         
         }
        i++;
     }
-    */
+    
    
 }

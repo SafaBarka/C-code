@@ -42,7 +42,9 @@ all :
 		  functions/configuration/ft_store_map_list.c\
 		  functions/mlx-draw/ft_put_pixel_to_image.c\
 		  functions/mlx-draw/ft_put_rectangle.c\
-		  functions/mlx-draw/ft_put_map.c
+		  functions/mlx-draw/ft_put_map.c\
+		  functions/helper-functions/ft_realloc.c\
+		  functions/configuration/ft_set_array2d.c
 		  
 
 
