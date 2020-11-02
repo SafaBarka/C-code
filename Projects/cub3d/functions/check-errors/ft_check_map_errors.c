@@ -58,48 +58,50 @@ void ft_check_middle_lines(char *line)
         perror("the line isn't closed");
         exit(EXIT_FAILURE);
     }
+   
      while (i < len -1)
     {
-   /*     if (player.player_found == 0 && line[i] == 'N')
+       
+        if (player.player_found == 0 && line[i] == 'N')
         {
-            player.x = i ;
             player.rotationAngle = (3 * M_PI) / 2 ;// -(M_PI/ 2);
-            player.y = config.nbr_lines;
-            player.player_found = 1;
             player. player_north = 1;
-
-        }else if (player.player_found == 0 && line[i] == 'S')
-        {
-            player.x = i ;
-            player.rotationAngle = (M_PI / 2);
+              player.x = i ;
             player.y = config.nbr_lines;
             player.player_found = 1;
+
+       }else if (player.player_found == 0 && line[i] == 'S')
+        {
+            player.rotationAngle = (M_PI / 2);
             player.player_south= 1;
+                     player.x = i ;
+            player.y = config.nbr_lines;
+            player.player_found = 1;
         }else if (player.player_found == 0 && line[i] == 'W')
         {
-            player.x = i ;
-             player.rotationAngle = 0;
-            player.y = config.nbr_lines;
-          
-            player.player_found = 1;
+            player.rotationAngle = (M_PI);
             player.player_west = 1;
+                     player.x = i ;
+            player.y = config.nbr_lines;
+            player.player_found = 1;
         }else if (player.player_found == 0 && line[i] == 'E')
         {
-              player.x = i ;
-             player.rotationAngle = (M_PI);
+             player.rotationAngle = 0;
+            player.player_east = 1;
+                     player.x = i ;
             player.y = config.nbr_lines;
             player.player_found = 1;
-            player.player_east = 1;
         }
         else if (line[i] == 'N' || line[i] == 'S' || line[i] == 'W' || line[i] == 'E')
         {
-            printf("redefined player in map \n");
+            perror("redefined player in map ");
+            exit(EXIT_FAILURE);
         
         }else if (line[i] == '2')
         {
           //  printf("sprit things\n");
-        }*/
-        if (line[i] != '1' && line[i] != ' ' && line[i] != '0')
+        }
+        else if (line[i] != '1' && line[i] != ' ' && line[i] != '0')
         {
             perror("the element not valid in map");
             exit(EXIT_FAILURE);

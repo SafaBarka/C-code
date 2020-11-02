@@ -44,7 +44,14 @@ all :
 		  functions/mlx-draw/ft_put_rectangle.c\
 		  functions/mlx-draw/ft_put_map.c\
 		  functions/helper-functions/ft_realloc.c\
-		  functions/configuration/ft_set_array2d.c
+		  functions/configuration/ft_set_array2d.c\
+		  functions/mlx-draw/ft_put_player.c\
+		  functions/initialization/ft_initialize_player.c\
+		  functions/mlx-draw/ft_put_orientation.c\
+		  functions/configuration/ft_deal_key.c\
+		  functions/configuration/ft_move.c
+
+
 		  
 
 

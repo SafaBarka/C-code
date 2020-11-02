@@ -1,6 +1,6 @@
 #include "../../variables/cub3d.h"
 
-void     ft_file(char *filename)
+void      ft_file(char *filename)
 {
     int fd;
    
@@ -10,6 +10,7 @@ void     ft_file(char *filename)
     }
 
     ft_initialize_config();
+    ft_initialize_player();
 
    ft_read_file(fd);
 

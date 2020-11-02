@@ -8,6 +8,7 @@
 #define WHITE  0xFFFFFF
 #define BROWN 0xa52a2a
 #define burlywood  0xdeb887
+#define yellow 0xff0000
 #define DarkSalmon  0xe9967a
 
 Config config;
@@ -74,4 +75,12 @@ void ft_print_list(t_list *head);
 char *ft_realloc(char *line, int nbr);
 void  ft_set_array_2d();
 void ft_print_array2d();
+void ft_put_player(int color);
+void ft_initialize_player();
+void ft_put_orientation(double angle , int color, double distance );
+int deal_key(int key, void *param);
+void initialize_turnwalk();
+void ft_update();
+int has_wall(double x, double y);
+void update_player_position();
 

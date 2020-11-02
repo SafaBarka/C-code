@@ -24,11 +24,18 @@ int ft_read_file(int fd)
         perror("the map is missing");
         exit(EXIT_FAILURE);
     }
-
+    if (player.player_found == 0)
+    {
+          perror("the player is missing");
+        exit(EXIT_FAILURE);
+    }
      ft_set_array_2d(); //STORE LINKED LIST IN ARRAY2D
      //CHECK SPACES  if closed 
+        
+
+     player.x = player.x * config.tile_width + (config.tile_width / 2);
+     player.y = player.y * config.tile_height - (config.tile_height /2);
 
      
-
     return 1;
 }
