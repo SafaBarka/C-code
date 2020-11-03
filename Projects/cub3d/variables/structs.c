@@ -22,6 +22,11 @@ typedef struct s_list {
    struct s_list* next;
 }  t_list;
 
+typedef struct ray{
+
+    double rayAngle;
+}Ray;
+
 typedef struct config
 {
     /* minilibx configuration */
@@ -60,6 +65,13 @@ typedef struct config
     char **map;
     t_list *head;
 
+    double fov ; //field of View angle 
+    //number of rays depends of how many  columns i have in my map 
+    int num_rays;
+    int wall_strip_width ;
+    Ray *rays;
+
+
 
 
 }Config;
@@ -84,3 +96,4 @@ typedef struct player{
     double radius;
 
 } Player;
+

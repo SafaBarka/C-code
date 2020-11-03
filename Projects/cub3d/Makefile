@@ -49,7 +49,8 @@ all :
 		  functions/initialization/ft_initialize_player.c\
 		  functions/mlx-draw/ft_put_orientation.c\
 		  functions/configuration/ft_deal_key.c\
-		  functions/configuration/ft_move.c
+		  functions/configuration/ft_move.c\
+		  functions/raycasting/ft_cast_all_rays.c
 
 
 		  

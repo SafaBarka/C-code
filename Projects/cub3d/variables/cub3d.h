@@ -8,7 +8,7 @@
 #define WHITE  0xFFFFFF
 #define BROWN 0xa52a2a
 #define burlywood  0xdeb887
-#define yellow 0xff0000
+#define BLUE 0x0000FF
 #define DarkSalmon  0xe9967a
 
 Config config;
@@ -83,4 +83,6 @@ void initialize_turnwalk();
 void ft_update();
 int has_wall(double x, double y);
 void update_player_position();
+void ft_cast_all_rays();
+void ft_print_rays();
 

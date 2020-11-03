@@ -76,3 +76,15 @@ void ft_print_array2d()
         i++;
     }
 }
+
+void ft_print_rays()
+{
+   int i = 0 ;
+  
+   while ( i < (int)config.num_rays)
+   {
+      ft_put_orientation(config.rays[i].rayAngle,0xFF0000,60);
+      i++;
+
+   }
+}
