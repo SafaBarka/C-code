@@ -9,10 +9,12 @@ void  ft_set_horz_distance(Ray *ray, int i)
             && ray->nextHorzY >= 0 && ray->nextHorzY <= config.height){
         if (has_wall(ray->nextHorzX , ray->nextHorzY) == '1')
         {
-            ray->hitX = ray->nextHorzX;
-            ray->hitY = ray->nextHorzY;
+            ray->hitXhorz = ray->nextHorzX;
+            ray->hitYhorz = ray->nextHorzY;
             ray->foundHorzWallHit = 1;
-            ray->distance = distanceBetweenPoints(player.x, player.y, ray->hitX,ray->hitY);
+            ray->distanceHorz = distanceBetweenPoints(player.x, player.y, ray->hitXhorz,ray->hitYhorz);
+            ft_draw_circle(ray->hitXhorz, ray->hitYhorz);
+            ft_put_orientation(ray->rayAngle,GRAY,ray->distanceHorz);
             break;
         }
         else

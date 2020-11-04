@@ -55,7 +55,10 @@ all :
 		  functions/raycasting/ft_cast.c\
 		  functions/initialization/ft_initialize_ray.c\
 		  functions/raycasting/ft_set_horz_distance.c\
-    	  functions/raycasting/ft_set_horz_var.c
+    	  functions/raycasting/ft_set_horz_var.c\
+		  functions/raycasting/ft_set_vert_var.c\
+		  functions/raycasting/ft_set_vert_distance.c\
+		  functions/mlx-draw/ft_draw_circle.c
 
 
 

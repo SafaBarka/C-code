@@ -7,7 +7,7 @@ void ft_cast_all_rays()
 
     //the first left ray
     double ray_angle = player.rotationAngle - (config.fov / 2);
-    while (cpt_columns < config.num_rays ) //config.num_rays )
+    while (cpt_columns < 1 ) //config.num_rays )
     {
        config.rays[cpt_columns].rayAngle =  ray_angle;
        //cast one single line

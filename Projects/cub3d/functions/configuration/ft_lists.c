@@ -77,7 +77,7 @@ void ft_print_array2d()
     }
 }
 
-void ft_print_rays()
+/*void ft_print_rays()
 {
    int i = 0 ;
   
@@ -87,4 +87,4 @@ void ft_print_rays()
       i++;
 
    }
-}
+}*/

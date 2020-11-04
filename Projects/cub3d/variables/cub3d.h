@@ -93,3 +93,8 @@ float distanceBetweenPoints(float x1,float y1,float x2,float y2);
 void  ft_set_horz_var(Ray *ray);
 void  ft_set_horz_distance(Ray *ray, int i);
 
+
+void  ft_set_vert_var(Ray *ray);
+void  ft_set_vert_distance(Ray *ray, int i);
+void ft_draw_circle(double x , double y);
+
