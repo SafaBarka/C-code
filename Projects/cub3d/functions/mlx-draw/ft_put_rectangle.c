@@ -10,8 +10,13 @@ void ft_put_rectangle(int x , int y, int color)
         {
             while (y <j)
             {
-                
-                    ft_put_pixel_to_image(x,y,color);
+                    if (x  == (i - config.tile_width)  ||  x == i -1   ||
+                    y == (j - config.tile_height) || y == j -1)
+                    {
+                      
+                        ft_put_pixel_to_image(x,y,yellow);
+                    }else
+                        ft_put_pixel_to_image(x,y,color);
                     y++;
             }
             x++;

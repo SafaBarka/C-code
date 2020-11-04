@@ -81,9 +81,9 @@ void ft_print_rays()
 {
    int i = 0 ;
   
-   while ( i < (int)config.num_rays)
+   while ( i < 1)         //(int)config.num_rays)
    {
-      ft_put_orientation(config.rays[i].rayAngle,0xFF0000,60);
+      ft_put_orientation(config.rays[i].rayAngle,GRAY,config.rays[i].distance);
       i++;
 
    }

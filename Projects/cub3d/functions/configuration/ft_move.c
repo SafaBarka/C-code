@@ -14,11 +14,15 @@ void ft_update()
     config.image_win.img = mlx_new_image(config.mlx,config.width, config.height); 
 
     config.image_win.addr = mlx_get_data_addr(config.image_win.img, &config.image_win.bpp, &config.image_win.line_length,&config.image_win.endian);
-    ft_put_map(BROWN);
+    
     update_player_position();
-    ft_put_player(BLUE);
-    ft_cast_all_rays();
-    ft_print_rays();
+    
+
+   
+    ft_put_map(STEELBLUE);
+    ft_put_player(MAROON);
+     ft_cast_all_rays();
+     ft_print_rays();
     mlx_put_image_to_window(config.mlx,config.mlx_win,config.image_win.img,0,0);
 }
 

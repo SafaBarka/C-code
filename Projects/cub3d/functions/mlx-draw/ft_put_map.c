@@ -20,7 +20,7 @@ void ft_put_map(int color)
         {
            if (config.map[r][c] == '1')
             {
-                ft_put_rectangle(x,y,BROWN);
+                ft_put_rectangle(x,y,color);
             }
             else if (config.map[r][c] == '0')
             {

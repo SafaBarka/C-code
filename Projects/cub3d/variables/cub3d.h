@@ -5,12 +5,12 @@
 #include <fcntl.h>
 #include <stdio.h>
 #include "../functions/helper-functions/get_next_line/get_next_line.h"
-#define WHITE  0xFFFFFF
-#define BROWN 0xa52a2a
-#define burlywood  0xdeb887
-#define BLUE 0x0000FF
-#define DarkSalmon  0xe9967a
-
+#define STEELBLUE 0x4682B4
+#define PURPLE 0x800080
+#define MAROON 0x800000
+#define GRAY 0x808080
+#define yellow 0xffff00
+#define WHITE 0xFFFFFF
 Config config;
 
 Player player;
@@ -85,4 +85,11 @@ int has_wall(double x, double y);
 void update_player_position();
 void ft_cast_all_rays();
 void ft_print_rays();
+float ft_normalize_angle(Ray *ray);
+void ft_cast(Ray *ray , int i);
+void ft_initialize_ray(Ray *ray);
+
+float distanceBetweenPoints(float x1,float y1,float x2,float y2);
+void  ft_set_horz_var(Ray *ray);
+void  ft_set_horz_distance(Ray *ray, int i);
 
