@@ -95,6 +95,8 @@ typedef struct config
     int wall_strip_width ;
     Ray *rays;
 
+    float mini_map_factor;
+
 
 
 

@@ -10,11 +10,11 @@ void ft_initialize_player()
     player.player_west = 0;
     player.player_north = 0;
     player.player_south = 0;
-    player.radius = 10;
+    player.radius = 3;
 
     player.rotationAngle = (M_PI / 2);
     player.moveSpeed = 10;
-    player.rotationSpeed = 30* (M_PI / 180);
+    player.rotationSpeed = 10* (M_PI / 180);
 
     player.turnDirection = 0;
     player.walkDirection = 0;

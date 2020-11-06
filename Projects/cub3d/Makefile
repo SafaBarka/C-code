@@ -57,7 +57,8 @@ all :
 		  functions/mlx-draw/ft_draw_circle.c\
 		  functions/raycasting/ft_set_horiz_var.c\
 		  functions/raycasting/ft_set_vert_var.c\
-		  functions/raycasting/ft_draw_ray.c
+		  functions/raycasting/ft_draw_ray.c\
+		  functions/3d/ft_render_3d.c
 
 
 

@@ -98,3 +98,5 @@ void    ft_set_vert_var(Ray *ray);
 void    ft_set_vert_distance(Ray *ray);
 void    ft_draw_ray(Ray *ray);
 
+void ft_render_3d();
+

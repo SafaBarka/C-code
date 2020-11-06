@@ -22,4 +22,5 @@ void ft_put_rectangle(int x , int y, int color)
             x++;
             y = j - config.tile_height;
         }
+       
 }
