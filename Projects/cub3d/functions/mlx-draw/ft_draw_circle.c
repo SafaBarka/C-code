@@ -8,8 +8,8 @@ void ft_draw_circle(double x , double y)
     i = 0;
       while (i < 360)
       {
-          x1 = 20 *cos(i * M_PI/180);
-          y1 = 20 *sin(i * M_PI/180);
+          x1 = 10 *cos(i * M_PI/180);
+          y1 = 10 *sin(i * M_PI/180);
           ft_put_pixel_to_image( x1+x , y1+y, PURPLE);
           i+= 0.01;
       }

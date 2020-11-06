@@ -86,15 +86,15 @@ void update_player_position();
 void ft_cast_all_rays();
 void ft_print_rays();
 float ft_normalize_angle(Ray *ray);
-void ft_cast(Ray *ray , int i);
 void ft_initialize_ray(Ray *ray);
 
 float distanceBetweenPoints(float x1,float y1,float x2,float y2);
-void  ft_set_horz_var(Ray *ray);
-void  ft_set_horz_distance(Ray *ray, int i);
+void  ft_raycast(Ray *ray, int i);
 
-
-void  ft_set_vert_var(Ray *ray);
-void  ft_set_vert_distance(Ray *ray, int i);
 void ft_draw_circle(double x , double y);
+void    ft_set_horiz_var(Ray *ray);
+void    ft_set_horiz_distance(Ray *ray);
+void    ft_set_vert_var(Ray *ray);
+void    ft_set_vert_distance(Ray *ray);
+void    ft_draw_ray(Ray *ray);
 

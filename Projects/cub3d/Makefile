@@ -52,13 +52,13 @@ all :
 		  functions/configuration/ft_move.c\
 		  functions/raycasting/ft_cast_all_rays.c\
 		  functions/raycasting/ft_normalize_angle.c\
-		  functions/raycasting/ft_cast.c\
 		  functions/initialization/ft_initialize_ray.c\
-		  functions/raycasting/ft_set_horz_distance.c\
-    	  functions/raycasting/ft_set_horz_var.c\
+		  functions/raycasting/ft_raycast.c\
+		  functions/mlx-draw/ft_draw_circle.c\
+		  functions/raycasting/ft_set_horiz_var.c\
 		  functions/raycasting/ft_set_vert_var.c\
-		  functions/raycasting/ft_set_vert_distance.c\
-		  functions/mlx-draw/ft_draw_circle.c
+		  functions/raycasting/ft_draw_ray.c
+
 
 
 

@@ -25,38 +25,27 @@ typedef struct s_list {
 typedef struct ray{
 
     double rayAngle;
-
-    double hitXhorz;
-    double hitYhorz;
-
-    double hitXVert;
-    double hitYVert;
-
-    double distanceHorz;
-    double distanceVert;
-
-    double xstep;
-    double ystep;
-
-    double xinterceppt ; 
-    double yintercept;
-
     int isRayFacingDown;
-    int isRayFacingUp ;
+    int isRayFacingUp;
     int isRayFacingRight;
     int isRayFacingLeft;
-
-    double nextHorzX ;
-    double nextHorzY;
-
-    double nextVertX ;
-    double nextVertY;
-
-    double wallHitX;
-    double wallHitY;
-
+    float xintercept;
+    float yintercept;
+    float xstep;
+    float ystep;
     int foundHorzWallHit;
+    float horzWallHitX;
+    float horzWallHitY;
     int foundVertWallHit;
+    float vertWallHitX;
+    float vertWallHitY;
+    int vertWallContent;
+    float distance_horiz;
+    float distance_vert;
+    
+
+
+
 
 
     

@@ -25,6 +25,6 @@ void    ft_initialize_config()
     config.head = NULL;
     config.fov = 120 * (M_PI / 180) ;
     //how much i want the width of each columns in pixel 
-    config.wall_strip_width = 80;
+    config.wall_strip_width = 40;
 }
 
