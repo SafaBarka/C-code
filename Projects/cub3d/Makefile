@@ -1,5 +1,5 @@
 all :
-	gcc   -g   -lmlx -framework OpenGL -framework AppKit  -D BUFFER_SIZE=60\
+	gcc   -g  -fsanitize=address -lmlx -framework OpenGL -framework AppKit  -D BUFFER_SIZE=60\
 			cub3d.c\
 			configuration/ft_open_file.c\
 			initialization/ft_initialize_config.c\
@@ -31,7 +31,25 @@ all :
 			player/ft_set_player.c\
 			map/ft_set_array.c\
 			draw/ft_draw_map.c\
-			draw/ft_put_pixel_to_image.c
+			draw/ft_put_pixel_to_image.c\
+			draw/ft_draw_player.c\
+			configuration/ft_deal_key.c\
+			update/ft_initialize_turn_walk.c\
+			update/ft_draw_black_screen.c\
+			update/ft_update.c\
+			update/ft_update_player.c\
+			update/ft_has_wall.c\
+			raycasting/ft_normalize_angle.c\
+			raycasting/ft_cast.c\
+			raycasting/ft_set_horiz_var.c\
+			raycasting/ft_set_vert_var.c\
+			raycasting/ft_raycast.c\
+			raycasting/ft_initialize_ray.c\
+			raycasting/ft_draw_ray.c\
+			helper-functions/ft_realloc.c\
+			3d/ft_render_3d.c
+			
+
 			
 
 

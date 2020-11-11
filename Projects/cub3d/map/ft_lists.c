@@ -53,7 +53,7 @@ void ft_print_list(t_list *head)
    t_list *tmp = head;
    while (tmp != NULL)
    {
-      printf("|%s|\n",tmp->line);
+    
       tmp = tmp->next;
 
    }
@@ -62,7 +62,8 @@ void ft_print_list(t_list *head)
 
 void ft_print_array()
 {
-    int i = 0;
+   
+   /*int i = 0;
     int j = 0 ;
 
     while(i < config.rows)
@@ -76,5 +77,5 @@ void ft_print_array()
         }
         printf("|\n");
         i++;
-    }
+    }*/
 }

@@ -9,10 +9,11 @@ void ft_check_first_last_line(char *line)
     {
             if (line[i] != ' ' && line[i] != '1')
                 config.erro.message = "not valid map";
+             ft_check_exit();
             i++;
     }
     
-    ft_check_exit();
+   
 }
 void ft_check_close_bounds(char *line)
 {
@@ -23,13 +24,14 @@ void ft_check_close_bounds(char *line)
         i++;
     if ( line[i] != '1')
         config.erro.message = "not valid map";
+    ft_check_exit();
     i = ft_strlen(line) - 1 ;
     while(line[i] == ' ')
         i--;
     if (line[i] != '1')
         config.erro.message = "not valid map";
-
     ft_check_exit();
+    
 }
 
 

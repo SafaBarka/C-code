@@ -63,11 +63,11 @@ typedef struct config
 
     void *mlx ;
     void *mlx_win;
-    image_data  *image;
+    image_data  image;
 
 
-    float width; 
-    float height; 
+    int width; 
+    int height; 
 
     int tile_width;
     int tile_height;
@@ -100,7 +100,8 @@ typedef struct config
     Ray *rays;  
     float mini_map_factor;
     Error erro;
-
+    int tmp_width;
+    int tmp_height;
     Player *player;
 
 }Config;

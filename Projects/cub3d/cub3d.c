@@ -14,36 +14,24 @@ int main()
     
     ft_read_file(fd);
 
-   /* printf("player : rotationAngle = %f\n x = %f\n y = %f\nis_north = %d\nis_West = %d\nis_east = %d\nis_south =%d\n",
-            config.player->rotationAngle,
-            config.player->x,
-            config.player->y,
-            config.player->player_north,
-            config.player->player_west,
-            config.player->player_east,
-           config.player->player_south );
-    */
-   //ft_print_list(config.head)
     ft_set_array();
-    printf("width = %f\nheight = %f\ntile_width = %d\ntile_height = %d\nmax_length = %d\ncolumns = %d\nrows = %d\n",
-    config.width,
-    config.height,
-    config.tile_width,
-    config.tile_height,
-    config.max_length,
-    config.columns,
-    config.rows
-    );
    
-    printf("----------------\n");
-   // ft_print_array();
-
-    ft_initialize_mlx();
-   
-   ft_draw_map();
-    mlx_put_image_to_window(config.mlx,config.mlx_win,config.image->img,0,0);
-
     
+    ft_initialize_mlx();
+   // printf("width = %d\n height = %d\n",config.width, config.height);
+
+     ft_cast();
+   ft_render_3d();
+    //config.width = config.columns * config.tile_width;
+    //config.height = config.rows * config.tile_height;
+   // ft_print_array();
+   // ft_draw_map(blue);
+   // ft_draw_player(config.player->x, config.player->y,red);
+   // ft_print_rays();
+
+    mlx_put_image_to_window(config.mlx,config.mlx_win,config.image.img,0,0);
+
+    mlx_hook(config.mlx_win, 2, 1L << 0, deal_key, (void *)0);
     mlx_loop(config.mlx);
     
   

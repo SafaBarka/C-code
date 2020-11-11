@@ -25,12 +25,11 @@ void ft_initialize_config()
     config.head = NULL;
     config.fov = 60 * (M_PI / 180) ; 
     config.wall_strip_width = 1;
-    config.mini_map_factor = 1;
+    config.mini_map_factor = 0.4;
 
     if ( !(config.player = malloc(sizeof(Player))) )
         config.erro.message = "memory problem";
     ft_initialize_player();
-    if (!(config.image = malloc(sizeof(image_data))))
-        config.erro.message = "memory problem";
+
     ft_check_exit();
 }

@@ -6,8 +6,14 @@
 //#include "minilibx/mlx.h"
 #include "structs.c"
 #include "helper-functions/get_next_line/get_next_line.h"
-
-Config config;
+#define confetti 0xEDED61
+#define sulu 0xCAED61
+#define blue 0x6188ED
+#define yellow 0xffff00
+#define Turquoise 0x61EDB5
+#define red 0xFF0000
+#define green 0x008000
+Config config; 
 
 
 
@@ -75,3 +81,39 @@ void ft_print_array();
 void ft_draw_map();
 void ft_draw_rectangle(int x , int y, int color);
 void ft_put_pixel_to_image(int x, int y , int color,int i);
+void ft_draw_player(float x , float y,int color);
+
+void ft_draw_orientation(double angle , int color, double distance);
+int deal_key(int key, void *param);
+
+void ft_initialize_turn_walk();
+void    ft_draw_black_screen();
+void ft_update_player();
+void ft_update();
+
+int ft_has_wall(float x, float y);
+
+float ft_normalize_angle(float angle);
+void ft_cast();
+void  ft_raycast(Ray *ray, int i);
+
+void    ft_set_horiz_var(Ray *ray);
+void    ft_set_horiz_distance(Ray *ray);
+void    ft_set_vert_var(Ray *ray);
+void    ft_set_vert_distance(Ray *ray);
+void ft_initialize_ray(Ray *ray);
+void    ft_draw_ray(Ray *ray);
+float ft_calcul_distance(float x1,float y1,float x2,float y2);
+void ft_render_3d();
+void ft_print_rays();
+
+
+
+
+
+
+
+
+
+
+
