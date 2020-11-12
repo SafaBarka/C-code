@@ -8,7 +8,7 @@ int ft_check_line(char *line , int i)
     if (ft_check_line_break(line[0]))
         return 1;
     else if(!(str = ft_split(line,' ')))
-        config.erro.message = "failed to check file ft_split()";
+        ft_check_exit("failed to check file ft_split()");
  
     else if  (*str && config.nbr_variables != 8)
     {
@@ -38,7 +38,7 @@ int ft_check_line(char *line , int i)
             config.last_line = 1;
         ft_check_map(line);
     }
-        
+    free(str);
     return 0;
 
 }

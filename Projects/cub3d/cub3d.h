@@ -61,7 +61,7 @@ void ft_set_no(char **str);
 void ft_set_ea(char **str);
 void ft_set_we(char **str);
 void ft_set_so(char **str);
-void ft_check_exit();
+void ft_check_exit(char *message);
 void ft_check_not_var(char **str);
 void ft_check_first_last_line(char *line);
 void ft_check_close_bounds(char *line);
@@ -106,6 +106,18 @@ void    ft_draw_ray(Ray *ray);
 float ft_calcul_distance(float x1,float y1,float x2,float y2);
 void ft_render_3d();
 void ft_print_rays();
+void ft_check_close_spaces();
+void ft_check_space(int line_indice, int space_indice);
+void ft_free(int true , void *ptr);
+void ft_free_single(char *ptr);
+
+void ft_free_double(char **ptr);
+void ft_free_list(t_list *ptr);
+
+
+
+
+
 
 
 

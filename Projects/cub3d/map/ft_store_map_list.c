@@ -9,7 +9,7 @@ void ft_store_map_list(char *line)
     len = ft_strlen(line);
 	i = 0;
     if(!(new = malloc(sizeof(char ) * (len + 1))))
-        config.erro.message ="memory problem";
+        ft_check_exit("memory problem");
 
 	while (i < len){
 		new[i] = line[i];
@@ -22,7 +22,7 @@ void ft_store_map_list(char *line)
         
         config.max_length= len;
         if(!(config.head = ft_lstnew(new)))
-            config.erro.message ="memory problem";
+            ft_check_exit("memory problem");
       
     }else
     {

@@ -47,7 +47,8 @@ all :
 			raycasting/ft_initialize_ray.c\
 			raycasting/ft_draw_ray.c\
 			helper-functions/ft_realloc.c\
-			3d/ft_render_3d.c
+			3d/ft_render_3d.c\
+			check-errors/ft_check_close_spaces.c
 			
 
 			

@@ -9,8 +9,8 @@ void  ft_set_array()
     config.columns = config.max_length;
     config.rows = ft_lst_size(config.head);
     
-    config.tile_height =60;//floor(config.width / config.columns);
-    config.tile_width =60;//floor(config.height/config.rows);
+    config.tile_height =60; //floor(config.width/config.columns);
+    config.tile_width =60; //floor(config.height/config.rows);
    
     config.player->x = config.player->x * config.tile_width + (config.tile_width / 2);
     config.player->y = config.player->y * config.tile_height - (config.tile_height /2);
@@ -18,9 +18,9 @@ void  ft_set_array()
     tmp = config.head;
 
    if(!(config.map = malloc((config.rows +1) * sizeof(char *))))
-        config.erro.message = "memory problem";
+        ft_check_exit("memory problem");
    
-    ft_check_exit();
+    
    
     while(r < config.rows)
     {
@@ -30,7 +30,7 @@ void  ft_set_array()
        r++;
     }
     config.map[r]= NULL;
-    ft_print_array();
+  //  ft_print_array();
 }
 
 

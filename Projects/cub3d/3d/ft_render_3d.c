@@ -31,19 +31,19 @@ void ft_render_3d()
    while (y < walltoppixel )
         {
           
-            ft_put_pixel_to_image(i * config.wall_strip_width,y,0xC9F8FE,0);
+            ft_put_pixel_to_image(i ,y,0xC9F8FE,0);
             y++;
         }
          y = walltoppixel;
         while (y < wallBottompixel)
         {
-            ft_put_pixel_to_image(i * config.wall_strip_width,y,0xCD0000,0);
+            ft_put_pixel_to_image(i ,y,0xCD0000,0);
             y++;
         }
         y = wallBottompixel -1;
          while (y <config.height)
         {
-            ft_put_pixel_to_image(i *config.wall_strip_width,y ,0xFFFFFF,0);
+            ft_put_pixel_to_image(i ,y ,0xFFFFFF,0);
             y++;
         }
 

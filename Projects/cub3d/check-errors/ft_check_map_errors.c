@@ -8,8 +8,10 @@ void ft_check_first_last_line(char *line)
     while(line[i])
     {
             if (line[i] != ' ' && line[i] != '1')
-                config.erro.message = "not valid map";
-             ft_check_exit();
+            {
+                printf("i = %d  j = %d\n",config.nbr_lines,i);
+                ft_check_exit("not valid map");
+            }
             i++;
     }
     
@@ -23,15 +25,12 @@ void ft_check_close_bounds(char *line)
     while(line[i] == ' ')
         i++;
     if ( line[i] != '1')
-        config.erro.message = "not valid map";
-    ft_check_exit();
+        ft_check_exit("not valid map");
     i = ft_strlen(line) - 1 ;
     while(line[i] == ' ')
         i--;
     if (line[i] != '1')
-        config.erro.message = "not valid map";
-    ft_check_exit();
-    
+       ft_check_exit("not valid map"); 
 }
 
 
@@ -54,14 +53,13 @@ void ft_check_middle_lines(char *line)
         else if (config.player->player_found == 0 && line[i] == 'E')
             ft_set_player(i, 0 , line[i]);
         else if (line[i] == 'N' || line[i] == 'S' || line[i] == 'W' || line[i] == 'E')
-            config.erro.message = "redefined player in map ";
+            ft_check_exit("redefined player in map ");
         else if (line[i] == '2')
         {
           //  printf("sprit things\n");
         }
         else if (line[i] != '1' && line[i] != ' ' && line[i] != '0')
-            config.erro.message = "the element not valid in map";
-        ft_check_exit();
+            ft_check_exit("the element not valid in map");
        i++;
     }
     

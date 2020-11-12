@@ -12,7 +12,7 @@ void ft_set_r(char **str)
     config.width = ft_atoi(str[1]);
     config.height = ft_atoi(str[2]);
     
-    config.num_rays =(int)(config.width /config.wall_strip_width);
+    config.num_rays =(int)(config.width);
     config.rays = (Ray *)malloc(sizeof(Ray) * config.num_rays);
     //printf("width = %f height = %f\n",config.width,config.height);
 }
