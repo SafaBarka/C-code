@@ -15,11 +15,23 @@
 int	main(void)
 {
 	int fd;
+	int i;
 
 	fd = ft_op_f("infos.cub");
-	ft_re_f(fd);
-	if (g_c.nbrv == 0 )
-		ft_err("missing file variables");
+	//---------------------------------------
+	if ((i = get_next_line(fd, &g_c.line)) < 0)
+		ft_err("failed to read file");
+	if (i == 0)
+		ft_err("the file is empty");
+	//------------------------------------
+	ft_initialize_conf();
+	//------------------------------------
+	if(ft_r_v(fd ,i) == 1)
+		ft_set_txt();
+	//read variables
+
+	//ft_re_f(fd);
+	
 	//if(g_c.fm == 0)
 	//	ft_err("missing map");
 	return (0);

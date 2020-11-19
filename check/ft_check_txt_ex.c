@@ -17,9 +17,8 @@ void	ft_check_txt_no(char *s)
 	int i;
 
 	i = ft_strlen(s);
-	if (i < 4 || ft_strncmp(".xpm", s + (i - 4), 5) != 0)
+	if (i < 4 || (ft_strncmp(".xpm", s + (i - 4), 5) != 0))
 		ft_err("extension file not valid no");
-	ft_set_no(s);
 }
 
 void	ft_check_txt_so(char *s)
@@ -29,7 +28,6 @@ void	ft_check_txt_so(char *s)
 	i = ft_strlen(s);
 	if (i < 4 || ft_strncmp(".xpm", s + (i - 4), 5) != 0)
 		ft_err("extension file not valid so");
-	ft_set_so(s);
 }
 
 void	ft_check_txt_we(char *s)
@@ -39,7 +37,6 @@ void	ft_check_txt_we(char *s)
 	i = ft_strlen(s);
 	if (i < 4 || ft_strncmp(".xpm", s + (i - 4), 5) != 0)
 		ft_err("extension file not valid we");
-	ft_set_we(s);
 }
 
 void	ft_check_txt_ea(char *s)
@@ -49,5 +46,4 @@ void	ft_check_txt_ea(char *s)
 	i = ft_strlen(s);
 	if (i < 4 || ft_strncmp(".xpm", s + (i - 4), 5) != 0)
 		ft_err("extension file not valid ea");
-	ft_set_ea(s);
 }

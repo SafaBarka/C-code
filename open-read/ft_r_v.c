@@ -1,37 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_check_txt.c                                     :+:      :+:    :+:   */
+/*   ft_r_v.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sbarka <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/18 18:47:05 by sbarka            #+#    #+#             */
-/*   Updated: 2020/11/18 18:48:38 by sbarka           ###   ########.fr       */
+/*   Created: 2020/11/17 11:22:53 by sbarka            #+#    #+#             */
+/*   Updated: 2020/11/17 11:22:55 by sbarka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cub3d.h"
 
-void	ft_check_no(char **str)
+int	ft_r_v(int fd, int i)
 {
-	ft_err_no(str);
-	//ft_set_no(str);
-}
-
-void	ft_check_so(char **str)
-{
-	ft_err_so(str);
-	//ft_set_so(str);
-}
-
-void	ft_check_we(char **str)
-{
-	ft_err_we(str);
-	//ft_set_we(str);
-}
-
-void	ft_check_ea(char **str)
-{
-	ft_err_ea(str);
-	//ft_set_ea(str);
+	while (i > 0)
+	{
+		if (g_c.nbrv == 8)
+			return (1);
+		ft_check_l(g_c.line, i);
+		free(g_c.line);
+		i = get_next_line(fd, &g_c.line);
+	}
+	if (i < 0)
+		ft_err("failed to read file");
+	if (g_c.nbrv != 8)
+		ft_err("missing file variables");
+	return (0);
 }

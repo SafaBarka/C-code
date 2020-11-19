@@ -35,7 +35,7 @@ void	ft_initialize_conf(void)
 	g_c.map = NULL;
 	g_c.head = NULL;
 	g_c.fov = 60 * (M_PI / 180);
-	if (!(g_c.t= malloc(sizeof(t_texture) * 5)))
+	if (!(g_c.t = malloc(sizeof(t_texture) * 5)))
 		ft_err("allocation failed");
-	void ft_initialize_mlx();
+	ft_initialize_mlx();
 }

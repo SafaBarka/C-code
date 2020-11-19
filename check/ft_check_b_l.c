@@ -14,8 +14,6 @@
 
 int	ft_check_b_l(char c)
 {
-	if (c == '\0' && g_c.fm == 1)
-		ft_err("line break in map");
 	if (c == '\0')
 		return (1);
 	return (0);

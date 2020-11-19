@@ -85,6 +85,7 @@ typedef struct		s_texture{
 
 
 typedef	struct		s_config{
+	char			*line;
 	void			*mlx;
 	void			*mlx_win;
 	t_image			img;
@@ -119,7 +120,7 @@ t_config			g_c;
 
 void				ft_err(char *message);
 int					ft_op_f(char *filename);
-void				ft_re_f(int fd);
+int					ft_r_v(int fd, int i);
 int					ft_atoi(const char *str);
 char				**ft_split(char const *s, char c);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
@@ -130,10 +131,6 @@ void				ft_check_r(char **str);
 void				ft_check_c(char **str);
 void				ft_check_f(char **str);
 void				ft_check_s(char **str);
-void				ft_check_no(char **str);
-void				ft_check_so(char **str);
-void				ft_check_we(char **str);
-void				ft_check_ea(char **str);
 void				ft_err_c(char **str);
 void				ft_err_f(char **str);
 void				ft_err_r(char **str);
@@ -146,18 +143,16 @@ void				ft_set_s(char **str);
 void				ft_set_r(char **str);
 void				ft_set_f(char **str);
 void				ft_set_c(char **str);
-void				ft_set_we(char *s);
-void				ft_set_so(char *s);
-void				ft_set_no(char *s);
-void				ft_set_ea(char *s);
 int					ft_nbr_split(char **str);
 void				ft_check_not_var(char **str);
 int					ft_is_number(char *s);
 int					ft_zeros(char *str);
-void				ft_initialize_conf(void);
 void				ft_putstr_fd(char const *s, int fd);
 void				ft_check_txt_no(char *s);
 void				ft_check_txt_so(char *s);
 void				ft_check_txt_we(char *s);
 void				ft_check_txt_ea(char *s);
+void				ft_initialize_conf(void);
+void				ft_initialize_mlx(void);
+void				ft_set_txt();
 #endif
