@@ -15,35 +15,35 @@
 void	ft_err_c(char **str)
 {
 	if (g_c.c != NULL)
-		ft_err("redefining variable'C'in file");
+		ft_err("redefining variable 'C' in file");
 	if (ft_nbr_split(str) != 2)
-		ft_err("invalid number of parameters for 'C' var");
+		ft_err("'C' parameters are not valid");
 }
 
 void	ft_err_f(char **str)
 {
 	if (g_c.f != NULL)
-		ft_err("defining variable  'F' twice in the file");
+		ft_err("redefining variable 'F' in file");
 	if (ft_nbr_split(str) != 2)
-		ft_err("number of parameters are  != 1  (F)");
+		ft_err("'F' parameters are not valid");
 }
 
 void	ft_err_r(char **str)
 {
 	if (g_c.w != -1 && g_c.h != -1)
-		ft_err("defining variable  'R' twice in the file");
+		ft_err("redefining variable 'R' in file");
 	if (ft_nbr_split(str) != 3)
-		ft_err("number of parameters are  != 2  (R)");
+		ft_err("'R' parameters are not valid");
 	if (ft_zeros(str[1]) || ft_zeros(str[2]))
-		ft_err("the width and height must be != 0");
+		ft_err("'R' parameters are not valid");
 	if (!ft_is_number(str[1]) || !ft_is_number(str[2]))
-		ft_err("R 's parameters are not valid numbers");
+		ft_err("'R' parameters are not valid");
 }
 
 void	ft_err_s(char **str)
 {
 	if (g_c.s != NULL)
-		ft_err("defining variable  'S' twice in the file");
+		ft_err("redefining variable 'S' in file");
 	if (ft_nbr_split(str) != 2)
-		ft_err("number of parameters are  != 2  (S)");
+		ft_err("'S' parameters are not valid");
 }

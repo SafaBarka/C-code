@@ -29,19 +29,19 @@ void	ft_check_v(char **str)
 {
 	if (ft_strncmp(str[0], "R", 2) == 0)
 		ft_check_r(str);
-	else if (ft_strncmp(str[0], "NO", 2))
+	else if (ft_strncmp(str[0], "NO", 2) == 0)
 		ft_check_no(str);
-	else if (ft_strncmp(str[0], "SO", 2))
+	else if (ft_strncmp(str[0], "SO", 2) == 0)
 		ft_check_so(str);
-	else if (ft_strncmp(str[0], "WE", 2))
+	else if (ft_strncmp(str[0], "WE", 2) == 0)
 		ft_check_we(str);
-	else if (ft_strncmp(str[0], "EA", 2))
+	else if (ft_strncmp(str[0], "EA", 2) == 0)
 		ft_check_ea(str);
-	else if (ft_strncmp(str[0], "S", 2))
+	else if (ft_strncmp(str[0], "S", 2) == 0)
 		ft_check_s(str);
-	else if (ft_strncmp(str[0], "F", 2))
+	else if (ft_strncmp(str[0], "F", 2) == 0)
 		ft_check_f(str);
-	else if (ft_strncmp(str[0], "C", 2))
+	else if (ft_strncmp(str[0], "C", 2) == 0)
 		ft_check_c(str);
 	else
 		ft_check_not_var(str);

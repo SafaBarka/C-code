@@ -14,6 +14,7 @@
 
 void	ft_err(char *message)
 {
-	perror(message);
+	ft_putstr_fd(message, 1);
+	//perror(message);
 	exit(EXIT_FAILURE);
 }

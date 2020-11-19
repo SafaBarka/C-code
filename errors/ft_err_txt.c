@@ -15,31 +15,35 @@
 void	ft_err_ea(char **str)
 {
 	if (g_c.ea != NULL)
-		ft_err("defining variable  'EA' twice in the file");
+		ft_err("redefining variable 'EA' in file");
 	if (ft_nbr_split(str) != 2)
-		ft_err("number of parameters are  != 1  (EA)");
+		ft_err("'EA' parameters are not valid");
+	ft_check_txt_ea(str[1]);
 }
 
 void	ft_err_no(char **str)
 {
 	if (g_c.no != NULL)
-		ft_err("defining variable  'NO' twice in the file");
+		ft_err("redefining variable 'NO' in file");
 	if (ft_nbr_split(str) != 2)
-		ft_err("number of parameters are  != 1  (NO)");
+		ft_err("'NO' parameters are not valid");
+	ft_check_txt_no(str[1]);
 }
 
 void	ft_err_so(char **str)
 {
 	if (g_c.so != NULL)
-		ft_err("defining variable  'SO' twice in the file");
+		ft_err("redefining variable 'SO' in file");
 	if (ft_nbr_split(str) != 2)
-		ft_err("number of parameters are  != 1  (SO)");
+		ft_err("'SO' parameters are not valid");
+	ft_check_txt_so(str[1]);
 }
 
 void	ft_err_we(char **str)
 {
 	if (g_c.we != NULL)
-		ft_err("defining variable  'WE' twice in the file");
+		ft_err("redefining variable 'WE' in file");
 	else if (ft_nbr_split(str) != 2)
-		ft_err("number of parameters are  != 1  (WE)");
+		ft_err("'WE' parameters are not valid");
+	ft_check_txt_we(str[1]);
 }

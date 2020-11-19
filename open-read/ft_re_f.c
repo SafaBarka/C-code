@@ -21,6 +21,7 @@ void	ft_re_f(int fd)
 		ft_err("failed to read file");
 	if (i == 0)
 		ft_err("the file is empty");
+	ft_initialize_conf();
 	while (i > 0)
 	{
 		ft_check_l(line, i);

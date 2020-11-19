@@ -16,16 +16,18 @@
 # include <stdio.h>
 # include <fcntl.h>
 # include <stdlib.h>
+# include <unistd.h>
+# include <math.h>
+# include <mlx.h>
 # include "help-func/get_next_line/get_next_line.h"
 
 typedef	struct		s_image{
-	void			*img;
+	void			*im;
 	unsigned int	*addr;
 	int				bpp;
 	int				ll;
 	int				e;
 }					t_image;
-t_image				g_img;
 
 typedef	struct		s_list{
 	char			*line;
@@ -80,11 +82,12 @@ typedef struct		s_texture{
 	int				e;
 	void			*img;
 }					t_texture;
-t_texture			g_text;
+
 
 typedef	struct		s_config{
 	void			*mlx;
 	void			*mlx_win;
+	t_image			img;
 	int				w;
 	int				h;
 	int				tw;
@@ -110,7 +113,7 @@ typedef	struct		s_config{
 	int				temp_w;
 	int				temp_h;
 	t_player		*player;
-	t_texture		*texts;
+	t_texture		*t;
 }					t_config;
 t_config			g_c;
 
@@ -143,13 +146,18 @@ void				ft_set_s(char **str);
 void				ft_set_r(char **str);
 void				ft_set_f(char **str);
 void				ft_set_c(char **str);
-void				ft_set_we(char **str);
-void				ft_set_so(char **str);
-void				ft_set_no(char **str);
-void				ft_set_ea(char **str);
+void				ft_set_we(char *s);
+void				ft_set_so(char *s);
+void				ft_set_no(char *s);
+void				ft_set_ea(char *s);
 int					ft_nbr_split(char **str);
 void				ft_check_not_var(char **str);
 int					ft_is_number(char *s);
 int					ft_zeros(char *str);
-
+void				ft_initialize_conf(void);
+void				ft_putstr_fd(char const *s, int fd);
+void				ft_check_txt_no(char *s);
+void				ft_check_txt_so(char *s);
+void				ft_check_txt_we(char *s);
+void				ft_check_txt_ea(char *s);
 #endif

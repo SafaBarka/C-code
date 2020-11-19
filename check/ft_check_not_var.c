@@ -22,5 +22,5 @@ void	ft_check_not_var(char **str)
 		ft_strncmp(str[0], "SO", 2) != 0 &&
 		ft_strncmp(str[0], "WE", 2) != 0 &&
 		ft_strncmp(str[0], "EA", 2) != 0)
-		ft_err("nom de variable is not valid!");
+		ft_err("variable name not valid in file");
 }

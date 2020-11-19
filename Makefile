@@ -16,11 +16,14 @@ all :
 			check/ft_check_r_c.c\
 			check/ft_check_not_var.c\
 			check/ft_check_txt.c\
+			check/ft_check_txt_ex.c\
 			errors/ft_err.c\
 			errors/ft_err_r_c.c\
 			errors/ft_err_txt.c\
 			set/ft_set_r_c.c\
-			set/ft_set_txt.c
+			set/ft_set_txt.c\
+			initialization/ft_initialize_conf.c\
+			help-func/ft_putstr_fd.c
 
 			
 			
