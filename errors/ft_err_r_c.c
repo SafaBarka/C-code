@@ -40,10 +40,4 @@ void	ft_err_r(char **str)
 		ft_err("'R' parameters are not valid");
 }
 
-void	ft_err_s(char **str)
-{
-	if (g_c.s != NULL)
-		ft_err("redefining variable 'S' in file");
-	if (ft_nbr_split(str) != 2)
-		ft_err("'S' parameters are not valid");
-}
+

@@ -56,3 +56,14 @@ void	ft_err_we(char **str)
 	g_c.nbrv++;
 	ft_check_txt_we(g_c.we);
 }
+
+void	ft_err_s(char **str)
+{
+	if (g_c.s != NULL)
+		ft_err("redefining variable 'S' in file");
+	if (ft_nbr_split(str) != 2)
+		ft_err("'S' parameters are not valid");
+	g_c.s = str[1];
+	g_c.nbrv++;
+	ft_check_txt_s(g_c.s);
+}

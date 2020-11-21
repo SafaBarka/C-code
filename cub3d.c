@@ -17,22 +17,9 @@ int	main(void)
 	int fd;
 	int i;
 
-	fd = ft_op_f("infos.cub");
-	//---------------------------------------
-	if ((i = get_next_line(fd, &g_c.line)) < 0)
-		ft_err("failed to read file");
-	if (i == 0)
-		ft_err("the file is empty");
-	//------------------------------------
-	ft_initialize_conf();
-	//------------------------------------
-	if(ft_r_v(fd ,i) == 1)
-		ft_set_txt();
-	//read variables
-
-	//ft_re_f(fd);
-	
-	//if(g_c.fm == 0)
-	//	ft_err("missing map");
+	fd = ft_op_f("infos.cub");// open file =>if it failed return an error
+	ft_init();//initialize configuration; initailize mlx , player , texture , conf
+	ft_read_var(fd,i);//read first part of the file + check errors
+	ft_read_map(fd,i);
 	return (0);
 }

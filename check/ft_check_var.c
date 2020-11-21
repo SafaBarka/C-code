@@ -12,7 +12,7 @@
 
 #include "../cub3d.h"
 
-int		ft_check_l(char *line, int i)
+int		ft_check_var(char *line, int i)
 {
 	char	**str;
 
@@ -38,7 +38,7 @@ void	ft_check_v(char **str)
 	else if (ft_strncmp(str[0], "EA", 2) == 0)
 		ft_err_ea(str);
 	else if (ft_strncmp(str[0], "S", 2) == 0)
-		ft_check_s(str);
+		ft_err_s(str);
 	else if (ft_strncmp(str[0], "F", 2) == 0)
 		ft_check_f(str);
 	else if (ft_strncmp(str[0], "C", 2) == 0)

@@ -27,7 +27,16 @@ void	ft_check_txt_so(char *s)
 
 	i = ft_strlen(s);
 	if (i < 4 || ft_strncmp(".xpm", s + (i - 4), 5) != 0)
-		ft_err("extension file not valid so");
+		ft_err("extension file not valid s");
+}
+
+void	ft_check_txt_s(char *s)
+{
+	int i;
+
+	i = ft_strlen(s);
+	if (i < 4 || ft_strncmp(".xpm", s + (i - 4), 5) != 0)
+		ft_err("extension file not valid s");
 }
 
 void	ft_check_txt_we(char *s)
