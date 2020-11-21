@@ -12,19 +12,19 @@
 
 #include "../cub3d.h"
 
-int	ft_r_v(int fd, int i)
+void	ft_read_var(int fd, int i)
 {
-	while (i > 0)
+	while ((i = get_next_line(fd, &g_c.line)) >= 0 && g_c.nbrv != 8)
 	{
-		if (g_c.nbrv == 8)
-			return (1);
-		ft_check_l(g_c.line, i);
+		ft_check_var(g_c.line, i);
 		free(g_c.line);
-		i = get_next_line(fd, &g_c.line);
+		if (i == 0)
+			break ;
 	}
 	if (i < 0)
-		ft_err("failed to read file");
+		ft_err("something wrong with .cub file");
 	if (g_c.nbrv != 8)
-		ft_err("missing file variables");
-	return (0);
+		ft_err("misisng file variables");
+	if (g_c.nbrv == 8)
+		ft_set_txt();
 }
