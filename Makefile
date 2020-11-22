@@ -23,7 +23,9 @@ all :
 			set/ft_set_r_c.c\
 			set/ft_set_txt.c\
 			initialization/ft_init.c\
-			help-func/ft_putstr_fd.c
+			help-func/ft_putstr_fd.c\
+			help-func/ft_lists.c\
+			set/ft_store_list.c
 
 			
 			

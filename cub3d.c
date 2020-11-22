@@ -20,6 +20,10 @@ int	main(void)
 	fd = ft_op_f("infos.cub");// open file =>if it failed return an error
 	ft_init();//initialize configuration; initailize mlx , player , texture , conf
 	ft_read_var(fd,i);//read first part of the file + check errors
+	while (g_c.line[0] == '\0')
+		g_c.i = get_next_line(fd,&g_c.line);
 	ft_read_map(fd,i);
+	if (g_c.nbrl == 0 )
+		ft_err("missing map");
 	return (0);
 }

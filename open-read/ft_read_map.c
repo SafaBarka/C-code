@@ -14,32 +14,30 @@
 
 void	ft_read_map(int fd, int i)
 {
-	while ((i = get_next_line(fd, &g_c.line)) > 0)
+	g_c.empty = 0;
+	while (g_c.i > 0)
 	{
-		ft_check_map(g_c.line, i);
-		free(g_c.line);
+		if (g_c.line[0] == '\0')
+			g_c.empty = 1;
+		else
+			ft_valid(g_c.line);
+		g_c.i = get_next_line(fd, &g_c.line);
 	}
-	if (i == 0)
-	{
-		ft_check_map(g_c.line, i);
-		free(g_c.line);
-	}
-	else if (i < 0)
-		ft_err("something wrong when reading file");
-	if (g_c.fm == 0)
-		ft_err("missing map");
+	ft_print_list(g_c.head);
 }
-
+void ft_valid(char *line)
+{
+	if (g_c.empty == 1 && g_c.nbrl > 0)
+		ft_err("break line in map ");
+	else 
+	{
+		ft_store_list(g_c.line);
+		g_c.nbrl++;
+	}
+}
 void	ft_check_map(char *line, int i)
 {
-	if (!g_c.head)
-		ft_check_fl(line);
-	else if (g_c.ll == 1)
-		ft_check_fl(line);
-	else
-		ft_check_ml(line);
-	g_c.fm = 1;
-		ft_store_list(line);
+	
 }
 
 void	ft_check_fl(char *line)
@@ -47,15 +45,18 @@ void	ft_check_fl(char *line)
 	int i;
 
 	i = 0;
+
 	while (line[i])
 	{
 		if (line[i] != ' ' && line[i] != '1')
 		{
+	printf("line = |%s|\n",line);
 			printf("i = %d  j = %d\n", g_c.nbrl, i);
 			ft_err("not valid map");
 		}
 		i++;
 	}
+	ft_store_list(line);
 }
 
 void	ft_check_ml(char *line)
@@ -84,6 +85,7 @@ void	ft_check_ml(char *line)
 			ft_err("the element not valid in map");
 		i++;
 	}
+	ft_store_list(line);
 }
 
 void	ft_set_player(float x, float angle, char c)

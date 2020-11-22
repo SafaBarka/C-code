@@ -67,5 +67,8 @@ void	ft_print_list(t_list *head)
 
 	tmp = head;
 	while (tmp != NULL)
+	{
+		printf("line = |%s|\n",tmp->line);
 		tmp = tmp->next;
+	}
 }

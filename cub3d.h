@@ -31,7 +31,7 @@ typedef	struct		s_image{
 
 typedef	struct		s_list{
 	char			*line;
-	struct t_list	*next;
+	struct s_list	*next;
 }					t_list;
 
 typedef struct		s_ray{
@@ -86,6 +86,7 @@ typedef struct		s_texture{
 
 typedef	struct		s_config{
 	char			*line;
+	int				i;
 	void			*mlx;
 	void			*mlx_win;
 	t_image			img;
@@ -115,6 +116,7 @@ typedef	struct		s_config{
 	int				temp_h;
 	t_player		*player;
 	t_texture		*t;
+	int				empty;
 }					t_config;
 t_config			g_c;
 
@@ -169,4 +171,11 @@ void				ft_check_v(char **str);
 void				ft_check_txt_s(char *s);
 void				ft_set_s(void);
 int					create_trgb(int t, int r, int g, int b);
+void				ft_store_list(char *line);
+t_list	*ft_lstlast(t_list *lst);
+void ft_valid(char *line);
+int		ft_lst_size(void);
+void	ft_lstadd_back(t_list *alst, t_list *new);
+t_list	*ft_lstnew(char *line);
+void	ft_print_list(t_list *head);
 #endif
