@@ -23,16 +23,55 @@ void	ft_err_ea(char **str)
 
 	ft_check_txt_ea(g_c.ea);
 }
+char		*ft_s(char **s1, char **s2)
+{
+	size_t	i;
+	size_t	j;
+	char	*str;
 
+	i = 0;
+	j = 0;
+	
+	if (*s1 == NULL || *s2 == NULL)
+		return (NULL);
+	if (!(str = (char *)malloc(sizeof(char) * (ft_strlen(*s1) + ft_strlen(*s2)
+						+ 2))))
+		return (NULL);
+	while ((*s1)[i])
+	{
+		str[i] = (*s1)[i];
+		i++;
+	}
+	str[i]=' ';
+	i++;
+	while ((*s2)[j] != '\0')
+	{
+		str[i] = (*s2)[j];
+		i++;
+		j++;
+	}
+	str[i] = '\0';
+	return (str);
+}
 void	ft_err_no(char **str)
 {
+	int i = 2;
+
 	if (g_c.no != NULL)
 		ft_err("redefining variable 'NO' in file");
-	if (ft_nbr_split(str) != 2)
+	if (ft_nbr_split(str) == 1)
 		ft_err("'NO' parameters are not valid");
 	g_c.no = str[1];
-	g_c.nbrv++;
+	char *tmp;
+	while (str[i])
+	{
+		tmp = ft_s(&g_c.no, &str[i]);
+		g_c.no = tmp;
+		i++;
+	}
+	printf("|%s|\n",g_c.no);
 	ft_check_txt_no(g_c.no);
+	g_c.nbrv++;
 }
 
 void	ft_err_so(char **str)

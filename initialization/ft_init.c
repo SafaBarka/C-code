@@ -24,8 +24,8 @@ void	ft_init(void)
 	g_c.so = NULL;
 	g_c.we = NULL;
 	g_c.ea = NULL;
-	g_c.f = NULL;
-	g_c.c = NULL;
+	g_c.f = -1;
+	g_c.c = -1;
 	g_c.s = NULL;
 	g_c.ml = 0;
 	g_c.ll = -1;

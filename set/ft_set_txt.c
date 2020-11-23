@@ -23,6 +23,7 @@ void	ft_set_txt(void)
 
 void	ft_set_no(void)
 {
+	printf("no = |%s|\n",g_c.no);
 	g_c.t[0].img = mlx_xpm_file_to_image(g_c.mlx,
 										g_c.no,
 										&g_c.t[0].w,
