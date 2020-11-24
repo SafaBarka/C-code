@@ -179,4 +179,7 @@ void	ft_lstadd_back(t_list *alst, t_list *new);
 t_list	*ft_lstnew(char *line);
 void	ft_print_list(t_list *head);
 void	ft_check_inv(char *line);
+void ft_store_array();
+void ft_print_array();
+char *ft_realloc(char *line, int max_length);
 #endif

@@ -25,7 +25,9 @@ int	main(void)
 	while (g_c.i > 0 && g_c.line[0] == '\0')
 		g_c.i = get_next_line(fd,&g_c.line);
 	ft_read_map(fd,i);
-	ft_print_list(g_c.head);
+	//ft_print_list(g_c.head);
+	ft_store_array();
+	ft_print_array();
 	if (g_c.nbrl == 0 )
 		ft_err("missing map");
 	return (0);
