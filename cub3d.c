@@ -21,11 +21,12 @@ int	main(void)
 	ft_init();//initialize configuration; initailize mlx , player , texture , conf
 	ft_read_var(fd,i);//read first part of the file + check errors
 	if (g_c.nbrv != 8)
-		ft_err("missing file data(variables)");
+		ft_err("missing file variables");
 	while (g_c.i > 0 && g_c.line[0] == '\0')
 		g_c.i = get_next_line(fd,&g_c.line);
 	ft_read_map(fd,i);
+	ft_print_list(g_c.head);
 	if (g_c.nbrl == 0 )
-		ft_err("missing file data(map)");
+		ft_err("missing map");
 	return (0);
 }

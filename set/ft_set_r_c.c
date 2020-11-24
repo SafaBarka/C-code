@@ -24,48 +24,32 @@ void	ft_set_r(char **str)
 
 void	ft_set_f(char *str)
 {
-	char **color;
-	int		r;
-	int		g;
-	int		b;
-
-
 	g_c.nbrv++;
-	if (!(color = ft_split(str, ',')))
-		ft_err("memory problem");
+	g_c.f = str;
+	char **color;
+	color = ft_split(str, ',');
 	if (ft_nbr_split(color) != 3)
 		ft_err("something wrong with floor color");
-	if (ft_is_number(color[0]) == 0 || ft_is_number(color[1]) == 0 || ft_is_number(color[2]) == 0 ) 
+	int r = ft_atoi(color[0]);
+	if ( r < 0 || r > 255)
 		ft_err("something wrong with floor color");
-	r = ft_atoi(color[0]);
-	g = ft_atoi(color[1]);
-	b = ft_atoi(color[2]);
-	if ( r < 0 || r > 255 || g < 0 || g > 255 || b < 0 || b > 255)
+	int g = ft_atoi(color[1]);
+	if ( g < 0 || g > 255)
 		ft_err("something wrong with floor color");
-	g_c.f= create_trgb(0,r,g,b);
+	int b = ft_atoi(color[2]);
+	if ( g < 0 || g > 255)
+		ft_err("something wrong with floor color");
+	unsigned int floorcolor= create_trgb(0,r,g,b);
+	printf("floor color = %u\n",floorcolor);
+	printf("floor color = %u\n",0xDC6400);
+
+
 }
 
-void	ft_set_c(char *str)
+void	ft_set_c(char **str)
 {
-	char **color;
-	int		r;
-	int		g;
-	int		b;
-
-
 	g_c.nbrv++;
-	if (!(color = ft_split(str, ',')))
-		ft_err("memory problem");
-	if (ft_nbr_split(color) != 3)
-		ft_err("something wrong with floor color");
-	if (ft_is_number(color[0]) == 0 || ft_is_number(color[1]) == 0 || ft_is_number(color[2]) == 0 ) 
-		ft_err("something wrong with floor color");
-	r = ft_atoi(color[0]);
-	g = ft_atoi(color[1]);
-	b = ft_atoi(color[2]);
-	if ( r < 0 || r > 255 || g < 0 || g > 255 || b < 0 || b > 255)
-		ft_err("something wrong with floor color");
-	g_c.c= create_trgb(0,r,g,b);
+	g_c.c = "";
 }
 int		create_trgb(int t, int r, int g, int b)
 {

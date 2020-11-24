@@ -14,7 +14,7 @@
 
 void	ft_err_c(char **str)
 {
-	if (g_c.c != -1)
+	if (g_c.c != NULL)
 		ft_err("redefining variable 'C' in file");
 	if (ft_nbr_split(str) != 2)
 		ft_err("'C' parameters are not valid");
@@ -22,11 +22,10 @@ void	ft_err_c(char **str)
 
 void	ft_err_f(char **str)
 {
-	if (g_c.f != -1)
+	if (g_c.f != NULL)
 		ft_err("redefining variable 'F' in file");
 	if (ft_nbr_split(str) != 2)
 		ft_err("'F' parameters are not valid");
-
 }
 
 void	ft_err_r(char **str)

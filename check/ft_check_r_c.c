@@ -21,7 +21,7 @@ void	ft_check_r(char **str)
 void	ft_check_c(char **str)
 {
 	ft_err_c(str);
-	ft_set_c(str[1]);
+	ft_set_c(str);
 }
 
 void	ft_check_f(char **str)

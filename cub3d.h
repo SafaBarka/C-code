@@ -101,8 +101,8 @@ typedef	struct		s_config{
 	char			*we;
 	char			*ea;
 	char			*s;
-	int				c;
-	int	 			f;
+	char			*c;
+	char			*f;
 	int				ml;
 	int				ll;
 	int				fm;
@@ -147,7 +147,7 @@ void				ft_err_so(char **str);
 void				ft_err_we(char **str);
 void				ft_set_r(char **str);
 void				ft_set_f(char *str);
-void				ft_set_c(char *str);
+void				ft_set_c(char **str);
 int					ft_nbr_split(char **str);
 void				ft_check_not_var(char **str);
 int					ft_is_number(char *s);
@@ -178,4 +178,5 @@ int		ft_lst_size(void);
 void	ft_lstadd_back(t_list *alst, t_list *new);
 t_list	*ft_lstnew(char *line);
 void	ft_print_list(t_list *head);
+void	ft_check_inv(char *line);
 #endif
