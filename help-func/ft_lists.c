@@ -6,7 +6,7 @@
 /*   By: sbarka <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/21 16:35:08 by sbarka            #+#    #+#             */
-/*   Updated: 2020/11/21 16:47:37 by sbarka           ###   ########.fr       */
+/*   Updated: 2020/11/25 16:27:28 by sbarka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ void	ft_print_list(t_list *head)
 	tmp = head;
 	while (tmp != NULL)
 	{
-		printf("line = |%s|\n",tmp->line);
+		printf("line = |%s|\n", tmp->line);
 		tmp = tmp->next;
 	}
 }

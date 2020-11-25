@@ -24,5 +24,5 @@ void	ft_read_var(int fd, int i)
 	if (g_c.i < 0)
 		ft_err("something wrong with .cub file");
 	if (g_c.nbrv == 8)
-		ft_set_txt();
+		ft_set_txts();
 }

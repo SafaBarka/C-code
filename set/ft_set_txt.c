@@ -12,15 +12,6 @@
 
 #include "../cub3d.h"
 
-void	ft_set_txt(void)
-{
-	ft_set_no();
-	ft_set_so();
-	ft_set_we();
-	ft_set_ea();
-	ft_set_s();
-}
-
 void	ft_set_no(void)
 {
 	g_c.t[0].img = mlx_xpm_file_to_image(g_c.mlx,
@@ -42,7 +33,7 @@ void	ft_set_so(void)
 										&g_c.t[1].w,
 										&g_c.t[1].h);
 	if (g_c.t[1].img == NULL)
-		ft_err("something wrong with 'S' file");
+		ft_err("something wrong with 'SO' file");
 	g_c.t[1].addr = (unsigned int *)mlx_get_data_addr(g_c.t[1].img,
 													&g_c.t[1].bpp,
 													&g_c.t[1].ll,

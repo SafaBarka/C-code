@@ -6,13 +6,11 @@
 /*   By: sbarka <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/18 18:36:39 by sbarka            #+#    #+#             */
-/*   Updated: 2020/11/25 13:55:22 by sbarka           ###   ########.fr       */
+/*   Updated: 2020/11/25 16:09:05 by sbarka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cub3d.h"
-
-
 
 void	ft_err_ea(char **str)
 {
@@ -36,7 +34,6 @@ void	ft_err_ea(char **str)
 void	ft_err_no(char **str)
 {
 	int i;
-
 	i = 2;
 	if (g_c.no != NULL)
 		ft_err("redefining variable 'NO' in file");

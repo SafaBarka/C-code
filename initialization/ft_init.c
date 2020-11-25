@@ -6,7 +6,7 @@
 /*   By: sbarka <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/19 10:16:38 by sbarka            #+#    #+#             */
-/*   Updated: 2020/11/19 10:21:56 by sbarka           ###   ########.fr       */
+/*   Updated: 2020/11/25 16:32:31 by sbarka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,7 @@ void	ft_init(void)
 	g_c.head = NULL;
 	g_c.empty = 0;
 	g_c.fov = 60 * (M_PI / 180);
-	if (!(g_c.t = malloc(sizeof(t_texture) * 5)))
-		ft_err("memory problem");
+	ft_init_tex();
 	ft_init_mlx();
 	ft_init_play();
 }
@@ -73,4 +72,10 @@ void	ft_init_play(void)
 	g_c.player->rots = 20 * (M_PI / 180);
 	g_c.player->turn = 0;
 	g_c.player->walk = 0;
+}
+
+void	ft_init_tex(void)
+{
+	if (!(g_c.t = malloc(sizeof(t_texture) * 5)))
+		ft_err("memory problem");
 }
