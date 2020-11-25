@@ -24,20 +24,21 @@ void	ft_read_map(int fd, int i)
 	}
 	else
 	{
-		while (g_c.i > 0)
+		while (g_c.i = get_next_line(fd,&g_c.line)>= 0)
 		{
 			if (g_c.line[0] == '\0')
 				g_c.empty = 1;
 			else
 				ft_valid(g_c.line);
 			g_c.i = get_next_line(fd, &g_c.line);
-		}
-		if (g_c.i == 0)
-		{
-			if (g_c.line[0] == '\0')
-				g_c.empty = 1;
-			else
-				ft_valid(g_c.line);
+			if (g_c.i == 0)
+			{
+				if (g_c.line[0] == '\0')
+					g_c.empty = 1;
+				else
+					ft_valid(g_c.line);
+				break;
+			}
 		}
 	}
 }
