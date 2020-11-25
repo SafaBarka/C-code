@@ -12,20 +12,20 @@
 
 #include "../cub3d.h"
 
-void	ft_store_list(char *line)
+void	ft_store_list(void)
 {
 	if (!g_c.head)
 		g_c.fm = 1;
 	int		len;
 	char	*new;
 	int		i;
-	len = ft_strlen(line);
+	len = ft_strlen(g_c.line);
 	i = 0;
 	if (!(new = malloc(sizeof(char ) * (len + 1))))
 		ft_err("memory problem");
 	while (i < len)
 	{
-		new[i] = line[i];
+		new[i] = g_c.line[i];
 		i++;
 	}
 	new[i] = '\0';

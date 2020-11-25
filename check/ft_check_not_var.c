@@ -6,7 +6,7 @@
 /*   By: sbarka <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/18 20:29:52 by sbarka            #+#    #+#             */
-/*   Updated: 2020/11/18 20:36:12 by sbarka           ###   ########.fr       */
+/*   Updated: 2020/11/25 13:32:29 by sbarka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,7 @@ void	ft_check_not_var(char **str)
 		ft_strncmp(str[0], "SO", 2) != 0 &&
 		ft_strncmp(str[0], "WE", 2) != 0 &&
 		ft_strncmp(str[0], "EA", 2) != 0)
+	{
 		ft_err("variable name not valid in file");
+	}
 }

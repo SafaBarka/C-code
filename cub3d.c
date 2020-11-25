@@ -17,19 +17,34 @@ int	main(void)
 	int fd;
 	int i;
 
-	fd = ft_op_f("infos.cub");// open file =>if it failed return an error
-	ft_init();//initialize configuration; initailize mlx , player , texture , conf
-	ft_read_var(fd,i);//read first part of the file + check errors
+	fd = ft_op_f("infos.cub");
+	ft_init();
+	ft_read_var(fd,i);
 	if (g_c.nbrv != 8)
-		ft_err("missing file variables");
+		ft_err("missing file data(variables)");
 	while (g_c.i > 0 && g_c.line[0] == '\0')
 		g_c.i = get_next_line(fd,&g_c.line);
 	ft_read_map(fd,i);
 	if (g_c.nbrl == 0 )
-		ft_err("missing map");
-	//ft_print_list(g_c.head);
-	ft_store_array();
-	ft_print_array();
+		ft_err("missing file data(map)");
 
+
+	//////////////////////////////////////
+	ft_store_array();
+
+	printf("textures : \n");
+	
+	printf("no texture = |%s|\n",g_c.no);
+	printf("so texture = |%s|\n",g_c.so);
+	printf("we texture = |%s|\n",g_c.we);
+	printf("ea texture = |%s|\n",g_c.ea);
+	printf("s texture  = |%s|\n",g_c.s);
+
+	printf("colors are : \n");
+	printf("floor color : |%u|\n",g_c.f);
+	printf("ceiling color : |%u|\n",g_c.c);
+	printf("map is : \n");
+	ft_print_array();
+	////////////////////////////////////////
 	return (0);
 }

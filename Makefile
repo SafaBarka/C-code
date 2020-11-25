@@ -27,7 +27,8 @@ all :
 			help-func/ft_lists.c\
 			set/ft_store_list.c\
 			set/ft_store_array.c\
-			help-func/ft_realloc.c
+			help-func/ft_realloc.c\
+			help-func/ft_join_txt.c
 
 			
 			
