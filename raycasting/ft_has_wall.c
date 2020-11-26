@@ -1,37 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_realloc.c                                       :+:      :+:    :+:   */
+/*   ft_has_wall.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sbarka <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/25 16:20:11 by sbarka            #+#    #+#             */
-/*   Updated: 2020/11/25 16:25:21 by sbarka           ###   ########.fr       */
+/*   Created: 2020/11/26 14:28:26 by sbarka            #+#    #+#             */
+/*   Updated: 2020/11/26 14:32:14 by sbarka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cub3d.h"
 
-char	*ft_realloc(char *line, int max_length)
+int		ft_has_wall(float x, float y)
 {
-	char	*new;
-	int		i;
-	int		len;
+	int a;
+	int b;
+	int c;
 
-	if(!(new = malloc(sizeof(char) * (g_c.ml + 1))))
-		ft_err("memory problem");
-	i = 0;
-	len = ft_strlen(line);
-	while (i < len)
-	{
-		new[i] = line[i];
-		i++;
-	}
-	while (i < g_c.ml)
-	{
-		new[i] = ' ';
-		i++;
-	}
-	new[i] = '\0';
-	return (new);
+	if (x < 0 || x > g_c.temp_w || y < 0 || y > g_c.temp_h)
+		return (1);
+	a = floor(x / g_c.tw);
+	b = floor(y / g_c.th);
+	return (g_c.map[b][a]);
 }

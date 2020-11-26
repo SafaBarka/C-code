@@ -53,5 +53,10 @@ int	main(void)
 	ft_print_array();
 	printf("******************************\n");
 	////////////////////////////////////////
+	/*ft_free_s(g_c.no);
+	ft_free_s(g_c.so);
+	ft_free_s(g_c.we);
+	ft_free_s(g_c.ea);*/
+	system("leaks a.out");
 	return (0);
 }

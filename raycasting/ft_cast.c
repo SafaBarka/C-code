@@ -1,37 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_realloc.c                                       :+:      :+:    :+:   */
+/*   ft_cast.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sbarka <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/25 16:20:11 by sbarka            #+#    #+#             */
-/*   Updated: 2020/11/25 16:25:21 by sbarka           ###   ########.fr       */
+/*   Created: 2020/11/26 14:16:25 by sbarka            #+#    #+#             */
+/*   Updated: 2020/11/26 14:20:00 by sbarka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cub3d.h"
 
-char	*ft_realloc(char *line, int max_length)
+void	ft_cast(void)
 {
-	char	*new;
-	int		i;
-	int		len;
+	int		c;
+	float	angle;
 
-	if(!(new = malloc(sizeof(char) * (g_c.ml + 1))))
-		ft_err("memory problem");
-	i = 0;
-	len = ft_strlen(line);
-	while (i < len)
+	g_c.temp_w = g_c.tw * g_c.co;
+	g_c.temp_h = g_c.th * g_c.ro;
+	c = 0;
+	angle = g_c.player->rota - (g_c.fov / 2);
+	while (c < g_c.nbrr)
 	{
-		new[i] = line[i];
-		i++;
+		g_c.rays[c].a = angle;
+		ft_raycast(&g_c.rays[c], c);
+		angle += g_c.fov / g_c.nbrr;
+		c++;
 	}
-	while (i < g_c.ml)
-	{
-		new[i] = ' ';
-		i++;
-	}
-	new[i] = '\0';
-	return (new);
 }

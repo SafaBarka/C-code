@@ -1,5 +1,5 @@
 all :
-	gcc   -g  -fsanitize=address -lmlx -framework OpenGL -framework AppKit  -D BUFFER_SIZE=60\
+	gcc   -g   -lmlx -framework OpenGL -framework AppKit  -D BUFFER_SIZE=60\
 			cub3d.c\
 			open-read/ft_op_f.c\
 			open-read/ft_read_var.c\
@@ -30,7 +30,15 @@ all :
 			help-func/ft_realloc.c\
 			help-func/ft_join_txt.c\
 			set/ft_set_txts.c\
-			help-func/ft_trim.c
-
+			help-func/ft_strtrim.c\
+			free/ft_free.c\
+			raycasting/ft_cast.c\
+			raycasting/ft_draw_ray.c\
+			raycasting/ft_initialize_ray.c\
+			raycasting/ft_normalize_angle.c\
+			raycasting/ft_raycast.c\
+			raycasting/ft_set_horiz_var.c\
+			raycasting/ft_set_vert_var.c\
+			raycasting/ft_has_wall.c
 			
 			

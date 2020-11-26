@@ -20,7 +20,13 @@
 # include <math.h>
 # include <mlx.h>
 # include "help-func/get_next_line/get_next_line.h"
-
+#define confetti 0xEDED61
+#define sulu 0xCAED61
+#define blue 0x6188ED
+#define yellow 0xffff00
+#define Turquoise 0x61EDB5
+#define red 0xFF0000
+#define green 0x008000
 typedef	struct		s_image{
 	void			*im;
 	unsigned int	*addr;
@@ -51,6 +57,8 @@ typedef struct		s_ray{
 	float			vx;
 	float			vy;
 	float			dis;
+	float			dish;
+	float			disv;
 	float			wx;
 	float			wy;
 }					t_ray;
@@ -116,6 +124,7 @@ typedef	struct		s_config{
 	int				temp_h;
 	t_player		*player;
 	t_texture		*t;
+	t_ray			*rays;
 	int				empty;
 }					t_config;
 t_config			g_c;
@@ -184,8 +193,23 @@ char				*ft_realloc(char *line, int max_length);
 char				*ft_join_txt(char **s1, char **s2);
 int					ft_create_trgb(int t, int r, int g, int b);
 void				ft_init_tex();
-void	ft_set_txts(void);
-int ft_trim_start(char *line);
-int ft_trim_end(char *line);
-char *ft_strd(char *line);
+void				ft_set_txts(void);
+char				*ft_strd(char *line);
+char				*ft_strtrim(char const *s1, char const *set);
+void				ft_free_d(char **str);
+void ft_free_s(char *str);
+void ft_free_list(t_list *head);
+void ft_cast();
+
+void    ft_draw_ray(t_ray *ray);
+float ft_calcul_distance(float x1,float y1,float x2,float y2);
+void ft_print_rays();
+void ft_initialize_ray(t_ray *ray);
+float ft_normalize_angle(float angle);
+int ft_has_wall(float x, float y);
+void    ft_set_horiz_distance(t_ray *ray);
+void    ft_set_horiz_var(t_ray *ray);
+void    ft_set_vert_var(t_ray *ray);
+void    ft_set_vert_distance(t_ray *ray);
+void  ft_raycast(t_ray *ray, int i);
 #endif

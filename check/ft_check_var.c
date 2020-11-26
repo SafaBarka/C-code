@@ -22,6 +22,7 @@ int		ft_check_var(char *line, int i)
 		ft_err("failed to allocate memory");
 	if (*str)
 		ft_check_v(str);
+	ft_free_d(str);
 	return (0);
 }
 
