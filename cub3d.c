@@ -24,6 +24,7 @@ int	main(void)
 		ft_err("missing file data(variables)");
 	while (g_c.i > 0 && g_c.line[0] == '\0')
 		g_c.i = get_next_line(fd,&g_c.line);
+		
 	ft_read_map(fd,i);
 	if (g_c.nbrl == 0 )
 		ft_err("missing file data(map)");
@@ -52,11 +53,16 @@ int	main(void)
 	printf("map is : \n");
 	ft_print_array();
 	printf("******************************\n");
-	////////////////////////////////////////
-	/*ft_free_s(g_c.no);
-	ft_free_s(g_c.so);
-	ft_free_s(g_c.we);
-	ft_free_s(g_c.ea);*/
-	system("leaks a.out");
-	return (0);
+	
+
+	ft_cast();
+
+	ft_render_3d();
+	
+	mlx_put_image_to_window(g_c.mlx,g_c.mlx_win,g_c.img.im,0,0);
+  
+  
+    mlx_loop(g_c.mlx);
+
+	return(0);
 }

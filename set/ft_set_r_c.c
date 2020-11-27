@@ -18,6 +18,7 @@ void	ft_set_r(char **str)
 	g_c.w = ft_atoi(str[1]);
 	g_c.h = ft_atoi(str[2]);
 	g_c.nbrr = (int)(g_c.w);
+	g_c.rays = (t_ray *)malloc(sizeof(t_ray) * g_c.nbrr);
 }
 
 void	ft_set_f(char *str)

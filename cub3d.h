@@ -28,11 +28,11 @@
 #define red 0xFF0000
 #define green 0x008000
 typedef	struct		s_image{
-	void			*im;
-	unsigned int	*addr;
+	void			*im; //image
+	unsigned int	*addr; //address
 	int				bpp;
-	int				ll;
-	int				e;
+	int				ll; //length line
+	int				e; //endian
 }					t_image;
 
 typedef	struct		s_list{
@@ -41,90 +41,102 @@ typedef	struct		s_list{
 }					t_list;
 
 typedef struct		s_ray{
-	float			a;
-	int				d;
-	int				u;
-	int				r;
-	int				l;
-	float			xi;
-	float			yi;
-	float			xs;
-	float			ys;
-	int				fh;
-	float			hx;
-	float			hy;
-	int				fv;
-	float			vx;
-	float			vy;
-	float			dis;
-	float			dish;
-	float			disv;
-	float			wx;
-	float			wy;
+	float			a; //ray angle
+	int				d; //facing down
+	int				u; //facing up
+	int				r; //facing right
+	int				l; //facing left
+	float			xi; //xintercept
+	float			yi; // y intercept
+	float			xs;//x step
+	float			ys;//y step
+	int				fh;//found horizontal
+	float			hx;//horizontal wall hit x
+	float			hy;//horizontal wall hit y
+	int				fv; //found vertical
+	float			vx; //vertical wall hit x
+	float			vy; //vertical wall hit y
+	float			dis; //distance
+	float			dish;// horizontal distance
+	float			disv; // vertical distance
+	float			wx; // wall hit x
+	float			wy;//wall hit y
 }					t_ray;
 t_ray				g_ray;
 
 typedef struct		s_player{
-	float			x;
-	float			y;
-	int				n;
-	int				s;
-	int				e;
-	int				w;
-	int				f;
-	int				turn;
-	int				walk;
-	float			rota;
-	float			mvs;
-	float			rots;
-	float			rad;
+	float			x; //player x 
+	float			y; //player y
+	int				n; //north
+	int				s;//south
+	int				e;//east
+	int				w;//west
+	int				f;//found
+	int				turn; //turn direction
+	int				walk; //walk direction
+	float			rota; //rotation angle
+	float			mvs; //move speed
+	float			rots; //rotation speed
+	float			rad; //radius
 }					t_player;
 t_player			g_pl;
 
 typedef struct		s_texture{
-	int				w;
-	int				h;
-	unsigned int	*addr;
+	int				w; //text width
+	int				h; //texture height
+	unsigned int	*addr; //addre
 	int				bpp;
 	int				ll;
-	int				e;
-	void			*img;
+	int				e; //endian
+	void			*img; //image *xpm
 }					t_texture;
 
-
+typedef struct		s_wall{
+	float			perd; //perpdistance
+	float			distpp; //distance proj plane
+	float			projwh; //projected wall height
+	int				wallsh;	//wall strip height
+	int				walltp;	//wall top pixel
+	int				wallbp; //
+}					t_wall;				
 typedef	struct		s_config{
+	float			nexthx;
+	float			nexthy;
+	float			nextvx;
+	float			nextvy;
+	t_wall			*wall;
 	char			*line;
 	int				i;
-	void			*mlx;
-	void			*mlx_win;
-	t_image			img;
-	int				w;
-	int				h;
-	int				tw;
-	int				th;
-	int				co;
-	int				ro;
-	char			*no;
-	char			*so;
-	char			*we;
-	char			*ea;
-	char			*s;
-	int				c;
-	int	 			f;
-	int				ml;
-	int				ll;
-	int				fm;
-	int				nbrv;
-	int				nbrl;
+	void			*mlx; //mlx
+	void			*mlx_win; //mlx_win
+	t_image			img; //image
+	int				w; //width
+	int				h; //height
+	int				tw; //tile width
+	int				th; //tile height
+	int				co; //columns
+	int				ro; //rows
+	char			*no; //north texture
+	char			*so; //south texture
+	char			*we; //west texture
+	char			*ea;//east texture
+	char			*s; //sprite texture
+	int				c; //floor color
+	int	 			f;//ceiling color
+	int				ml; //max_length
+	int				ll; //last line
+	int				fm; //found map
+	int				nbrv; //nbr de variables
+	int				nbrl; //nbr lignes
 	char			**map;
 	t_list			*head;
 	double			fov;
 	int				nbrr;
-	int				temp_w;
-	int				temp_h;
+	int				temp_w; //temp width
+	int				temp_h; //temp height
 	t_player		*player;
-	t_texture		*t;
-	t_ray			*rays;
+	t_texture		*t; //array of texture
+	t_ray			*rays; //array of rays
 	int				empty;
 }					t_config;
 t_config			g_c;
@@ -212,4 +224,7 @@ void    ft_set_horiz_var(t_ray *ray);
 void    ft_set_vert_var(t_ray *ray);
 void    ft_set_vert_distance(t_ray *ray);
 void  ft_raycast(t_ray *ray, int i);
+void ft_render_3d();
+void ft_put_pixel_to_image(int x, int y , unsigned int color,int i);
+
 #endif

@@ -1,5 +1,5 @@
 all :
-	gcc   -g   -lmlx -framework OpenGL -framework AppKit  -D BUFFER_SIZE=60\
+	gcc   -g -fsanitize=address  -lmlx -framework OpenGL -framework AppKit  -D BUFFER_SIZE=60\
 			cub3d.c\
 			open-read/ft_op_f.c\
 			open-read/ft_read_var.c\
@@ -39,6 +39,7 @@ all :
 			raycasting/ft_raycast.c\
 			raycasting/ft_set_horiz_var.c\
 			raycasting/ft_set_vert_var.c\
-			raycasting/ft_has_wall.c
+			raycasting/ft_has_wall.c\
+			3d/ft_render_3d.c
 			
 			

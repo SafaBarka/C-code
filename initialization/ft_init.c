@@ -37,7 +37,7 @@ void	ft_init(void)
 	g_c.empty = 0;
 	g_c.fov = 60 * (M_PI / 180);
 	ft_init_tex();
-	ft_init_mlx();
+	g_c.wall =  malloc(sizeof(t_wall));
 	ft_init_play();
 }
 
