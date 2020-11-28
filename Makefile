@@ -40,6 +40,11 @@ all :
 			raycasting/ft_set_horiz_var.c\
 			raycasting/ft_set_vert_var.c\
 			raycasting/ft_has_wall.c\
-			3d/ft_render_3d.c
+			3d/ft_render_3d.c\
+			update/ft_draw_black_screen.c\
+			update/ft_initialize_turn_walk.c\
+			update/ft_update.c\
+			update/ft_update_player.c
+
 			
 			

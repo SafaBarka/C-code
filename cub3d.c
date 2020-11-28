@@ -61,8 +61,45 @@ int	main(void)
 	
 	mlx_put_image_to_window(g_c.mlx,g_c.mlx_win,g_c.img.im,0,0);
   
-  
+     mlx_hook(g_c.mlx_win, 2, 0, deal_key, (void *)0);
     mlx_loop(g_c.mlx);
 
 	return(0);
 }
+int deal_key(int key, void *param)
+{
+    
+    ft_initialize_turn_walk();
+    
+    if ( key == 126) //up
+    {
+        
+        printf("up\n");
+        g_c.player->walk = +1;
+    }
+    else if(key == 125) // down
+    {
+        printf("down\n");
+        g_c.player->walk = -1;
+    }
+    else if(key == 124) //right
+    {
+        printf("right\n");
+        g_c.player->turn = +1;
+    }
+    else if( key == 123)//left
+    {
+        printf("left\n");
+        g_c.player->turn = -1;
+    }
+    else if (key == 53 ) //esc
+    {
+        printf("exit\n");
+        mlx_destroy_window(g_c.mlx,g_c.mlx_win);
+        exit(EXIT_SUCCESS);
+    }
+ 
+    ft_update();
+    return 1;
+}
+

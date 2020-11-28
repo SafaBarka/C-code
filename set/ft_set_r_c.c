@@ -66,6 +66,7 @@ void	ft_set_c(char *str)
 	if (r < 0 || r > 255 || g < 0 || g > 255 || b < 0 || b > 255)
 		ft_err("something wrong with floor color");
 	g_c.c = ft_create_trgb(0, r, g, b);
+	printf("ceiling color = %u\n",g_c.c);
 	ft_free_d(color);
 }
 

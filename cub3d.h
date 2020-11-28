@@ -218,7 +218,7 @@ float ft_calcul_distance(float x1,float y1,float x2,float y2);
 void ft_print_rays();
 void ft_initialize_ray(t_ray *ray);
 float ft_normalize_angle(float angle);
-int ft_has_wall(float x, float y);
+
 void    ft_set_horiz_distance(t_ray *ray);
 void    ft_set_horiz_var(t_ray *ray);
 void    ft_set_vert_var(t_ray *ray);
@@ -226,5 +226,11 @@ void    ft_set_vert_distance(t_ray *ray);
 void  ft_raycast(t_ray *ray, int i);
 void ft_render_3d();
 void ft_put_pixel_to_image(int x, int y , unsigned int color,int i);
+int deal_key(int key, void *param);
+void    ft_draw_black_screen();
+int ft_has_wall(float x, float y);
+void ft_initialize_turn_walk();
+void ft_update();
 
+void ft_update_player();
 #endif

@@ -1,11 +1,11 @@
-R 1000 1000
+R 1920 1080
 NO texture/tx     64- 1.xpm
 SO texture/txt6  4-2.xpm
 WE texture/txt6 4-3.xpm
 EA texture/txt64-4.xpm
 S texture/sprt6 4.xpm
-F 220,100,0
-C 225,30,0
+F 193,78,78
+C 189,110,110
 
 
 
