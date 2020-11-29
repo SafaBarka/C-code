@@ -29,3 +29,13 @@ void	ft_cast(void)
 		c++;
 	}
 }
+
+void	ft_raycast(t_ray *ray, int i)
+{
+	ft_initialize_ray(ray);
+	ft_set_horiz_var(ray);
+	ft_set_horiz_distance(ray);
+	ft_set_vert_var(ray);
+	ft_set_vert_distance(ray);
+	ft_draw_ray(ray);
+}

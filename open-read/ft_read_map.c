@@ -37,14 +37,12 @@ void	ft_read_map(int fd, int i)
 
 void	ft_valid(void)
 {
+		g_c.nbrl++;
 	ft_check_inv();
 	if (g_c.empty == 1 && g_c.nbrl > 0)
 		ft_err("break line in map ");
 	else
-	{
 		ft_store_list();
-		g_c.nbrl++;
-	}
 }
 
 void	ft_check_inv(void)
@@ -53,8 +51,8 @@ void	ft_check_inv(void)
 	int len;
 
 	len = ft_strlen(g_c.line);
-	i = 0;
-	while (i < len)
+	i = 1;
+	while (i < len -1)
 	{
 		if (g_c.player->f == 0 && g_c.line[i] == 'N')
 			ft_set_player(i, (3 * M_PI) / 2);

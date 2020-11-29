@@ -98,6 +98,9 @@ typedef struct		s_wall{
 	int				wallsh;	//wall strip height
 	int				walltp;	//wall top pixel
 	int				wallbp; //
+	int				distft;
+	int				txtox; //texture offset x
+	int				txtoy;	//texture offset y;
 }					t_wall;				
 typedef	struct		s_config{
 	float			nexthx;
@@ -226,11 +229,17 @@ void    ft_set_vert_distance(t_ray *ray);
 void  ft_raycast(t_ray *ray, int i);
 void ft_render_3d();
 void ft_put_pixel_to_image(int x, int y , unsigned int color,int i);
-int deal_key(int key, void *param);
 void    ft_draw_black_screen();
 int ft_has_wall(float x, float y);
-void ft_initialize_turn_walk();
+void ft_init_turn_walk();
 void ft_update();
 
 void ft_update_player();
+void ft_render_ceiling(int i);
+void ft_render_walls(int i);
+int		ft_op_f(char *filename);
+int ft_deal_key(int key, void *param);
+void ft_check_spaces();
+void ft_check_space(int j, int i);
+
 #endif

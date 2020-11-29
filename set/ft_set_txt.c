@@ -43,7 +43,7 @@ void	ft_set_so(void)
 void	ft_set_we(void)
 {
 	g_c.t[2].img = mlx_xpm_file_to_image(g_c.mlx,
-										g_c.no,
+										g_c.we,
 										&g_c.t[2].w,
 										&g_c.t[2].h);
 	if (g_c.t[2].img == NULL)
@@ -57,7 +57,7 @@ void	ft_set_we(void)
 void	ft_set_ea(void)
 {
 	g_c.t[3].img = mlx_xpm_file_to_image(g_c.mlx,
-										g_c.no,
+										g_c.ea,
 										&g_c.t[3].w,
 										&g_c.t[3].h);
 	if (g_c.t[3].img == NULL)

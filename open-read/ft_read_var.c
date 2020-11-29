@@ -12,6 +12,7 @@
 
 #include "../cub3d.h"
 
+
 void	ft_read_var(int fd, int i)
 {
 	while ((g_c.i = get_next_line(fd, &g_c.line)) >= 0 && g_c.nbrv != 8)
