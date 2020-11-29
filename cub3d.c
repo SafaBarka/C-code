@@ -12,12 +12,16 @@
 
 #include "cub3d.h"
 
-int	main(void)
+int	main(int argc, char *argv[])
 {
+	
 	int fd;
 	int i;
-
-	fd = ft_op_f("infos.cub");
+	if (argc == 1)
+		ft_err("file name is missing");
+	//check extension is .cub
+	
+	fd = ft_op_f(argv[1]);
 	ft_init();
 	ft_read_var(fd,i);
 	if (g_c.nbrv != 8)
@@ -32,7 +36,7 @@ int	main(void)
 		ft_err("player is missing");
 	ft_store_array();
 	ft_check_spaces();
-	printf("textures : \n");
+	/*printf("textures : \n");
 	printf("no texture = |%s|\n",g_c.no);
 	printf("so texture = |%s|\n",g_c.so);
 	printf("we texture = |%s|\n",g_c.we);
@@ -51,7 +55,7 @@ int	main(void)
 	printf("******************************\n");
 	printf("map is : \n");
 	ft_print_array();
-	printf("******************************\n");
+	printf("******************************\n");*/
 	ft_cast();
 
 	ft_render_3d();
@@ -60,7 +64,7 @@ int	main(void)
   
      mlx_hook(g_c.mlx_win, 2, 0, ft_deal_key, (void *)0);
     mlx_loop(g_c.mlx);
-
+	system("Leaks a.out");
 	return(0);
 }
 
