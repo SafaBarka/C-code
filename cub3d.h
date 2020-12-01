@@ -213,7 +213,7 @@ char				*ft_strd(char *line);
 char				*ft_strtrim(char const *s1, char const *set);
 void				ft_free_d(char **str);
 void ft_free_s(char *str);
-void ft_free_list(t_list *head);
+void ft_free_list();
 void ft_cast();
 
 void    ft_draw_ray(t_ray *ray);
@@ -241,5 +241,7 @@ int		ft_op_f(char *filename);
 int ft_deal_key(int key, void *param);
 void ft_check_spaces();
 void ft_check_space(int j, int i);
-
+void	ft_init_wall(void);
+void	ft_render(void);
+void	ft_read(int fd);
 #endif

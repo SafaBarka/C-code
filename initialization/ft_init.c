@@ -12,6 +12,7 @@
 
 #include "../cub3d.h"
 
+
 void	ft_init(void)
 {
 	g_c.w = -1;
@@ -37,7 +38,7 @@ void	ft_init(void)
 	g_c.empty = 0;
 	g_c.fov = 60 * (M_PI / 180);
 	ft_init_tex();
-	g_c.wall =  malloc(sizeof(t_wall));
+	ft_init_wall();
 	ft_init_play();
 }
 
@@ -68,7 +69,7 @@ void	ft_init_play(void)
 	g_c.player->n = 0;
 	g_c.player->s = 0;
 	g_c.player->rad = 1;
-	g_c.player->mvs = 20;
+	g_c.player->mvs = 15;
 	g_c.player->rots = 20 * (M_PI / 180);
 	g_c.player->turn = 0;
 	g_c.player->walk = 0;
@@ -77,5 +78,12 @@ void	ft_init_play(void)
 void	ft_init_tex(void)
 {
 	if (!(g_c.t = malloc(sizeof(t_texture) * 5)))
+		ft_err("memory problem");
+}
+
+void	ft_init_wall(void)
+{
+	g_c.wall = malloc(sizeof(t_wall));
+	if (!g_c.wall)
 		ft_err("memory problem");
 }

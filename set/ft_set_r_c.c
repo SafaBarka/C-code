@@ -42,7 +42,16 @@ void	ft_set_f(char *str)
 	if (r < 0 || r > 255 || g < 0 || g > 255 || b < 0 || b > 255)
 		ft_err("something wrong with floor color");
 	g_c.f = ft_create_trgb(0, r, g, b);
-	ft_free_d(color);
+	////////////////////
+	int j;
+	j = 0;
+	while (color[j])
+	{
+		free(color[j]);
+		j++;
+	}
+	free(color);
+	////////////////////
 }
 
 void	ft_set_c(char *str)
@@ -66,8 +75,16 @@ void	ft_set_c(char *str)
 	if (r < 0 || r > 255 || g < 0 || g > 255 || b < 0 || b > 255)
 		ft_err("something wrong with floor color");
 	g_c.c = ft_create_trgb(0, r, g, b);
-	printf("ceiling color = %u\n",g_c.c);
-	ft_free_d(color);
+	//////////////////////
+	int j;
+	j = 0;
+	while (color[j])
+	{
+		free(color[j]);
+		j++;
+	}
+	free(color);
+	////////////////////
 }
 
 int		ft_create_trgb(int t, int r, int g, int b)

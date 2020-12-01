@@ -19,11 +19,12 @@ int		ft_check_var(char *line, int i)
 	if (ft_check_b_l(line[0]))
 		return (1);
 	if (!(str = ft_split(line, ' ')))
-		ft_err("failed to allocate memory");
+		ft_err("memory problem");
 	if (*str)
 		ft_check_v(str);
 	ft_free_d(str);
 	return (0);
+
 }
 
 void	ft_check_v(char **str)
@@ -46,4 +47,5 @@ void	ft_check_v(char **str)
 		ft_check_c(str);
 	else
 		ft_check_not_var(str);
+
 }

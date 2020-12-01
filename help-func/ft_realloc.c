@@ -33,5 +33,6 @@ char	*ft_realloc(char *line, int max_length)
 		i++;
 	}
 	new[i] = '\0';
+	free(line);
 	return (new);
 }

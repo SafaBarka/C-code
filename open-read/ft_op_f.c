@@ -17,14 +17,28 @@ int		ft_op_f(char *filename)
 	int	fd;
 
 	if ((fd = open(filename, O_RDONLY)) < 0)
+    {
+        system("leaks a.out");
 		ft_err("failed to open file");
+    }
 	return (fd);
 }
 
 int ft_deal_key(int key, void *param)
 {
+    //13 
+    //1
     ft_init_turn_walk();
-    
+    if (key == 2 )//D //walk to left
+    {
+       
+        printf("D keyword\n");
+    }
+    else if (key == 0)//A
+    {
+       
+        printf("A keyword\n"); //walk to right
+    }
     if ( key == 126) //up
         g_c.player->walk = +1;
     else if(key == 125) // down
@@ -51,6 +65,12 @@ void ft_init_turn_walk()
 
 void	ft_err(char *message)
 {
+  /*  if (g_c.player)
+        free(g_c.player);
+    if (g_c.wall)
+        free(g_c.wall);
+    if (g_c.t)
+        free(g_c.t);*/
 	ft_putstr_fd(message, 1);
 	exit(EXIT_FAILURE);
 }

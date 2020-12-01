@@ -14,6 +14,7 @@
 
 void	ft_read_map(int fd, int i)
 {
+	
 	while (g_c.i >= 0)
 	{
 		if (g_c.i == 0)
@@ -22,6 +23,7 @@ void	ft_read_map(int fd, int i)
 				g_c.empty = 1;
 			else
 				ft_valid();
+			free(g_c.line);
 			break ;
 		}
 		else
@@ -30,8 +32,9 @@ void	ft_read_map(int fd, int i)
 				g_c.empty = 1;
 			else
 				ft_valid();
-			g_c.i = get_next_line(fd, &g_c.line);
+			free(g_c.line);
 		}
+		g_c.i = get_next_line(fd, &g_c.line);
 	}
 }
 

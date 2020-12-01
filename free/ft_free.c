@@ -20,17 +20,15 @@ void ft_free_s(char *str)
 {
     free(str);
 }
-void ft_free_list(t_list *head)
+void ft_free_list()
 {
-    t_list *current;
-    t_list *next;
-    current = head;
+    t_list *tmp;
 
-
-    if (current != NULL)
+     while (g_c.head != NULL)
     {
-        next = current->next;
-        free(current);
-        current = next;
+       tmp = g_c.head;
+       g_c.head = g_c.head->next;
+       free(tmp);
     }
+	free(g_c.head);
 }
