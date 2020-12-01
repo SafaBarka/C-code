@@ -38,7 +38,9 @@ all :
 			update/ft_draw_black_screen.c\
 			update/ft_update.c\
 			update/ft_update_player.c\
-			check/ft_check_spaces.c
+			check/ft_check_spaces.c\
+			check/ft_check_save.c\
+			help-func/ft_memcpy.c
 
 			
 			

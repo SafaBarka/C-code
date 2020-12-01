@@ -101,8 +101,28 @@ typedef struct		s_wall{
 	int				distft;
 	int				txtox; //texture offset x
 	int				txtoy;	//texture offset y;
-}					t_wall;				
+}					t_wall;		
+typedef struct 		s_bitmap
+{
+	int width;
+	int height;
+	int bitcount;
+	int wi_byt;
+	int imagesize;
+	int bisize;
+	int bfoffbits;
+	int filesize;
+	int biplanes;
+	unsigned char header[54];	
+	unsigned char* buf;
+	int row;
+	int col;
+	int *color;		
+	int fd;
+
+}					t_bitmap;
 typedef	struct		s_config{
+	t_bitmap 		*bitmap;			
 	float			nexthx;
 	float			nexthy;
 	float			nextvx;
@@ -238,10 +258,17 @@ void ft_update_player();
 void ft_render_ceiling(int i);
 void ft_render_walls(int i);
 int		ft_op_f(char *filename);
-int ft_deal_key(int key, void *param);
-void ft_check_spaces();
-void ft_check_space(int j, int i);
+int		ft_deal_key(int key, void *param);
+void	ft_check_spaces();
+void	ft_check_space(int j, int i);
 void	ft_init_wall(void);
 void	ft_render(void);
 void	ft_read(int fd);
+void	ft_check_save(int argc,char *argv[]);
+void	ft_save();
+void	*ft_memcpy(void *dst, const void *src, size_t n);
+int     *get_colors(int color);
+void ft_set_header(void);
+void ft_set_init(void);
+
 #endif

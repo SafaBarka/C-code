@@ -65,12 +65,6 @@ void ft_init_turn_walk()
 
 void	ft_err(char *message)
 {
-  /*  if (g_c.player)
-        free(g_c.player);
-    if (g_c.wall)
-        free(g_c.wall);
-    if (g_c.t)
-        free(g_c.t);*/
 	ft_putstr_fd(message, 1);
 	exit(EXIT_FAILURE);
 }
