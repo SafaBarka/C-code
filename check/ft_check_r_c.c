@@ -17,6 +17,7 @@ void	ft_check_r(char **str)
 	ft_err_r(str);
 	ft_set_r(str);
 	ft_init_mlx();
+;
 }
 
 void	ft_check_c(char **str)

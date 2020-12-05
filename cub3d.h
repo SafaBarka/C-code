@@ -78,6 +78,8 @@ typedef struct		s_player{
 	float			mvs; //move speed
 	float			rots; //rotation speed
 	float			rad; //radius
+	float			mvstep;
+	int				lr;
 }					t_player;
 t_player			g_pl;
 
@@ -270,5 +272,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t n);
 int     *get_colors(int color);
 void ft_set_header(void);
 void ft_set_init(void);
+int					mlx_get_screen_size(void *mlx_ptr, int *sizex, int *sizey);
+
 
 #endif

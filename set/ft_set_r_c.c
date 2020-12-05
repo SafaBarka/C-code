@@ -14,9 +14,18 @@
 
 void	ft_set_r(char **str)
 {
+	int screenw;
+	int screenh;
+
+	mlx_get_screen_size(g_c.mlx,&screenw,&screenh);
 	g_c.nbrv++;
 	g_c.w = ft_atoi(str[1]);
 	g_c.h = ft_atoi(str[2]);
+	if (g_c.w > screenw)
+		g_c.w = screenw;
+	if (g_c.h > screenh)
+		g_c.h = screenh;
+	printf("width = %d height = %d\n",g_c.w,g_c.h);
 	g_c.nbrr = (int)(g_c.w);
 	g_c.rays = (t_ray *)malloc(sizeof(t_ray) * g_c.nbrr);
 }
