@@ -18,12 +18,19 @@ void	ft_read_var(int fd, int i)
 	while ((g_c.i = get_next_line(fd, &g_c.line)) >= 0 && g_c.nbrv != 8)
 	{
 		ft_check_var(g_c.line, g_c.i);
+		free(g_c.line);
 		if (g_c.i == 0)
 			break ;
+	}
+	while(g_c.i > 0 && g_c.line[0] == '\0')
+	{
 		free(g_c.line);
+		g_c.i = get_next_line(fd,&g_c.line);
 	}
 	if (g_c.i < 0)
-		ft_err("something wrong with .cub file");
+		ft_err("failed to read .cub file");
 	if (g_c.nbrv == 8)
 		ft_set_txts();
+	if (g_c.nbrv != 8)
+		ft_err("file data is missing");
 }

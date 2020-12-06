@@ -25,7 +25,6 @@ void	ft_set_r(char **str)
 		g_c.w = screenw;
 	if (g_c.h > screenh)
 		g_c.h = screenh;
-	printf("width = %d height = %d\n",g_c.w,g_c.h);
 	g_c.nbrr = (int)(g_c.w);
 	g_c.rays = (t_ray *)malloc(sizeof(t_ray) * g_c.nbrr);
 }

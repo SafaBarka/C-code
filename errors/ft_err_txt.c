@@ -23,7 +23,7 @@ void	ft_err_ea(char **str)
 		ft_err("'EA' parameters are not valid");
 	g_c.ea = ft_strtrim(g_c.line +3, " ");
 	g_c.nbrv++;
-	ft_check_txt_ea(g_c.ea);
+//	ft_check_txt_ea(g_c.ea);
 }
 
 void	ft_err_no(char **str)
@@ -35,7 +35,7 @@ void	ft_err_no(char **str)
 	if (ft_nbr_split(str) == 1)
 		ft_err("'NO' parameters are not valid");
 	g_c.no = ft_strtrim(g_c.line +3, " ");
-	ft_check_txt_no(g_c.no);
+	//ft_check_txt_no(g_c.no);
 	g_c.nbrv++;
 }
 
@@ -49,7 +49,7 @@ void	ft_err_so(char **str)
 	if (ft_nbr_split(str) == 1)
 		ft_err("'SO' parameters are not valid");
 	g_c.so = ft_strtrim(g_c.line +3, " ");
-	ft_check_txt_so(g_c.so);
+	//ft_check_txt_so(g_c.so);
 	g_c.nbrv++;
 }
 
@@ -63,7 +63,7 @@ void	ft_err_we(char **str)
 	if (ft_nbr_split(str) == 1)
 		ft_err("'WE' parameters are not valid");
 	g_c.we = ft_strtrim(g_c.line +3, " ");
-	ft_check_txt_we(g_c.we);
+	//ft_check_txt_we(g_c.we);
 	g_c.nbrv++;
 }
 
@@ -77,6 +77,6 @@ void	ft_err_s(char **str)
 	if (ft_nbr_split(str) == 1)
 		ft_err("'S' parameters are not valid");
 	g_c.s = ft_strtrim(g_c.line +2, " ");
-	ft_check_txt_s(g_c.s);
+	//ft_check_txt_s(g_c.s);
 	g_c.nbrv++;
 }

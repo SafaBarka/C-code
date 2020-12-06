@@ -29,7 +29,7 @@ char	*ft_realloc(char *line, int max_length)
 	}
 	while (i < g_c.ml)
 	{
-		new[i] = '1';
+		new[i] = ' ';
 		i++;
 	}
 	new[i] = '\0';

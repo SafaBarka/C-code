@@ -9,9 +9,10 @@ void ft_check_spaces()
     i = 0;
     while ( j < g_c.nbrl)
     {
+    
         while ( i <  g_c.ml)
         {
-            if (g_c.map[j][i] == ' ')
+            if (g_c.map[j][i] == '0')
                ft_check_space(j,i);
              i++;
         }
@@ -21,52 +22,53 @@ void ft_check_spaces()
 }
 void ft_check_space(int j, int i)
 {
-   if ( i == 0)
-   {
-       if ( g_c.map[j][i + 1] == '0')
+    
+    if ( i == 0)
+    {
+       if ( g_c.map[j][i + 1] == ' ')
        {
-           
-            printf("j = %d i = %d\n",j,i);
-            ft_err("space not closed");
+       printf("i = %d j = %d\n",i,j);
+            ft_err("map not closed");
        }
-   }else if ( i ==  g_c.ml - 1)
-   {
-       if (g_c.map[j][i - 1] == '0')
+    }
+    else if ( i ==  g_c.ml - 1)
+    {
+       if (g_c.map[j][i - 1] == ' ')
        {
-           printf("j = %d i = %d\n",j,i);
-           ft_err("Space not closed");
+       printf("i = %d j = %d\n",i,j);
+           ft_err("map not closed");
        }
-   }else 
-   {
-       if (g_c.map[j][i + 1] == '0' || g_c.map[j][i-1] == '0')
-        {
-            printf("j = %d i = %d\n",j,i);
-           ft_err("Space not closed");
-        }
-   }
+    }
+    else 
+    {
+       if (g_c.map[j][i + 1] == ' ' || g_c.map[j][i-1] == ' ')
+       {
+       printf("i = %d j = %d\n",i,j);
+           ft_err("map not closed");
+       }
+    }
    if ( j == 0)
    {
-       if (g_c.map[j+1][i] == '0')
+       if (g_c.map[j+1][i] == ' ')
        {
-           printf("j = %d i = %d\n",j,i);
-           ft_err("Space not closed");
+           printf("i = %d j = %d\n",i,j);
+           ft_err("map not closed");
        }
-   }else if ( j == g_c.nbrl - 1)
+   }
+   else if ( j == g_c.nbrl - 1)
    {
-         if (g_c.map[j-1][i] == '0')
-       {
-           printf("j = %d i = %d\n",j,i);
-            ft_err("Space not closed");
-       }
-   }else
-   {
-       if (g_c.map[j + 1][i] == '0' || g_c.map[j - 1][i] == '0')
+       if (g_c.map[j-1][i] == ' ')
         {
-            printf("j = %d i = %d\n",j,i);
-           ft_err("Space not closed");
+           printf("i = %d j = %d\n",i,j);
+            ft_err("map not closed");
         }
    }
-  
-   
-   
+   else
+   {
+       if (g_c.map[j + 1][i] == ' ' || g_c.map[j - 1][i] == ' ')
+        {
+           printf("i = %d j = %d\n",i,j);
+           ft_err("map not closed");
+        }
+   }
 }

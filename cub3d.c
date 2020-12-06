@@ -17,20 +17,73 @@ void ft_read(int fd)
 	int i;
 
 	ft_read_var(fd,i);
-	if (g_c.nbrv != 8)
-		ft_err("missing file data(variables)");
-	while ((g_c.i = get_next_line(fd,&g_c.line)) > 0 && g_c.line[0] == '\0')
-		free(g_c.line);
 	ft_read_map(fd,i);
-	if (g_c.nbrl == 0 )
-		ft_err("missing file data(map)");
-	if (g_c.player->f == 0)
-		ft_err("player is missing");
 	ft_store_array();
+	ft_check_array();
 	ft_check_spaces();
+	ft_space_to_wall();
 	ft_render();
 }
+void ft_space_to_wall()
+{
+	int i;
+	int j;
 
+	i = 0;
+	j = 0;
+	while (i < g_c.ro)
+	{
+		j = 0;
+		while (j < g_c.co)
+		{
+			if(g_c.map[i][j] == ' ')
+				g_c.map[i][j] = '1';
+			j++;
+		}
+		i++;
+	}
+}
+void ft_check_fl(char *line)
+{
+	int i = 0;
+	while (line[i])
+	{
+		if (line[i] != ' ' && line[i] != '1')
+			ft_err("not closed map");
+		i++;
+	}
+}
+void ft_check_ml(char *line)
+{
+	int i = 0;
+	while (line[i] == ' ')
+		i++;
+	if (line[i] == '0')
+		ft_err("not closed map");
+	i = ft_strlen(line) - 1;	
+	while(i >= 0 && line[i] == ' ')
+		i--;
+	if(i >= 0 && line[i] == '0')
+		ft_err("not closed map");
+}
+void ft_check_array()
+{
+	int i;
+	int j;
+
+	i = 0;
+	j = 0;
+
+	while (i < g_c.ro)
+	{
+		if (i == 0 || i == g_c.nbrl - 1)
+			ft_check_fl(g_c.map[i]);
+		else
+			ft_check_ml(g_c.map[i]);
+		
+		i++;
+	}
+}
 void ft_render(void)
 {
 	ft_cast();
@@ -39,9 +92,6 @@ void ft_render(void)
 
 int	main(int argc, char *argv[])
 {
-
-
-	
 	int fd;
 	int i;
 

@@ -210,7 +210,6 @@ void				ft_set_we();
 void				ft_set_ea();
 void				ft_read_map(int fd, int i);
 void				ft_check_map(char *line, int i);
-void				ft_check_fl(char *line);
 void				ft_set_player(int i, float angle);
 void				ft_check_ml(char *line);
 void				ft_check_v(char **str);
@@ -274,5 +273,8 @@ void ft_set_header(void);
 void ft_set_init(void);
 int					mlx_get_screen_size(void *mlx_ptr, int *sizex, int *sizey);
 
-
+void ft_check_array();
+void ft_check_fl(char *line);
+void ft_check_ml(char *line);
+void ft_space_to_wall();
 #endif

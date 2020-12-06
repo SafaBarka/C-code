@@ -14,7 +14,6 @@
 
 void	ft_read_map(int fd, int i)
 {
-	
 	while (g_c.i >= 0)
 	{
 		if (g_c.i == 0)
@@ -34,26 +33,32 @@ void	ft_read_map(int fd, int i)
 		}
 		g_c.i = get_next_line(fd, &g_c.line);
 	}
+	
+	if (g_c.nbrl == 0 )
+		ft_err("map is missing");
+	if (g_c.player->f == 0)
+		ft_err("player is missing");
+
 }
 
 void	ft_valid(void)
 {
-		g_c.nbrl++;
+	g_c.nbrl++;
 	ft_check_inv();
 	if (g_c.empty == 1 && g_c.nbrl > 0)
 		ft_err("break line in map ");
 	else
 		ft_store_list();
 }
-
 void	ft_check_inv(void)
 {
 	int i;
 	int len;
 
 	len = ft_strlen(g_c.line);
-	i = 1;
-	while (i < len -1)
+
+	i = 0;
+	while (i < len)
 	{
 		if (g_c.player->f == 0 && g_c.line[i] == 'N')
 			ft_set_player(i, (3 * M_PI) / 2);
