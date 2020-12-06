@@ -19,11 +19,13 @@ void ft_read(int fd)
 	ft_read_var(fd,i);
 	ft_read_map(fd,i);
 	ft_store_array();
+	ft_free_list();
 	ft_check_array();
 	ft_check_spaces();
 	ft_space_to_wall();
 	ft_render();
 }
+
 void ft_space_to_wall()
 {
 	int i;
@@ -43,6 +45,7 @@ void ft_space_to_wall()
 		i++;
 	}
 }
+
 void ft_check_fl(char *line)
 {
 	int i = 0;
@@ -53,6 +56,7 @@ void ft_check_fl(char *line)
 		i++;
 	}
 }
+
 void ft_check_ml(char *line)
 {
 	int i = 0;
@@ -66,6 +70,7 @@ void ft_check_ml(char *line)
 	if(i >= 0 && line[i] == '0')
 		ft_err("not closed map");
 }
+
 void ft_check_array()
 {
 	int i;
@@ -101,6 +106,7 @@ int	main(int argc, char *argv[])
 	ft_init();
 	ft_read(fd);
 	ft_check_save(argc,argv);
+	//system("leaks a.out");
 	mlx_put_image_to_window(g_c.mlx,g_c.mlx_win,g_c.img.im,0,0);
     mlx_hook(g_c.mlx_win, 2, 0, ft_deal_key, (void *)0);
     mlx_loop(g_c.mlx);

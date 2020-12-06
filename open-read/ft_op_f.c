@@ -61,6 +61,7 @@ void ft_init_turn_walk()
 
 void	ft_err(char *message)
 {
+    
 	ft_putstr_fd(message, 1);
 	exit(EXIT_FAILURE);
 }

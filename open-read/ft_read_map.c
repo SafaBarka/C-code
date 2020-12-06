@@ -23,6 +23,7 @@ void	ft_read_map(int fd, int i)
 			else
 				ft_valid();
 			break ;
+
 		}
 		else
 		{
@@ -31,9 +32,10 @@ void	ft_read_map(int fd, int i)
 			else
 				ft_valid();
 		}
+		free(g_c.line);
 		g_c.i = get_next_line(fd, &g_c.line);
+		
 	}
-	
 	if (g_c.nbrl == 0 )
 		ft_err("map is missing");
 	if (g_c.player->f == 0)
