@@ -238,4 +238,6 @@ void ft_check_array();
 void ft_check_fl(char *line);
 void ft_check_ml(char *line);
 void ft_space_to_wall();
+void ft_check_file_ex(char *filename);
+void free_exit();
 #endif

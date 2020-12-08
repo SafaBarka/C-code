@@ -32,3 +32,23 @@ void ft_free_list()
     }
 	free(g_c.head);
 }
+
+// in exit mode
+//free map char **map
+//free player
+//free mlx things
+//free wall;
+//free text
+
+void free_exit()
+{
+    free(g_c.player);
+    ft_free_d(g_c.map);
+    free(g_c.t);
+    free(g_c.rays);
+    free(g_c.no);
+    free(g_c.so);
+    free(g_c.we);
+    free(g_c.ea);
+    free(g_c.s);
+}

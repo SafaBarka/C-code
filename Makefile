@@ -1,5 +1,5 @@
 all :
-	gcc   -g    -lmlx -framework OpenGL -framework AppKit  libmlx.dylib -D BUFFER_SIZE=60\
+	gcc   -g -lmlx -framework OpenGL -framework AppKit  libmlx.dylib -D BUFFER_SIZE=60\
 			cub3d.c\
 			ft_read_var.c\
 			ft_read_map.c\
