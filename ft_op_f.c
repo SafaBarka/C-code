@@ -87,8 +87,8 @@ void ft_render(void)
 
 void ft_init_turn_walk()
 {
-    g_c.player->turn = 0;
-    g_c.player->walk = 0;
-    g_c.player->lr = 0;
+    g_c.player.turn = 0;
+    g_c.player.walk = 0;
+    g_c.player.lr = 0;
 }
 

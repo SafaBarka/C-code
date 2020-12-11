@@ -38,7 +38,7 @@ void	ft_read_map(int fd, int i)
 	}
 	if (g_c.nbrl == 0 )
 		ft_err("map is missing");
-	if (g_c.player->f == 0)
+	if (g_c.player.f == 0)
 		ft_err("player is missing");
 
 }
@@ -62,13 +62,13 @@ void	ft_check_inv(void)
 	i = 0;
 	while (i < len)
 	{
-		if (g_c.player->f == 0 && g_c.line[i] == 'N')
+		if (g_c.player.f == 0 && g_c.line[i] == 'N')
 			ft_set_player(i, (3 * M_PI) / 2);
-		else if (g_c.player->f == 0 && g_c.line[i] == 'S')
+		else if (g_c.player.f == 0 && g_c.line[i] == 'S')
 			ft_set_player(i, (M_PI / 2));
-		else if (g_c.player->f == 0 && g_c.line[i] == 'W')
+		else if (g_c.player.f == 0 && g_c.line[i] == 'W')
 			ft_set_player(i, M_PI);
-		else if (g_c.player->f == 0 && g_c.line[i] == 'E')
+		else if (g_c.player.f == 0 && g_c.line[i] == 'E')
 			ft_set_player(i, 0);
 		else if (g_c.line[i] == 'N' || g_c.line[i] == 'S'
 				|| g_c.line[i] == 'W' || g_c.line[i] == 'E')
@@ -83,17 +83,17 @@ void	ft_check_inv(void)
 
 void	ft_set_player(int i, float angle)
 {
-	g_c.player->x = i;
-	g_c.player->y = g_c.nbrl;
-	g_c.player->f = 1;
-	g_c.player->rota = angle;
+	g_c.player.x = i;
+	g_c.player.y = g_c.nbrl;
+	g_c.player.f = 1;
+	g_c.player.rota = angle;
 	if (g_c.line[i] == 'N')
-		g_c.player->n = 1;
+		g_c.player.n = 1;
 	else if (g_c.line[i] == 'S')
-		g_c.player->s = 1;
+		g_c.player.s = 1;
 	else if (g_c.line[i] == 'W')
-		g_c.player->w = 1;
+		g_c.player.w = 1;
 	else if (g_c.line[i] == 'E')
-		g_c.player->e = 1;
+		g_c.player.e = 1;
 	g_c.line[i] = '0';
 }

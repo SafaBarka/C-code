@@ -41,20 +41,20 @@ void	ft_init_mlx(void)
 
 void	ft_init_play(void)
 {
-	if (!(g_c.player = malloc(sizeof(t_player))))
-		ft_err("memory problem");
-	g_c.player->x = 0;
-	g_c.player->y = 0;
-	g_c.player->f = 0;
-	g_c.player->e = 0;
-	g_c.player->w = 0;
-	g_c.player->n = 0;
-	g_c.player->s = 0;
-	g_c.player->rad = 1;
-	g_c.player->mvs = 15;
-	g_c.player->rots = 20 * (M_PI / 180);
-	g_c.player->turn = 0;
-	g_c.player->walk = 0;
+	//if (!(g_c.player = malloc(sizeof(t_player))))
+	//	ft_err("memory problem");
+	g_c.player.x = 0;
+	g_c.player.y = 0;
+	g_c.player.f = 0;
+	g_c.player.e = 0;
+	g_c.player.w = 0;
+	g_c.player.n = 0;
+	g_c.player.s = 0;
+	g_c.player.rad = 1;
+	g_c.player.mvs = 15;
+	g_c.player.rots = 20 * (M_PI / 180);
+	g_c.player.turn = 0;
+	g_c.player.walk = 0;
 }
 
 void	ft_init(void)

@@ -63,7 +63,7 @@ void ft_render_3d()
     while(i < g_c.nbrr)
     {
         if (g_c.rays[i].dis != 0)
-            g_c.wall->perd = g_c.rays[i].dis * cos(g_c.rays[i].a - g_c.player->rota);
+            g_c.wall->perd = g_c.rays[i].dis * cos(g_c.rays[i].a - g_c.player.rota);
         else
             g_c.wall->perd = 1;
         g_c.wall->distpp = (g_c.w /2) /tan(g_c.fov / 2);

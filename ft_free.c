@@ -42,7 +42,7 @@ void ft_free_list()
 
 void free_exit()
 {
-    free(g_c.player);
+   // free(g_c.player);
     ft_free_d(g_c.map);
     free(g_c.t);
     free(g_c.rays);

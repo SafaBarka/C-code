@@ -36,6 +36,7 @@ int		ft_atoi(const char *str)
 	}
 	if (nbr > 9223372036854775807)
 		return (n > 0 ? -1 : 0);
+
 	return (nbr * n);
 }
 

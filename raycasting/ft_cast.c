@@ -20,7 +20,7 @@ void	ft_cast(void)
 	g_c.temp_w = g_c.tw * g_c.co;
 	g_c.temp_h = g_c.th * g_c.ro;
 	c = 0;
-	angle = g_c.player->rota - (g_c.fov / 2);
+	angle = g_c.player.rota - (g_c.fov / 2);
 	while (c < g_c.nbrr)
 	{
 		g_c.rays[c].a = angle;
@@ -76,10 +76,10 @@ void	ft_draw_ray(t_ray *ray)
 	float vdistance;
 
 	hdistance = ray->fh
-		? ft_calcul_distance(g_c.player->x, g_c.player->y, ray->hx, ray->hy)
+		? ft_calcul_distance(g_c.player.x, g_c.player.y, ray->hx, ray->hy)
 		: 1000000;
 	vdistance = ray->fv
-		? ft_calcul_distance(g_c.player->x, g_c.player->y, ray->vx, ray->vy)
+		? ft_calcul_distance(g_c.player.x, g_c.player.y, ray->vx, ray->vy)
 		: 1000000;
 	if (vdistance < hdistance)
 	{

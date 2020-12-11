@@ -74,5 +74,20 @@ void ft_save()
 void	ft_err(char *message)
 {
 	ft_putstr_fd(message, 1);
+	
+	ft_failed();
+}
+void ft_failed()
+{
+	ft_free_d(g_c.map);
+	ft_free_list();
 	exit(EXIT_FAILURE);
+}
+void ft_check_save(int argc,char *argv[])
+{
+		ft_save();
+		mlx_destroy_window(g_c.mlx, g_c.mlx_win);
+	    free_exit();
+		exit(EXIT_SUCCESS);
+    
 }

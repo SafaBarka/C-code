@@ -159,7 +159,7 @@ typedef	struct		s_config{
 	int				nbrr;
 	int				temp_w; //temp width
 	int				temp_h; //temp height
-	t_player		*player;
+	t_player		player;
 	t_texture		*t; //array of texture
 	t_ray			*rays; //array of rays
 	int				empty;
@@ -175,8 +175,8 @@ int					ft_atoi(const char *str);
 char				**ft_split(char const *s, char c);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
 void				ft_check_r(char **str);
-void				ft_check_c(char **str);
-void				ft_check_f(char **str);
+void				ft_check_c();
+void				ft_check_f();
 void				ft_check_s(char **str);
 void				ft_err_s(char **str);
 void				ft_err_ea(char **str);
@@ -240,4 +240,7 @@ void ft_check_ml(char *line);
 void ft_space_to_wall();
 void ft_check_file_ex(char *filename);
 void free_exit();
+int ft_nbr_comma(char *s);
+void ft_check_save(int argc,char *argv[]);
+int		ft_deal_key(int key, void *param);
 #endif

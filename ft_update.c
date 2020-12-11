@@ -1,5 +1,28 @@
 #include "cub3d.h"
-
+int		ft_deal_key(int key, void *param)
+{
+	ft_init_turn_walk();
+	if (key == 2)
+		g_c.player.lr = -1;
+	else if (key == 0)
+		g_c.player.lr = +1;
+	if (key == 126 || key == 13)
+		g_c.player.walk = +1;
+	else if (key == 125 || key == 1)
+		g_c.player.walk = -1;
+	else if (key == 124)
+		g_c.player.turn = +1;
+	else if (key == 123)
+		g_c.player.turn = -1;
+	else if (key == 53)
+	{
+		mlx_destroy_window(g_c.mlx, g_c.mlx_win);
+		free_exit();
+		exit(EXIT_SUCCESS);
+	}
+	ft_update();
+	return (1);
+}
 int ft_has_wall(float x, float y)
 {
     
@@ -36,24 +59,24 @@ void ft_update_player()
     float newy;
     float rlangle;
 
-    if(g_c.player->lr != 0)
+    if(g_c.player.lr != 0)
     {
-      rlangle = g_c.player->rota - M_PI / 2;
-      g_c.player->mvstep = g_c.player->lr * g_c.player->mvs;
+      rlangle = g_c.player.rota - M_PI / 2;
+      g_c.player.mvstep = g_c.player.lr * g_c.player.mvs;
     }else
     {
-      g_c.player->rota += g_c.player->turn *g_c.player->rots;
-      g_c.player->mvstep = g_c.player->walk * g_c.player->mvs;
-      rlangle = g_c.player->rota;
+      g_c.player.rota += g_c.player.turn *g_c.player.rots;
+      g_c.player.mvstep = g_c.player.walk * g_c.player.mvs;
+      rlangle = g_c.player.rota;
     }
-    newx= g_c.player->x +cos(rlangle) *  g_c.player->mvstep *2 ;
-    newy= g_c.player->y + sin(rlangle) *  g_c.player->mvstep *2 ;
+    newx= g_c.player.x +cos(rlangle) *  g_c.player.mvstep *2 ;
+    newy= g_c.player.y + sin(rlangle) *  g_c.player.mvstep *2 ;
     int a = floor(newx / g_c.tw );
     int b = floor(newy /g_c.th);
     if ((a > 0 && b > 0) && ft_has_wall(newx , newy) != '1')
     {
-      g_c.player->x = g_c.player->x +cos(rlangle) *  g_c.player->mvstep;
-      g_c.player->y = g_c.player->y + sin(rlangle) *  g_c.player->mvstep;
+      g_c.player.x = g_c.player.x +cos(rlangle) *  g_c.player.mvstep;
+      g_c.player.y = g_c.player.y + sin(rlangle) *  g_c.player.mvstep;
     }
 }
 

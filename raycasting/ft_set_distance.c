@@ -15,9 +15,9 @@
 
 void	ft_set_horiz_var(t_ray *ray)
 {
-	ray->yi = floor(g_c.player->y / g_c.th) * g_c.th;
+	ray->yi = floor(g_c.player.y / g_c.th) * g_c.th;
 	ray->yi += ray->d ? g_c.th : 0;
-	ray->xi = g_c.player->x + (ray->yi - g_c.player->y) / tan(ray->a);
+	ray->xi = g_c.player.x + (ray->yi - g_c.player.y) / tan(ray->a);
 	ray->ys = g_c.th;
 	ray->ys *= ray->u ? -1 : 1;
 	ray->xs = g_c.th / tan(ray->a);
@@ -57,9 +57,9 @@ void	ft_set_horiz_distance(t_ray *ray)
 
 void	ft_set_vert_var(t_ray *ray)
 {
-	ray->xi = floor(g_c.player->x / g_c.tw) * g_c.tw;
+	ray->xi = floor(g_c.player.x / g_c.tw) * g_c.tw;
 	ray->xi += ray->r ? g_c.tw : 0;
-	ray->yi = g_c.player->y + (ray->xi - g_c.player->x) * tan(ray->a);
+	ray->yi = g_c.player.y + (ray->xi - g_c.player.x) * tan(ray->a);
 	ray->xs = g_c.tw;
 	ray->xs *= ray->l ? -1 : 1;
 	ray->ys = g_c.tw * tan(ray->a);

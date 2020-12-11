@@ -6,7 +6,7 @@
 /*   By: sbarka <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/18 16:10:02 by sbarka            #+#    #+#             */
-/*   Updated: 2020/11/25 13:33:16 by sbarka           ###   ########.fr       */
+/*   Updated: 2020/12/11 14:55:54 by sbarka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_set_r(char **str)
 	int screenw;
 	int screenh;
 
-	mlx_get_screen_size(g_c.mlx,&screenw,&screenh);
+	mlx_get_screen_size(g_c.mlx, &screenw, &screenh);
 	g_c.nbrv++;
 	g_c.w = ft_atoi(str[1]);
 	g_c.h = ft_atoi(str[2]);
@@ -26,7 +26,8 @@ void	ft_set_r(char **str)
 	if (g_c.h > screenh)
 		g_c.h = screenh;
 	g_c.nbrr = (int)(g_c.w);
-	g_c.rays = (t_ray *)malloc(sizeof(t_ray) * g_c.nbrr);
+	if (!(g_c.rays = (t_ray *)malloc(sizeof(t_ray) * g_c.nbrr)))
+		ft_err("memory problem");
 }
 
 void	ft_err_r(char **str)
@@ -46,9 +47,4 @@ void	ft_check_r(char **str)
 	ft_err_r(str);
 	ft_set_r(str);
 	ft_init_mlx();
-
 }
-
-
-
-

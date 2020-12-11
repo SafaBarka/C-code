@@ -1,37 +1,55 @@
 #include "cub3d.h"
-void	ft_err_c(char **str)
+
+int ft_nbr_comma(char *s)
 {
-	if (g_c.c != -1)
-		ft_err("redefining variable 'C' in file");
-	if (ft_nbr_split(str) != 2)
-		ft_err("'C' parameters are not valid");
+
+	int i = 0;
+	int sum = 0;
+	while (s[i])
+	{
+		if (s[i] == ',')
+			sum++;
+		i++;
+	}
+	return sum;
 }
-void	ft_set_c(char *str)
+void	ft_check_c()
 {
-	char	**color;
+	char *trim;
+	char **color;
 	int		r;
 	int		g;
-	int		b;
-
+	int     b;
+	char	*tmp1;
 	g_c.nbrv++;
-	if (!(color = ft_split(str, ',')))
+	if (g_c.c != -1)
+		ft_err("redefining variable 'C' in file");
+	if(!(trim = ft_strtrim(g_c.line + 1," ")))
 		ft_err("memory problem");
+	if (ft_nbr_comma(g_c.line +1) != 2)
+		ft_err("invalid parameters for ceiling color");
+	if(!(color = ft_split(trim,',')))
+		ft_err("mmeory problem");
 	if (ft_nbr_split(color) != 3)
-		ft_err("something wrong with floor color");
-	if (ft_is_number(color[0]) == 0 || ft_is_number(color[1]) == 0
-		|| ft_is_number(color[2]) == 0)
-		ft_err("something wrong with floor color");
-	r = ft_atoi(color[0]);
-	g = ft_atoi(color[1]);
-	b = ft_atoi(color[2]);
+		ft_err("ceiling color nbr  parameters are not valid");
+	tmp1 = (char *)ft_strtrim(color[0]," ");
+	if (ft_is_number(tmp1) == 0)
+		ft_err("ceiling color is not valid arg1");
+	r = ft_atoi(tmp1);
+	free(tmp1);
+	tmp1 = (char *)ft_strtrim(color[1]," ");
+	if ( ft_is_number(tmp1) == 0)
+		ft_err("ceiling color is not valid arg2");
+	g = ft_atoi(tmp1);
+	free(tmp1);
+	tmp1 = (char *)ft_strtrim(color[2]," ");
+	if ( ft_is_number(tmp1) == 0)
+		ft_err("ceiling color is not valid arg3");
+	b = ft_atoi(tmp1);
+	free(tmp1);
 	if (r < 0 || r > 255 || g < 0 || g > 255 || b < 0 || b > 255)
-		ft_err("something wrong with floor color");
+		ft_err("something wrong with ceiling color");
 	g_c.c = ft_create_trgb(0, r, g, b);
 	ft_free_d(color);
-}
-
-void	ft_check_c(char **str)
-{
-	ft_err_c(str);
-	ft_set_c(str[1]);
+	free(trim);
 }
