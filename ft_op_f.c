@@ -153,7 +153,7 @@ void	draw_sprite(t_list *tmp)
 	while (++i < ((t_sprit *)tmp->line)->size - 1)
 	{
 		if (((t_sprit *)tmp->line)->x_ofst + i < 0 ||
-				((t_sprit *)tmp->line)->x_ofst + i > g_c.w)
+				((t_sprit *)tmp->line)->x_ofst + i >= g_c.w)
 			continue;
 		if ((int)((t_sprit *)tmp->line)->x_ofst + i >= g_c.nbrr)
 			continue;
@@ -163,7 +163,7 @@ void	draw_sprite(t_list *tmp)
 		while (++j < ((t_sprit *)tmp->line)->size - 1)
 		{
 			if (((t_sprit *)tmp->line)->y_ofst + j < 0 ||
-					((t_sprit *)tmp->line)->y_ofst + j > g_c.h)
+					((t_sprit *)tmp->line)->y_ofst + j >= g_c.h)
 				continue;
 			sprite_pp(tmp, i,j );
 		}
