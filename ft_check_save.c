@@ -74,8 +74,7 @@ void ft_save()
 void	ft_err(char *message)
 {
 	ft_putstr_fd(message, 1);
-	
-	ft_failed();
+	exit(EXIT_FAILURE);
 }
 void ft_failed()
 {

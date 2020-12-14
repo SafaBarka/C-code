@@ -37,9 +37,9 @@ int		ft_lst_size(void)
 	return (i);
 }
 
-void	ft_lstadd_back(t_list *alst, t_list *new)
+void	ft_lstadd_back(t_list **alst, t_list *new)
 {
-	t_list *lst;
+	/*t_list *lst;
 
 	if (alst == NULL)
 		alst = new;
@@ -47,10 +47,37 @@ void	ft_lstadd_back(t_list *alst, t_list *new)
 	{
 		lst = ft_lstlast(alst);
 		lst->next = new;
+	}*/
+
+	t_list *lst;
+
+	if (*alst == NULL)
+		*alst = new;
+	else if (*alst && new)
+	{
+		lst = ft_lstlast(*alst);
+		lst->next = new;
 	}
 }
+/*
+void	ft_calcul_dist(void)
+{
+	t_list	*curr;
+	int		x;
+	int		y;
 
-t_list	*ft_lstnew(char *line)
+	curr = g_conf.sprite_head;
+	while (curr)
+	{
+		x = ((t_sprit *)curr->content)->x;
+		y = ((t_sprit *)curr->content)->y;
+		((t_sprit *)curr->content)->dis = distance_between(g_player.pos.x, \
+		g_player.pos.y, x, y);
+		curr = curr->next;
+	}
+}
+*/
+t_list	*ft_lstnew(void *line)
 {
 	t_list *element;
 
@@ -72,3 +99,14 @@ void	ft_print_list(t_list *head)
 		tmp = tmp->next;
 	}
 }
+
+/*void	ft_print_list(t_list *head)
+{
+	t_list *tmp;
+	tmp = head;
+	while(tmp != NULL)
+	{
+		t_sprit  sp = tmp->(t_sprit)line;
+		printf("x = |%d|\n",(t_sprit)tmp->line->x)
+	}
+}*/

@@ -74,7 +74,9 @@ void	ft_check_inv(void)
 				|| g_c.line[i] == 'W' || g_c.line[i] == 'E')
 			ft_err("redefined player in map");
 		else if (g_c.line[i] == '2')
-			g_c.line[i] = '0';
+		{
+			//g_c.line[i] = '0';
+		}
 		else if (g_c.line[i] != '1' && g_c.line[i] != ' ' && g_c.line[i] != '0')
 			ft_err("the element not valid in map");
 		i++;

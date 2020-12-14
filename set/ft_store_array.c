@@ -86,7 +86,7 @@ void	ft_store_list(void)
 	{
 		if (len >= g_c.ml)
 			g_c.ml = len;
-		ft_lstadd_back(g_c.head, ft_lstnew(new));
+		ft_lstadd_back(&g_c.head, ft_lstnew(new));
 		
 	}
 }

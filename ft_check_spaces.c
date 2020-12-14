@@ -44,7 +44,7 @@ void ft_check_spaces()
     
         while ( i <  g_c.ml)
         {
-            if (g_c.map[j][i] == '0')
+            if (g_c.map[j][i] == '0' || g_c.map[j][i] == '2')
                ft_check_space(j,i);
              i++;
         }

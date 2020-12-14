@@ -89,7 +89,9 @@ void ft_update()
     
     ft_update_player();
     ft_cast();
+     
     ft_render_3d();
+    ft_render_sprites();
     mlx_put_image_to_window(g_c.mlx,g_c.mlx_win,g_c.img.im,0,0);
 
 }

@@ -56,15 +56,15 @@ int		main(int argc, char *argv[])
 	int	fd;
 	int	i;
 
-	if (argc == 1)//check if file name is missing
+	if (argc == 1)
 		ft_err("file name is missing");
-	ft_check_file_ex(argv[1]);//check if the file has extension .cub
-	fd = ft_op_f(argv[1]);//open the file
-	ft_init(); //initialize configuration
+	ft_check_file_ex(argv[1]);
+	fd = ft_op_f(argv[1]);
+	ft_init();
 	ft_read(fd);
 	if (argc >= 3 && ft_strncmp(argv[2], "--save", 7) == 0)
-		ft_check_save(argc, argv);
-	system("leaks a.out");
+	ft_check_save(argc, argv);
+	//system("leaks a.out");
 	mlx_put_image_to_window(g_c.mlx, g_c.mlx_win, g_c.img.im, 0, 0);
 	mlx_hook(g_c.mlx_win, 2, 0, ft_deal_key, (void *)0);
 	mlx_hook(g_c.mlx_win, 17, 1L << 17, ft_exit, (void *)0);

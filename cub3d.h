@@ -36,7 +36,7 @@ typedef	struct		s_image{
 }					t_image;
 
 typedef	struct		s_list{
-	char			*line;
+	void			*line;
 	struct s_list	*next;
 }					t_list;
 
@@ -92,6 +92,18 @@ typedef struct		s_texture{
 	int				e; //endian
 	void			*img; //image *xpm
 }					t_texture;
+typedef struct		s_sprit
+{
+	int			x;
+	int			y;
+	int			size;
+	float		dis;
+	//int			exist;
+	float		angle;
+	int			i;
+	float		y_ofst;
+	float		x_ofst;
+}				t_sprit;
 
 typedef struct		s_wall{
 	float			perd; //perpdistance
@@ -103,7 +115,8 @@ typedef struct		s_wall{
 	int				distft;
 	int				txtox; //texture offset x
 	int				txtoy;	//texture offset y;
-}					t_wall;		
+}					t_wall;	
+	
 typedef struct 		s_bitmap
 {
 	int width;
@@ -163,6 +176,8 @@ typedef	struct		s_config{
 	t_texture		*t; //array of texture
 	t_ray			*rays; //array of rays
 	int				empty;
+	t_list			*sp;
+			
 }					t_config;
 t_config			g_c;
 
@@ -197,8 +212,8 @@ void				ft_store_list(void);
 t_list				*ft_lstlast(t_list *lst);
 void				ft_valid();
 int					ft_lst_size(void);
-void				ft_lstadd_back(t_list *alst, t_list *new);
-t_list				*ft_lstnew(char *line);
+void				ft_lstadd_back(t_list **alst, t_list *new);
+t_list				*ft_lstnew(void *line);
 void				ft_print_list(t_list *head);
 void				ft_check_inv(void);
 void				ft_store_array();
@@ -243,4 +258,15 @@ void free_exit();
 int ft_nbr_comma(char *s);
 void ft_check_save(int argc,char *argv[]);
 int		ft_deal_key(int key, void *param);
+void ft_store_sprite(int y, int x);
+void ft_dist_sprite();
+void ft_draw_rectangle(int x , int y, int color);
+//void ft_render_sprite();
+void ft_render_sprite(t_list *tmp);
+void ft_render_sprites();
+void ft_sort_list();
+void	draw_sprite(t_list *tmp);
+void	ft_set_s(void);
+void	sprite_pp(t_list *sprit, int i, int j);
+
 #endif

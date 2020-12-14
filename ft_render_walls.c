@@ -41,7 +41,47 @@ void ft_render_walls(int i)
         }
         y++;
     }
+    //ft_render_sprite();
 }
+void ft_draw_rectangle(int x , int y, int color)
+{
+        int i ;
+        int j;
+       
+        i = x + g_c.tw;
+        j = y + g_c.th;
+        while ( x < i)
+        {
+            while (y <j)
+            {
+                  //  if (x  == (i - config.tile_width)  ||  x == i -1   ||
+                  //  y == (j - config.tile_height) || y == j -1)
+                  //  {
+                      
+                  //    ft_put_pixel_to_image(x,y,yellow,1);
+                  //  }else
+                        ft_put_pixel_to_image(x,y,color,1);
+                    y++;
+            }
+            x++;
+           // y = j - config.tile_height;
+           y = j - g_c.th;
+        }
+       
+}
+/*void ft_render_sprite()
+{
+    t_list *tmp = g_c.sp;
+    int x;
+    int y;
+	while (tmp != NULL)
+	{
+        x = ((t_sprit *)tmp->line)->x;
+        y = ((t_sprit *)tmp->line)->y;
+		ft_draw_rectangle(x,y,red);
+		tmp = tmp->next;
+	}
+}*/
 void    ft_render_floor(int i)
 {
     int y;

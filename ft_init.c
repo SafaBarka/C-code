@@ -81,6 +81,7 @@ void	ft_init(void)
 	g_c.head = NULL;
 	g_c.empty = 0;
 	g_c.fov = 60 * (M_PI / 180);
+	g_c.sp = NULL;
 	ft_init_tex();
 	ft_init_wall();
 	ft_init_play();
