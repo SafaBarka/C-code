@@ -1,54 +1,54 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_free.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sbarka <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/12/16 13:36:59 by sbarka            #+#    #+#             */
+/*   Updated: 2020/12/16 13:40:49 by sbarka           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "cub3d.h"
 
-void ft_free_d(char **str)
+void	ft_free_d(char **str)
 {
-    int i ;
+	int i;
 
-    i = 0;
-    if (str)
-    {
-        while(str[i])
-        {
-            free(str[i]);
-            i++;
-        }
-    }
-    free(str);
+	i = 0;
+	if (str)
+	{
+		while (str[i])
+		{
+			free(str[i]);
+			i++;
+		}
+	}
+	free(str);
 }
 
-void ft_free_s(char *str)
+void	ft_free_list(void)
 {
-    free(str);
-}
-void ft_free_list()
-{
-    t_list *tmp;
+	t_list *tmp;
 
-     while (g_c.head != NULL)
-    {
-       tmp = g_c.head;
-       g_c.head = g_c.head->next;
-       free(tmp);
-    }
+	while (g_c.head != NULL)
+	{
+		tmp = g_c.head;
+		g_c.head = g_c.head->next;
+		free(tmp);
+	}
 	free(g_c.head);
 }
 
-// in exit mode
-//free map char **map
-//free player
-//free mlx things
-//free wall;
-//free text
-
-void free_exit()
+void	free_exit(void)
 {
-   // free(g_c.player);
-    ft_free_d(g_c.map);
-    free(g_c.t);
-    free(g_c.rays);
-    free(g_c.no);
-    free(g_c.so);
-    free(g_c.we);
-    free(g_c.ea);
-    free(g_c.s);
+	ft_free_d(g_c.map);
+	free(g_c.t);
+	free(g_c.rays);
+	free(g_c.no);
+	free(g_c.so);
+	free(g_c.we);
+	free(g_c.ea);
+	free(g_c.s);
 }

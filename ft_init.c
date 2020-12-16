@@ -6,16 +6,11 @@
 /*   By: sbarka <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/19 10:16:38 by sbarka            #+#    #+#             */
-/*   Updated: 2020/11/25 16:32:31 by sbarka           ###   ########.fr       */
+/*   Updated: 2020/12/16 11:52:09 by sbarka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
-void	ft_init_tex(void)
-{
-	if (!(g_c.t = malloc(sizeof(t_texture) * 5)))
-		ft_err("memory problem");
-}
 
 void	ft_init_wall(void)
 {
@@ -41,8 +36,6 @@ void	ft_init_mlx(void)
 
 void	ft_init_play(void)
 {
-	//if (!(g_c.player = malloc(sizeof(t_player))))
-	//	ft_err("memory problem");
 	g_c.player.x = 0;
 	g_c.player.y = 0;
 	g_c.player.f = 0;
@@ -82,11 +75,6 @@ void	ft_init(void)
 	g_c.empty = 0;
 	g_c.fov = 60 * (M_PI / 180);
 	g_c.sp = NULL;
-	ft_init_tex();
 	ft_init_wall();
 	ft_init_play();
 }
-
-
-
-

@@ -121,7 +121,7 @@ void ft_render_3d()
 }
 
 
-void ft_put_pixel_to_image(int x, int y , unsigned int color,int i)
+void ft_put_pixel_to_image(int x, int y , unsigned int color, int i)
 {
   
     char *dst;

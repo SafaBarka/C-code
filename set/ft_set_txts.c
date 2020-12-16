@@ -77,10 +77,11 @@ void	ft_set_s(void)
 													&g_c.t[4].bpp,
 													&g_c.t[4].ll,
 													&g_c.t[4].e);
-	printf("g_c.sprite = |%s|\n",g_c.s);
 }
 void	ft_set_txts(void)
 {
+	if (!(g_c.t = malloc(sizeof(t_texture) * 5)))
+		ft_err("memory problem");
 	ft_set_no();
 	ft_set_so();
 	ft_set_we();

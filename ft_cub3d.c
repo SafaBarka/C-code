@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cub3d.c                                            :+:      :+:    :+:   */
+/*   ft_cub3d.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sbarka <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/17 09:18:53 by sbarka            #+#    #+#             */
-/*   Updated: 2020/12/11 14:34:38 by sbarka           ###   ########.fr       */
+/*   Created: 2020/12/15 17:22:49 by sbarka            #+#    #+#             */
+/*   Updated: 2020/12/15 17:23:28 by sbarka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ void	ft_read(int fd)
 {
 	int i;
 
-	ft_read_var(fd, i);//read the first of part of file
-	ft_read_map(fd, i);//read the map
+	ft_read_var(fd, i);
+	ft_read_map(fd, i);
 	ft_store_array();
 	ft_free_list();
 	ft_check_array();
@@ -41,13 +41,14 @@ void	ft_check_file_ex(char *filename)
 
 	i = ft_strlen(filename);
 	if (i < 4 || (ft_strncmp(".cub", filename + (i - 4), 5) != 0))
-		ft_err("file extension not valid");
+		ft_err("file extension must be (.cub)");
 }
 
 int		ft_exit(void)
 {
 	mlx_destroy_image(g_c.mlx, g_c.img.im);
 	mlx_destroy_window(g_c.mlx, g_c.mlx_win);
+	free_exit();
 	exit(EXIT_SUCCESS);
 }
 
@@ -58,13 +59,16 @@ int		main(int argc, char *argv[])
 
 	if (argc == 1)
 		ft_err("file name is missing");
+	if (argc > 3)
+		ft_err("invalid number of arguments");
+	if (argc == 3 && ft_strncmp(argv[2], "--save", 7) != 0)
+		ft_err("second argument must be (--save)");
 	ft_check_file_ex(argv[1]);
 	fd = ft_op_f(argv[1]);
 	ft_init();
 	ft_read(fd);
-	if (argc >= 3 && ft_strncmp(argv[2], "--save", 7) == 0)
-	ft_check_save(argc, argv);
-	//system("leaks a.out");
+	if (argc == 3 && ft_strncmp(argv[2], "--save", 7) == 0)
+		ft_save();
 	mlx_put_image_to_window(g_c.mlx, g_c.mlx_win, g_c.img.im, 0, 0);
 	mlx_hook(g_c.mlx_win, 2, 0, ft_deal_key, (void *)0);
 	mlx_hook(g_c.mlx_win, 17, 1L << 17, ft_exit, (void *)0);

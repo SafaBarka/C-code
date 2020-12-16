@@ -119,25 +119,26 @@ typedef struct		s_wall{
 	
 typedef struct 		s_bitmap
 {
-	int width;
-	int height;
-	int bitcount;
-	int wi_byt;
-	int imagesize;
-	int bisize;
-	int bfoffbits;
-	int filesize;
-	int biplanes;
-	unsigned char header[54];	
+	int w;//width
+	int he;//height
+	int bc;//bit count
+	int wb;//wi_byte
+	int imgs; //imgsize
+	int bs; //bisize
+	int bob; //bfoffbits
+	int fs;//filesize
+	int bp; //biplanes
+	unsigned char  h[54]; //header[54]	
 	unsigned char* buf;
-	int row;
-	int col;
+	int ro; //row
+	int co; //col
 	int *color;		
 	int fd;
 
 }					t_bitmap;
+
 typedef	struct		s_config{
-	t_bitmap 		*bitmap;			
+	t_bitmap 		bitm;			
 	float			nexthx;
 	float			nexthy;
 	float			nextvx;
@@ -180,6 +181,9 @@ typedef	struct		s_config{
 			
 }					t_config;
 t_config			g_c;
+
+
+
 
 
 void				ft_init(void);
@@ -246,7 +250,7 @@ void				ft_update();
 int					ft_op_f(char *filename);
 void				ft_check_spaces();
 void				ft_render(void);
-void				ft_save();
+int		ft_save(void);
 void				*ft_memcpy(void *dst, const void *src, size_t n);
 int					mlx_get_screen_size(void *mlx_ptr, int *sizex, int *sizey);
 void ft_check_array();
@@ -268,5 +272,13 @@ void ft_sort_list();
 void	draw_sprite(t_list *tmp);
 void	ft_set_s(void);
 void	sprite_pp(t_list *sprit, int i, int j);
-
+int		*get_colors(int color);
+void	ft_save_file(void);
+void	create_header(void);
+int		*get_colors(int color);
+void	create_image(void);
+int		screenshot(void);
+void	ft_inisialize_save(void);
+void	ft_header(void);
+int		ft_exit(void);
 #endif

@@ -79,7 +79,7 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n)
 
 void	ft_putstr_fd(char const *s, int fd)
 {
+	write(fd , "Error\n",6);
 	if (s != NULL)
 		write(fd, s, ft_strlen(s));
-	write(fd, "\n", 1);
 }

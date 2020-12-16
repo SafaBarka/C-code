@@ -6,7 +6,7 @@
 /*   By: sbarka <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/26 14:16:25 by sbarka            #+#    #+#             */
-/*   Updated: 2020/11/26 14:20:00 by sbarka           ###   ########.fr       */
+/*   Updated: 2020/12/16 14:49:47 by sbarka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,69 +29,60 @@ void	ft_cast(void)
 		c++;
 	}
 	ft_dist_sprite();
-	printf("----------------------\n");
-	//t_list *tmp = g_c.sp;
-	/*printf("%p", g_c.sp);*/
-	/*while (tmp != NULL)
-	{
-
-		printf("x = |%d| y = |%d| dis = |%f|\n", ((t_sprit *)tmp->line)->x,((t_sprit *)tmp->line)->y, ((t_sprit *)tmp->line)->dis);
-		tmp = tmp->next;
-	}*/
-	//sorting distance of sprites
-	//printf("before\n");
 	t_list *tmp = g_c.sp;
 	while (tmp != NULL)
-	{
-
-		//printf("dis = |%f|\n", ((t_sprit *)tmp->line)->dis);
 		tmp = tmp->next;
-	}
-//	ft_sort_list();
-	//printf("after\n");
 	tmp = g_c.sp;
 	while (tmp != NULL)
-	{
-
-		//printf("dis = |%f|\n", ((t_sprit *)tmp->line)->dis);
 		tmp = tmp->next;
-	}
+}
+
+void	ft_render(void)
+{
+	ft_cast();
+	ft_render_3d();
+	ft_render_sprites();
+}
+
+void	ft_err(char *message)
+{
+	ft_putstr_fd(message, 1);
+	exit(EXIT_SUCCESS);
 }
 
 void ft_sort_list()
 {
-    t_list *current;
-    t_list *next;
-	int x;
-	int y;
-    float swap = 0;
-	
-    current = g_c.sp;
-    while (current != NULL)
-    {
-        next = current->next;
-        while (next != NULL)
-        {
-            if(((t_sprit *)next->line)->dis  > ((t_sprit *)current->line)->dis)
-            {
-                swap = ((t_sprit *)next->line)->dis;
-                ((t_sprit *)next->line)->dis = ((t_sprit *)current->line)->dis;
-                 ((t_sprit *)current->line)->dis = swap;
+	t_list *current;
+	t_list *next;
 
-			     swap = ((t_sprit *)next->line)->x;
-                ((t_sprit *)next->line)->x = ((t_sprit *)current->line)->x;
-                 ((t_sprit *)current->line)->x = swap;
+	float swap = 0;
 
-				 swap = ((t_sprit *)next->line)->y;
-                ((t_sprit *)next->line)->y = ((t_sprit *)current->line)->y;
-                 ((t_sprit *)current->line)->y = swap;
-            }
-            next = next->next;
-        }
-        current = current->next;
-    }	
+	current = g_c.sp;
+	while (current != NULL)
+	{
+		next = current->next;
+		while (next != NULL)
+		{
+			if (((t_sprit *)next->line)->dis > ((t_sprit *)current->line)->dis)
+			{
+				swap = ((t_sprit *)next->line)->dis;
+				((t_sprit *)next->line)->dis = ((t_sprit *)current->line)->dis;
+				((t_sprit *)current->line)->dis = swap;
+
+				swap = ((t_sprit *)next->line)->x;
+				((t_sprit *)next->line)->x = ((t_sprit *)current->line)->x;
+				((t_sprit *)current->line)->x = swap;
+
+				swap = ((t_sprit *)next->line)->y;
+				((t_sprit *)next->line)->y = ((t_sprit *)current->line)->y;
+				((t_sprit *)current->line)->y = swap;
+			}
+			next = next->next;
+		}
+		current = current->next;
+	}
 }
-void	ft_raycast(t_ray *ray, int i)
+void ft_raycast(t_ray *ray, int i)
 {
 	ft_initialize_ray(ray);
 	ft_set_horiz_var(ray);
@@ -101,13 +92,12 @@ void	ft_raycast(t_ray *ray, int i)
 	ft_draw_ray(ray);
 }
 
-void	ft_initialize_ray(t_ray *ray)
+void ft_initialize_ray(t_ray *ray)
 {
 	ray->a = ft_normalize_angle(ray->a);
 	ray->d = ray->a >= 0 && ray->a <= M_PI;
 	ray->u = !ray->d;
-	ray->r = (ray->a >= 0 && ray->a <= M_PI / 2)
-			|| (ray->a >= 3 * (M_PI / 2) && ray->a <= 2 * M_PI);
+	ray->r = (ray->a >= 0 && ray->a <= M_PI / 2) || (ray->a >= 3 * (M_PI / 2) && ray->a <= 2 * M_PI);
 	ray->l = !ray->r;
 	ray->fh = 0;
 	ray->hx = 0;
@@ -121,8 +111,11 @@ void	ft_initialize_ray(t_ray *ray)
 	ray->wx = 0;
 	ray->wy = 0;
 }
-
-float	ft_normalize_angle(float angle)
+/*
+**
+**
+*/
+float ft_normalize_angle(float angle)
 {
 	angle = fmod(angle, 2 * M_PI);
 	if (angle < 0)
@@ -130,18 +123,17 @@ float	ft_normalize_angle(float angle)
 	return (angle);
 }
 
-
-void	ft_draw_ray(t_ray *ray)
+void ft_draw_ray(t_ray *ray)
 {
 	float hdistance;
 	float vdistance;
 
 	hdistance = ray->fh
-		? ft_calcul_distance(g_c.player.x, g_c.player.y, ray->hx, ray->hy)
-		: 1000000;
+					? ft_calcul_distance(g_c.player.x, g_c.player.y, ray->hx, ray->hy)
+					: 1000000;
 	vdistance = ray->fv
-		? ft_calcul_distance(g_c.player.x, g_c.player.y, ray->vx, ray->vy)
-		: 1000000;
+					? ft_calcul_distance(g_c.player.x, g_c.player.y, ray->vx, ray->vy)
+					: 1000000;
 	if (vdistance < hdistance)
 	{
 		ray->fh = 0;
