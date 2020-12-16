@@ -95,3 +95,11 @@ void	ft_set_vert_distance(t_ray *ray)
 		}
 	}
 }
+
+float ft_normalize_angle(float angle)
+{
+	angle = fmod(angle, 2 * M_PI);
+	if (angle < 0)
+		angle = (2 * M_PI) + angle;
+	return (angle);
+}

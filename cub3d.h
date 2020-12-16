@@ -281,4 +281,6 @@ int		screenshot(void);
 void	ft_inisialize_save(void);
 void	ft_header(void);
 int		ft_exit(void);
+
+void ft_swap(t_list *current, t_list *next);
 #endif

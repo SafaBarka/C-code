@@ -1,12 +1,40 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_sort.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sbarka <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/12/16 16:13:56 by sbarka            #+#    #+#             */
+/*   Updated: 2020/12/16 17:05:45 by sbarka           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "cub3d.h"
 
-void ft_sort_list()
+void	ft_swap(t_list *current, t_list *next)
 {
-	t_list *current;
-	t_list *next;
+	float swap;
 
-	float swap = 0;
+	swap = 0;
+	swap = ((t_sprit *)next->line)->dis;
+	((t_sprit *)next->line)->dis = ((t_sprit *)current->line)->dis;
+	((t_sprit *)current->line)->dis = swap;
+	swap = ((t_sprit *)next->line)->x;
+	((t_sprit *)next->line)->x = ((t_sprit *)current->line)->x;
+	((t_sprit *)current->line)->x = swap;
+	swap = ((t_sprit *)next->line)->y;
+	((t_sprit *)next->line)->y = ((t_sprit *)current->line)->y;
+	((t_sprit *)current->line)->y = swap;
+}
 
+void	ft_sort_list(void)
+{
+	t_list	*current;
+	t_list	*next;
+	float	swap;
+
+	swap = 0;
 	current = g_c.sp;
 	while (current != NULL)
 	{
@@ -14,21 +42,15 @@ void ft_sort_list()
 		while (next != NULL)
 		{
 			if (((t_sprit *)next->line)->dis > ((t_sprit *)current->line)->dis)
-			{
-				swap = ((t_sprit *)next->line)->dis;
-				((t_sprit *)next->line)->dis = ((t_sprit *)current->line)->dis;
-				((t_sprit *)current->line)->dis = swap;
-
-				swap = ((t_sprit *)next->line)->x;
-				((t_sprit *)next->line)->x = ((t_sprit *)current->line)->x;
-				((t_sprit *)current->line)->x = swap;
-
-				swap = ((t_sprit *)next->line)->y;
-				((t_sprit *)next->line)->y = ((t_sprit *)current->line)->y;
-				((t_sprit *)current->line)->y = swap;
-			}
+				ft_swap(current, next);
 			next = next->next;
 		}
 		current = current->next;
 	}
+}
+
+void	ft_err(char *message)
+{
+	ft_putstr_fd(message, 1);
+	exit(EXIT_SUCCESS);
 }

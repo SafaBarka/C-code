@@ -6,20 +6,21 @@
 /*   By: sbarka <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/26 14:16:25 by sbarka            #+#    #+#             */
-/*   Updated: 2020/12/16 14:49:47 by sbarka           ###   ########.fr       */
+/*   Updated: 2020/12/16 16:41:41 by sbarka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cub3d.h"
-//
+
 void	ft_cast(void)
 {
-	int		c;
-	float	angle;
+	int			c;
+	float		angle;
+	t_list		*tmp;
 
+	c = 0;
 	g_c.temp_w = g_c.tw * g_c.co;
 	g_c.temp_h = g_c.th * g_c.ro;
-	c = 0;
 	angle = g_c.player.rota - (g_c.fov / 2);
 	while (c < g_c.nbrr)
 	{
@@ -29,7 +30,7 @@ void	ft_cast(void)
 		c++;
 	}
 	ft_dist_sprite();
-	t_list *tmp = g_c.sp;
+	tmp = g_c.sp;
 	while (tmp != NULL)
 		tmp = tmp->next;
 	tmp = g_c.sp;
@@ -44,14 +45,7 @@ void	ft_render(void)
 	ft_render_sprites();
 }
 
-void	ft_err(char *message)
-{
-	ft_putstr_fd(message, 1);
-	exit(EXIT_SUCCESS);
-}
-
-
-void ft_raycast(t_ray *ray, int i)
+void	ft_raycast(t_ray *ray, int i)
 {
 	ft_initialize_ray(ray);
 	ft_set_horiz_var(ray);
@@ -61,12 +55,13 @@ void ft_raycast(t_ray *ray, int i)
 	ft_draw_ray(ray);
 }
 
-void ft_initialize_ray(t_ray *ray)
+void	ft_initialize_ray(t_ray *ray)
 {
 	ray->a = ft_normalize_angle(ray->a);
 	ray->d = ray->a >= 0 && ray->a <= M_PI;
 	ray->u = !ray->d;
-	ray->r = (ray->a >= 0 && ray->a <= M_PI / 2) || (ray->a >= 3 * (M_PI / 2) && ray->a <= 2 * M_PI);
+	ray->r = (ray->a >= 0 && ray->a <= M_PI / 2)
+		|| (ray->a >= 3 * (M_PI / 2) && ray->a <= 2 * M_PI);
 	ray->l = !ray->r;
 	ray->fh = 0;
 	ray->hx = 0;
@@ -80,29 +75,18 @@ void ft_initialize_ray(t_ray *ray)
 	ray->wx = 0;
 	ray->wy = 0;
 }
-/*
-**
-**
-*/
-float ft_normalize_angle(float angle)
-{
-	angle = fmod(angle, 2 * M_PI);
-	if (angle < 0)
-		angle = (2 * M_PI) + angle;
-	return (angle);
-}
 
-void ft_draw_ray(t_ray *ray)
+void	ft_draw_ray(t_ray *ray)
 {
 	float hdistance;
 	float vdistance;
 
 	hdistance = ray->fh
-					? ft_calcul_distance(g_c.player.x, g_c.player.y, ray->hx, ray->hy)
-					: 1000000;
+		? ft_calcul_distance(g_c.player.x, g_c.player.y, ray->hx, ray->hy)
+		: 1000000;
 	vdistance = ray->fv
-					? ft_calcul_distance(g_c.player.x, g_c.player.y, ray->vx, ray->vy)
-					: 1000000;
+		? ft_calcul_distance(g_c.player.x, g_c.player.y, ray->vx, ray->vy)
+		: 1000000;
 	if (vdistance < hdistance)
 	{
 		ray->fh = 0;
