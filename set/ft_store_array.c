@@ -64,3 +64,5 @@ void	ft_store_list(void)
 		ft_lstadd_back(&g_c.head, ft_lstnew(new));
 	}
 }
+
+

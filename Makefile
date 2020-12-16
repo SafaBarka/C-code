@@ -12,6 +12,7 @@ all :
 			ft_check_r.c\
 			ft_check_f.c\
 			ft_init.c\
+			ft_sort.c\
 			help-func/ft_lists.c\
 			set/ft_store_array.c\
 			set/ft_set_txts.c\
