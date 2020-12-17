@@ -25,7 +25,7 @@ void	ft_cast(void)
 	while (c < g_c.nbrr)
 	{
 		g_c.rays[c].a = angle;
-		ft_raycast(&g_c.rays[c], c);
+		ft_raycast(&g_c.rays[c]);
 		angle += g_c.fov / g_c.nbrr;
 		c++;
 	}
@@ -45,7 +45,7 @@ void	ft_render(void)
 	ft_render_sprites();
 }
 
-void	ft_raycast(t_ray *ray, int i)
+void	ft_raycast(t_ray *ray)
 {
 	ft_initialize_ray(ray);
 	ft_set_horiz_var(ray);

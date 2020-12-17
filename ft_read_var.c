@@ -56,7 +56,7 @@ void	ft_check_var(char **str)
 		ft_check_not_var(str);
 }
 
-int		ft_check_vars(char *line, int i)
+int		ft_check_vars(char *line)
 {
 	char	**str;
 
@@ -70,11 +70,11 @@ int		ft_check_vars(char *line, int i)
 	return (0);
 }
 
-void	ft_read_var(int fd, int i)
+void	ft_read_var(int fd)
 {
 	while ((g_c.i = get_next_line(fd, &g_c.line)) >= 0 && g_c.nbrv != 8)
 	{
-		ft_check_vars(g_c.line, g_c.i);
+		ft_check_vars(g_c.line);
 		free(g_c.line);
 		if (g_c.i == 0)
 			break ;

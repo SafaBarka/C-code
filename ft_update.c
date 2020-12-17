@@ -6,15 +6,14 @@
 /*   By: sbarka <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/16 12:08:35 by sbarka            #+#    #+#             */
-/*   Updated: 2020/12/16 12:32:52 by sbarka           ###   ########.fr       */
+/*   Updated: 2020/12/17 17:50:56 by sbarka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-int		ft_deal_key(int key, void *param)
+int		ft_deal_key(int key)
 {
-	ft_init_turn_walk();
 	if (key == 2)
 		g_c.player.lr = -1;
 	else if (key == 0)
@@ -29,7 +28,6 @@ int		ft_deal_key(int key, void *param)
 		g_c.player.turn = -1;
 	else if (key == 53)
 		ft_exit();
-	ft_update();
 	return (1);
 }
 
@@ -58,7 +56,7 @@ void	ft_draw_black_screen(void)
 		x = 0;
 		while (x < g_c.w)
 		{
-			ft_put_pixel_to_image(x, y, 0x000000, 0);
+			ft_put_pixel_to_image(x, y, 0x000000);
 			x++;
 		}
 		y++;
@@ -91,7 +89,7 @@ void	ft_update_player(void)
 	}
 }
 
-void	ft_update(void)
+int		ft_update(void)
 {
 	ft_draw_black_screen();
 	ft_update_player();
@@ -99,11 +97,5 @@ void	ft_update(void)
 	ft_render_3d();
 	ft_render_sprites();
 	mlx_put_image_to_window(g_c.mlx, g_c.mlx_win, g_c.img.im, 0, 0);
-}
-
-void	ft_init_turn_walk(void)
-{
-	g_c.player.turn = 0;
-	g_c.player.walk = 0;
-	g_c.player.lr = 0;
+	return (0);
 }

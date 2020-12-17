@@ -6,13 +6,13 @@
 /*   By: sbarka <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/21 20:13:37 by sbarka            #+#    #+#             */
-/*   Updated: 2020/12/16 13:27:27 by sbarka           ###   ########.fr       */
+/*   Updated: 2020/12/17 18:02:20 by sbarka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-void	ft_read_map(int fd, int i)
+void	ft_read_map(int fd)
 {
 	while (g_c.i >= 0)
 	{
@@ -92,4 +92,12 @@ void	ft_set_player(int i, float angle)
 	else if (g_c.line[i] == 'E')
 		g_c.player.e = 1;
 	g_c.line[i] = '0';
+}
+
+void	ft_put_pixel_to_image(int x, int y, unsigned int color)
+{
+	char *dst;
+
+	dst = (char*)g_c.img.addr + (y * g_c.img.ll + x * (g_c.img.bpp / 8));
+	*(unsigned int *)dst = color;
 }

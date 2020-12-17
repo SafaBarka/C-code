@@ -1,5 +1,5 @@
 all :
-	gcc   -g -lmlx -fsanitize=address -framework OpenGL -framework AppKit  libmlx.dylib -D BUFFER_SIZE=60\
+	gcc   -g -lmlx -Wall -Wextra -Werror -framework OpenGL -framework AppKit  libmlx.dylib -D BUFFER_SIZE=60\
 			ft_cub3d.c\
 			ft_read_var.c\
 			ft_read_map.c\

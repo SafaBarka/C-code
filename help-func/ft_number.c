@@ -6,7 +6,7 @@
 /*   By: sbarka <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/18 20:37:53 by sbarka            #+#    #+#             */
-/*   Updated: 2020/11/18 20:37:55 by sbarka           ###   ########.fr       */
+/*   Updated: 2020/12/17 13:43:15 by sbarka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ int		ft_atoi(const char *str)
 	}
 	if (nbr > 9223372036854775807)
 		return (n > 0 ? -1 : 0);
-
 	return (nbr * n);
 }
 
@@ -80,4 +79,3 @@ float	ft_calcul_distance(float x1, float y1, float x2, float y2)
 {
 	return (sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1)));
 }
-

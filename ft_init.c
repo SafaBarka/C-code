@@ -44,8 +44,8 @@ void	ft_init_play(void)
 	g_c.player.n = 0;
 	g_c.player.s = 0;
 	g_c.player.rad = 1;
-	g_c.player.mvs = 15;
-	g_c.player.rots = 20 * (M_PI / 180);
+	g_c.player.mvs = 3;
+	g_c.player.rots = 6 * (M_PI / 180);
 	g_c.player.turn = 0;
 	g_c.player.walk = 0;
 }
@@ -77,4 +77,21 @@ void	ft_init(void)
 	g_c.sp = NULL;
 	ft_init_wall();
 	ft_init_play();
+}
+
+int		ft_init_turn_walk(int key)
+{
+	if (key == 2)
+		g_c.player.lr = 0;
+	else if (key == 0)
+		g_c.player.lr = 0;
+	if (key == 126 || key == 13)
+		g_c.player.walk = 0;
+	else if (key == 125 || key == 0)
+		g_c.player.walk = 0;
+	else if (key == 124)
+		g_c.player.turn = 0;
+	else if (key == 123)
+		g_c.player.turn = 0;
+	return (0);
 }

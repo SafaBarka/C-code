@@ -6,12 +6,11 @@
 /*   By: sbarka <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/26 14:41:02 by sbarka            #+#    #+#             */
-/*   Updated: 2020/11/27 18:39:47 by sbarka           ###   ########.fr       */
+/*   Updated: 2020/12/17 13:35:15 by sbarka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cub3d.h"
-
 
 void	ft_set_horiz_var(t_ray *ray)
 {
@@ -54,7 +53,6 @@ void	ft_set_horiz_distance(t_ray *ray)
 	}
 }
 
-
 void	ft_set_vert_var(t_ray *ray)
 {
 	ray->xi = floor(g_c.player.x / g_c.tw) * g_c.tw;
@@ -96,7 +94,7 @@ void	ft_set_vert_distance(t_ray *ray)
 	}
 }
 
-float ft_normalize_angle(float angle)
+float	ft_normalize_angle(float angle)
 {
 	angle = fmod(angle, 2 * M_PI);
 	if (angle < 0)

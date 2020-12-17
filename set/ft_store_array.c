@@ -6,7 +6,7 @@
 /*   By: sbarka <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/25 16:53:23 by sbarka            #+#    #+#             */
-/*   Updated: 2020/12/16 13:32:02 by sbarka           ###   ########.fr       */
+/*   Updated: 2020/12/17 13:36:04 by sbarka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	ft_store_array(void)
 		ft_err("memory problem");
 	while (r < g_c.ro)
 	{
-		g_c.map[r] = ft_realloc(tmp->line, g_c.ml);
+		g_c.map[r] = ft_realloc(tmp->line);
 		tmp = tmp->next;
 		r++;
 	}
@@ -64,5 +64,3 @@ void	ft_store_list(void)
 		ft_lstadd_back(&g_c.head, ft_lstnew(new));
 	}
 }
-
-

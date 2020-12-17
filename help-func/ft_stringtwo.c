@@ -6,7 +6,7 @@
 /*   By: sbarka <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/25 16:15:56 by sbarka            #+#    #+#             */
-/*   Updated: 2020/11/25 16:18:59 by sbarka           ###   ########.fr       */
+/*   Updated: 2020/12/17 13:39:20 by sbarka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,13 +40,13 @@ char	*ft_join_txt(char **s1, char **s2)
 	return (str);
 }
 
-char	*ft_realloc(char *line, int max_length)
+char	*ft_realloc(char *line)
 {
 	char	*new;
 	int		i;
 	int		len;
 
-	if(!(new = malloc(sizeof(char) * (g_c.ml + 1))))
+	if (!(new = malloc(sizeof(char) * (g_c.ml + 1))))
 		ft_err("memory problem");
 	i = 0;
 	len = ft_strlen(line);
@@ -79,7 +79,7 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n)
 
 void	ft_putstr_fd(char const *s, int fd)
 {
-	write(fd , "Error\n",6);
+	write(fd, "Error\n", 6);
 	if (s != NULL)
 		write(fd, s, ft_strlen(s));
 }

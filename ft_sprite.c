@@ -88,7 +88,7 @@ void	sprite_pp(t_list *tmp, int i, int j)
 	if (color != 0)
 	{
 		ft_put_pixel_to_image(((t_sprit *)tmp->line)->x_ofst + i,
-				((t_sprit *)tmp->line)->y_ofst + j, color, 0);
+				((t_sprit *)tmp->line)->y_ofst + j, color);
 	}
 }
 
