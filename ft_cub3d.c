@@ -6,7 +6,7 @@
 /*   By: sbarka <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/15 17:22:49 by sbarka            #+#    #+#             */
-/*   Updated: 2020/12/17 13:02:46 by sbarka           ###   ########.fr       */
+/*   Updated: 2020/12/17 18:39:50 by sbarka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,9 +68,7 @@ int		main(int argc, char *argv[])
 		ft_save();
 	mlx_put_image_to_window(g_c.mlx, g_c.mlx_win, g_c.img.im, 0, 0);
 	mlx_hook(g_c.mlx_win, 2, 0, ft_deal_key, (void *)0);
-	mlx_hook(g_c.mlx_win, 3, 0, ft_init_turn_walk, (void *)0);
 	mlx_hook(g_c.mlx_win, 17, 0, ft_exit, (void *)0);
-	mlx_loop_hook(g_c.mlx, ft_update, NULL);
 	mlx_loop(g_c.mlx);
 	return (0);
 }

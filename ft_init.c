@@ -6,7 +6,7 @@
 /*   By: sbarka <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/19 10:16:38 by sbarka            #+#    #+#             */
-/*   Updated: 2020/12/16 11:52:09 by sbarka           ###   ########.fr       */
+/*   Updated: 2020/12/17 18:39:24 by sbarka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,8 @@ void	ft_init_play(void)
 	g_c.player.n = 0;
 	g_c.player.s = 0;
 	g_c.player.rad = 1;
-	g_c.player.mvs = 3;
-	g_c.player.rots = 6 * (M_PI / 180);
+	g_c.player.mvs = 50;
+	g_c.player.rots = 20 * (M_PI / 180);
 	g_c.player.turn = 0;
 	g_c.player.walk = 0;
 }
@@ -79,19 +79,9 @@ void	ft_init(void)
 	ft_init_play();
 }
 
-int		ft_init_turn_walk(int key)
+void	ft_init_turn_walk(void)
 {
-	if (key == 2)
-		g_c.player.lr = 0;
-	else if (key == 0)
-		g_c.player.lr = 0;
-	if (key == 126 || key == 13)
-		g_c.player.walk = 0;
-	else if (key == 125 || key == 0)
-		g_c.player.walk = 0;
-	else if (key == 124)
-		g_c.player.turn = 0;
-	else if (key == 123)
-		g_c.player.turn = 0;
-	return (0);
+	g_c.player.turn = 0;
+	g_c.player.walk = 0;
+	g_c.player.lr = 0;
 }

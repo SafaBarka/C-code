@@ -6,7 +6,7 @@
 /*   By: sbarka <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/16 12:08:35 by sbarka            #+#    #+#             */
-/*   Updated: 2020/12/17 17:50:56 by sbarka           ###   ########.fr       */
+/*   Updated: 2020/12/17 18:38:32 by sbarka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 int		ft_deal_key(int key)
 {
+	ft_init_turn_walk();
 	if (key == 2)
 		g_c.player.lr = -1;
 	else if (key == 0)
@@ -28,6 +29,7 @@ int		ft_deal_key(int key)
 		g_c.player.turn = -1;
 	else if (key == 53)
 		ft_exit();
+	ft_update();
 	return (1);
 }
 
@@ -92,6 +94,7 @@ void	ft_update_player(void)
 int		ft_update(void)
 {
 	ft_draw_black_screen();
+	
 	ft_update_player();
 	ft_cast();
 	ft_render_3d();

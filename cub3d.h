@@ -6,7 +6,7 @@
 /*   By: sbarka <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/17 11:12:48 by sbarka            #+#    #+#             */
-/*   Updated: 2020/12/17 17:43:36 by sbarka           ###   ########.fr       */
+/*   Updated: 2020/12/17 18:40:34 by sbarka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -244,7 +244,8 @@ void				ft_render_3d();
 void				ft_put_pixel_to_image(int x, int y,
 		unsigned int color);
 int					ft_has_wall(float x, float y);
-int					ft_init_turn_walk(int key);
+
+void				ft_init_turn_walk(void);
 int					ft_update(void);
 int					ft_op_f(char *filename);
 void				ft_check_spaces();
