@@ -30,9 +30,11 @@ int		ft_nbr_comma(char *s)
 
 void	ft_trim_split_c(void)
 {
+	char *tmp;
 	if (g_c.c != -1)
 		ft_err("redefining variable 'C' in file");
-	if (!(g_c.rgb.trim = ft_strtrim(g_c.line + 1, " ")))
+	tmp = ft_strtrim(g_c.line," ");
+	if (!(g_c.rgb.trim = ft_strtrim(tmp + 1, " ")))
 		ft_err("memory problem");
 	if (ft_nbr_comma(g_c.line + 1) != 2)
 		ft_err("invalid parameters for ceiling color");
@@ -40,6 +42,7 @@ void	ft_trim_split_c(void)
 		ft_err("memory problem");
 	if (ft_nbr_split(g_c.rgb.color) != 3)
 		ft_err("ceiling color nbr  parameters are not valid");
+	free(tmp);
 }
 
 void	ft_check_c(void)

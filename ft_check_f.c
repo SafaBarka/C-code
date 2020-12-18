@@ -14,9 +14,11 @@
 
 void	ft_trim_split_f(void)
 {
+	char *tmp;
 	if (g_c.f != -1)
 		ft_err("redefining variable 'F' in file");
-	if (!(g_c.rgb.trim = ft_strtrim(g_c.line + 1, " ")))
+	tmp = ft_strtrim(g_c.line, " ");
+	if (!(g_c.rgb.trim = ft_strtrim(tmp + 1, " ")))
 		ft_err("memory problem");
 	if (ft_nbr_comma(g_c.line + 1) != 2)
 		ft_err("invalid parameters for floor color");
