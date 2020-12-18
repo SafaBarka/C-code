@@ -17,17 +17,26 @@ void	ft_start_end(int j, int i)
 	if (i == 0)
 	{
 		if (g_c.map[j][i + 1] == ' ')
+		{
+			printf("i = %d - j = %d\n",i,j);
 			ft_err("map not closed");
+		}
 	}
 	else if (i == g_c.ml - 1)
 	{
 		if (g_c.map[j][i - 1] == ' ')
+		{
+			printf("i = %d - j = %d\n",i,j);
 			ft_err("map not closed");
+		}
 	}
 	else
 	{
 		if (g_c.map[j][i + 1] == ' ' || g_c.map[j][i - 1] == ' ')
+			{
+			printf("i = %d - j = %d\n",i,j);
 			ft_err("map not closed");
+		}
 	}
 }
 
@@ -36,17 +45,26 @@ void	ft_first_last(int j, int i)
 	if (j == 0)
 	{
 		if (g_c.map[j + 1][i] == ' ')
+			{
+			printf("i = %d - j = %d\n",i,j);
 			ft_err("map not closed");
+		}
 	}
 	else if (j == g_c.nbrl - 1)
 	{
 		if (g_c.map[j - 1][i] == ' ')
+			{
+			printf("i = %d - j = %d\n",i,j);
 			ft_err("map not closed");
+		}
 	}
 	else
 	{
 		if (g_c.map[j + 1][i] == ' ' || g_c.map[j - 1][i] == ' ')
+			{
+			printf("i = %d - j = %d\n",i,j);
 			ft_err("map not closed");
+		}
 	}
 }
 

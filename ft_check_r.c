@@ -21,9 +21,9 @@ void	ft_set_r(char **str)
 	g_c.nbrv++;
 	g_c.w = ft_atoi(str[1]);
 	g_c.h = ft_atoi(str[2]);
-	if (g_c.w > screenw)
+	if (g_c.w > screenw || g_c.w < 0)
 		g_c.w = screenw;
-	if (g_c.h > screenh)
+	if (g_c.h > screenh || g_c.h < 0)
 		g_c.h = screenh;
 	g_c.nbrr = (int)(g_c.w);
 	if (!(g_c.rays = (t_ray *)malloc(sizeof(t_ray) * g_c.nbrr)))
