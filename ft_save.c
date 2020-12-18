@@ -64,7 +64,7 @@ int		ft_save(void)
 		g_c.bitm.co = 0;
 	}
 	ft_save_file();
-	exit(EXIT_FAILURE);
+	exit(EXIT_SUCCESS);
 	return (0);
 }
 

@@ -6,7 +6,7 @@
 /*   By: sbarka <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/16 12:08:35 by sbarka            #+#    #+#             */
-/*   Updated: 2020/12/17 18:38:32 by sbarka           ###   ########.fr       */
+/*   Updated: 2020/12/18 12:14:18 by sbarka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,6 @@ void	ft_update_player(void)
 int		ft_update(void)
 {
 	ft_draw_black_screen();
-	
 	ft_update_player();
 	ft_cast();
 	ft_render_3d();
