@@ -37,7 +37,10 @@ void	ft_read_map(int fd)
 	if (g_c.nbrl == 0)
 		ft_err("map is missing.");
 	if (g_c.player.f == 0)
+	{
+		system("leaks cub3D");
 		ft_err("player is missing.");
+	}
 }
 
 void	ft_valid(void)

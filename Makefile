@@ -4,7 +4,7 @@ CFLAGS =  -Wall -Wextra -Werror
 
 
 $(NAME):
-		gcc $(CFLAGS)\
+		gcc  $(CFLAGS)\
 			ft_cub3d.c\
 			ft_read_var.c\
 			ft_read_map.c\
