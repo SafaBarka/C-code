@@ -42,13 +42,7 @@ void	ft_check_file_ex(char *filename)
 		ft_err("file extension must be (.cub)");
 }
 
-int		ft_exit(void)
-{
-	mlx_destroy_image(g_c.mlx, g_c.img.im);
-	mlx_destroy_window(g_c.mlx, g_c.mlx_win);
-	free_exit();
-	exit(EXIT_SUCCESS);
-}
+
 
 int		main(int argc, char *argv[])
 {
@@ -66,9 +60,10 @@ int		main(int argc, char *argv[])
 	ft_read(fd);
 	if (argc == 3 && ft_strncmp(argv[2], "--save", 7) == 0)
 		ft_save();
+	//system("leaks cub3D");
 	mlx_put_image_to_window(g_c.mlx, g_c.mlx_win, g_c.img.im, 0, 0);
 	mlx_hook(g_c.mlx_win, 2, 0, ft_deal_key, (void *)0);
-	mlx_hook(g_c.mlx_win, 17, 0, ft_exit, (void *)0);
+	mlx_hook(g_c.mlx_win, 17, 0, ft_exit,EXIT_SUCCESS);
 	mlx_loop(g_c.mlx);
 	return (0);
 }

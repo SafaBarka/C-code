@@ -40,6 +40,7 @@ void	ft_err_no(char **str)
 		ft_err("'NO' parameters are not valid");
 	tmp = ft_strtrim(g_c.line, " ");
 	g_c.no = ft_strtrim(tmp + 3, " ");
+	free(tmp);
 	g_c.nbrv++;
 }
 

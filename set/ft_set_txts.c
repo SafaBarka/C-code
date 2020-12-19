@@ -24,6 +24,7 @@ void	ft_set_no(void)
 													&g_c.t[0].bpp,
 													&g_c.t[0].ll,
 													&g_c.t[0].e);
+	
 }
 
 void	ft_set_so(void)
@@ -38,6 +39,7 @@ void	ft_set_so(void)
 													&g_c.t[1].bpp,
 													&g_c.t[1].ll,
 													&g_c.t[1].e);
+													
 }
 
 void	ft_set_we(void)
@@ -52,6 +54,7 @@ void	ft_set_we(void)
 													&g_c.t[2].bpp,
 													&g_c.t[2].ll,
 													&g_c.t[2].e);
+
 }
 
 void	ft_set_ea(void)
@@ -66,6 +69,7 @@ void	ft_set_ea(void)
 													&g_c.t[3].bpp,
 													&g_c.t[3].ll,
 													&g_c.t[3].e);
+	
 }
 
 void	ft_set_txts(void)

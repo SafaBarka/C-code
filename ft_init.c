@@ -6,7 +6,7 @@
 /*   By: sbarka <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/19 10:16:38 by sbarka            #+#    #+#             */
-/*   Updated: 2020/12/17 18:39:24 by sbarka           ###   ########.fr       */
+/*   Updated: 2020/12/19 16:40:43 by sbarka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	ft_init_play(void)
 	g_c.player.s = 0;
 	g_c.player.rad = 1;
 	g_c.player.mvs = 25;
-	g_c.player.rots = 20 * (M_PI / 180);
+	g_c.player.rots = 15 * (M_PI / 180);
 	g_c.player.turn = 0;
 	g_c.player.walk = 0;
 }

@@ -6,7 +6,7 @@
 /*   By: sbarka <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/17 16:43:45 by sbarka            #+#    #+#             */
-/*   Updated: 2020/12/17 16:48:55 by sbarka           ###   ########.fr       */
+/*   Updated: 2020/12/19 16:41:04 by sbarka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 void	ft_trim_split_f(void)
 {
 	char *tmp;
+
 	if (g_c.f != -1)
 		ft_err("redefining variable 'F' in file");
 	tmp = ft_strtrim(g_c.line, " ");
@@ -26,6 +27,7 @@ void	ft_trim_split_f(void)
 		ft_err("memory problem");
 	if (ft_nbr_split(g_c.rgb.color) != 3)
 		ft_err("floor color nbr  parameters are not valid");
+	free(tmp);
 }
 
 void	ft_check_f(void)

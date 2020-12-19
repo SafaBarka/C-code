@@ -63,8 +63,33 @@ void	ft_set_s(void)
 													&g_c.t[4].e);
 }
 
+int ft_exit(int i)
+{
+	if(g_c.mlx && g_c.img.im && g_c.mlx_win)
+	{
+		mlx_destroy_image(g_c.mlx, g_c.img.im);
+		mlx_destroy_window(g_c.mlx, g_c.mlx_win);
+	}
+	if (g_c.map)
+		ft_free_d(g_c.map);
+	if (g_c.t)
+		free(g_c.t);
+	if (g_c.rays)
+		free(g_c.rays);
+	if (g_c.no)
+		free(g_c.no);
+	if (g_c.so)
+		free(g_c.so);
+	if (g_c.we)
+		free(g_c.we);
+	if (g_c.ea)
+		free(g_c.ea);
+	if (g_c.s)
+		free(g_c.s);
+	exit(i);
+}
 void	ft_err(char *message)
 {
 	ft_putstr_fd(message, 1);
-	exit(EXIT_SUCCESS);
+	ft_exit(EXIT_SUCCESS);
 }

@@ -278,7 +278,7 @@ void				create_image(void);
 int					screenshot(void);
 void				ft_inisialize_save(void);
 void				ft_header(void);
-int					ft_exit(void);
 void				ft_swap(t_list *current, t_list *next);
 char				*ft_differnt_zero(char *s);
+int					ft_exit(int i);
 #endif

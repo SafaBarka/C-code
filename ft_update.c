@@ -28,7 +28,7 @@ int		ft_deal_key(int key)
 	else if (key == 123)
 		g_c.player.turn = -1;
 	else if (key == 53)
-		ft_exit();
+		ft_exit(EXIT_SUCCESS);
 	ft_update();
 	return (1);
 }
