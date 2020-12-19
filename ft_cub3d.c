@@ -53,7 +53,7 @@ int		ft_exit(void)
 int		main(int argc, char *argv[])
 {
 	int	fd;
-	
+
 	if (argc == 1)
 		ft_err("file name is missing");
 	if (argc > 3)
