@@ -4,8 +4,6 @@ CFLAGS =  -Wall -Wextra -Werror
 
 
 $(NAME):
-		make -C ./mlx
-		cp ./mlx/libmlx.dylib .
 		gcc  \
 			ft_cub3d.c\
 			ft_read_var.c\
@@ -40,8 +38,6 @@ $(NAME):
 all : $(NAME)
 
 clean:
-	make clean -C ./mlx
-	rm -rf libmlx.dylib
 	rm $(NAME)
 
 fclean: clean
