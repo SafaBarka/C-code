@@ -35,9 +35,9 @@ void	ft_read_map(int fd)
 		g_c.i = get_next_line(fd, &g_c.line);
 	}
 	if (g_c.nbrl == 0)
-		ft_err("map is missing.");
+		ft_err("map is missing");
 	if (g_c.player.f == 0)
-		ft_err("player is missing.");
+		ft_err("player is missing");
 }
 
 void	ft_valid(void)
@@ -45,7 +45,7 @@ void	ft_valid(void)
 	g_c.nbrl++;
 	ft_check_inv();
 	if (g_c.empty == 1 && g_c.nbrl > 0)
-		ft_err("break line in map.");
+		ft_err("break line in map");
 	else
 		ft_store_list();
 }
@@ -69,10 +69,10 @@ void	ft_check_inv(void)
 			ft_set_player(i, 0);
 		else if (g_c.line[i] == 'N' || g_c.line[i] == 'S'
 				|| g_c.line[i] == 'W' || g_c.line[i] == 'E')
-			ft_err("redefined player in map.");
+			ft_err("redefining player in map");
 		else if (g_c.line[i] != '1' && g_c.line[i] != ' ' && g_c.line[i] != '0'
 				&& g_c.line[i] != '2')
-			ft_err("element not valid in map.");
+			ft_err("element not valid in map");
 		i++;
 	}
 }

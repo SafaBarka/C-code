@@ -36,7 +36,7 @@ void	ft_initialize_save(void)
 	g_c.bitm.fs = 54 + g_c.bitm.imgs;
 	g_c.bitm.bp = 1;
 	if (!(g_c.bitm.buf = malloc(g_c.bitm.imgs)))
-		ft_err("Buff bitmap error");
+		ft_err("memory problem");
 	g_c.bitm.ro = g_c.bitm.he - 1;
 	g_c.bitm.co = 0;
 }

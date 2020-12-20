@@ -40,7 +40,7 @@ void	ft_check_fl(char *line)
 	while (line[i])
 	{
 		if (line[i] != ' ' && line[i] != '1')
-			ft_err("not closed map");
+			ft_err("map not closed");
 		i++;
 	}
 }
@@ -53,12 +53,12 @@ void	ft_check_ml(char *line)
 	while (line[i] == ' ')
 		i++;
 	if (line[i] == '0')
-		ft_err("not closed map");
+		ft_err("map not closed");
 	i = ft_strlen(line) - 1;
 	while (i >= 0 && line[i] == ' ')
 		i--;
 	if (i >= 0 && line[i] == '0')
-		ft_err("not closed map");
+		ft_err("map not closed");
 }
 
 void	ft_dist_sprite(void)

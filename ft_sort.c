@@ -56,7 +56,7 @@ void	ft_set_s(void)
 										&g_c.t[4].w,
 										&g_c.t[4].h);
 	if (g_c.t[4].img == NULL)
-		ft_err("something wrong with 'S' file");
+		ft_err("invalid texture for 'S'");
 	g_c.t[4].addr = (unsigned int *)mlx_get_data_addr(g_c.t[4].img,
 													&g_c.t[4].bpp,
 													&g_c.t[4].ll,

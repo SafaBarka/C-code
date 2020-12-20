@@ -30,7 +30,7 @@ void	ft_check_not_var(char **str)
 		ft_strncmp(str[0], "WE", 3) != 0 &&
 		ft_strncmp(str[0], "EA", 3) != 0)
 	{
-		ft_err("variable name not valid in file");
+		ft_err("element not valid in file");
 	}
 }
 

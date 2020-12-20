@@ -19,7 +19,7 @@ void	ft_err_ea(char **str)
 
 	i = 2;
 	if (g_c.ea != NULL)
-		ft_err("redefining variable 'EA' in file");
+		ft_err("redefining 'EA' in file");
 	if (ft_nbr_split(str) == 1)
 		ft_err("'EA' parameters are not valid");
 	tmp = ft_strtrim(g_c.line + 3, " ");
@@ -35,7 +35,7 @@ void	ft_err_no(char **str)
 
 	i = 2;
 	if (g_c.no != NULL)
-		ft_err("redefining variable 'NO' in file");
+		ft_err("redefining 'NO' in file");
 	if (ft_nbr_split(str) == 1)
 		ft_err("'NO' parameters are not valid");
 	tmp = ft_strtrim(g_c.line, " ");
@@ -51,7 +51,7 @@ void	ft_err_so(char **str)
 
 	i = 2;
 	if (g_c.so != NULL)
-		ft_err("redefining variable 'SO' in file");
+		ft_err("redefining 'SO' in file");
 	if (ft_nbr_split(str) == 1)
 		ft_err("'SO' parameters are not valid");
 	tmp = ft_strtrim(g_c.line, " ");
@@ -67,7 +67,7 @@ void	ft_err_we(char **str)
 
 	i = 2;
 	if (g_c.we != NULL)
-		ft_err("redefining variable 'WE' in file");
+		ft_err("redefining 'WE' in file");
 	if (ft_nbr_split(str) == 1)
 		ft_err("'WE' parameters are not valid");
 	tmp = ft_strtrim(g_c.line, " ");
@@ -83,7 +83,7 @@ void	ft_err_s(char **str)
 
 	i = 2;
 	if (g_c.s != NULL)
-		ft_err("redefining variable 'S' in file");
+		ft_err("redefining 'S' in file");
 	if (ft_nbr_split(str) == 1)
 		ft_err("'S' parameters are not valid");
 	tmp = ft_strtrim(g_c.line, " ");

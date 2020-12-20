@@ -52,7 +52,7 @@ void	ft_set_r(char **str)
 void	ft_err_r(char **str)
 {
 	if (g_c.w != -1 && g_c.h != -1)
-		ft_err("redefining variable 'R' in file");
+		ft_err("redefining 'R' in file");
 	if (ft_nbr_split(str) != 3)
 		ft_err("'R' parameters are not valid");
 	if (ft_zeros(str[1]) || ft_zeros(str[2]))
