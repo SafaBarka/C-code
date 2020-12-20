@@ -6,7 +6,7 @@
 /*   By: sbarka <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/17 17:44:15 by sbarka            #+#    #+#             */
-/*   Updated: 2020/12/17 18:15:19 by sbarka           ###   ########.fr       */
+/*   Updated: 2020/12/20 10:26:22 by sbarka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,10 @@ int		ft_nbr_comma(char *s)
 void	ft_trim_split_c(void)
 {
 	char *tmp;
+
 	if (g_c.c != -1)
 		ft_err("redefining variable 'C' in file");
-	tmp = ft_strtrim(g_c.line," ");
+	tmp = ft_strtrim(g_c.line, " ");
 	if (!(g_c.rgb.trim = ft_strtrim(tmp + 1, " ")))
 		ft_err("memory problem");
 	if (ft_nbr_comma(g_c.line + 1) != 2)

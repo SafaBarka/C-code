@@ -6,7 +6,7 @@
 /*   By: sbarka <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/25 16:52:21 by sbarka            #+#    #+#             */
-/*   Updated: 2020/12/17 13:34:28 by sbarka           ###   ########.fr       */
+/*   Updated: 2020/12/20 10:28:13 by sbarka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ void	ft_set_no(void)
 													&g_c.t[0].bpp,
 													&g_c.t[0].ll,
 													&g_c.t[0].e);
-	
 }
 
 void	ft_set_so(void)
@@ -39,7 +38,6 @@ void	ft_set_so(void)
 													&g_c.t[1].bpp,
 													&g_c.t[1].ll,
 													&g_c.t[1].e);
-													
 }
 
 void	ft_set_we(void)
@@ -54,7 +52,6 @@ void	ft_set_we(void)
 													&g_c.t[2].bpp,
 													&g_c.t[2].ll,
 													&g_c.t[2].e);
-
 }
 
 void	ft_set_ea(void)
@@ -69,7 +66,6 @@ void	ft_set_ea(void)
 													&g_c.t[3].bpp,
 													&g_c.t[3].ll,
 													&g_c.t[3].e);
-	
 }
 
 void	ft_set_txts(void)

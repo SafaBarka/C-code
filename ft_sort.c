@@ -6,7 +6,7 @@
 /*   By: sbarka <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/16 16:13:56 by sbarka            #+#    #+#             */
-/*   Updated: 2020/12/16 17:05:45 by sbarka           ###   ########.fr       */
+/*   Updated: 2020/12/20 10:22:14 by sbarka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,9 +63,9 @@ void	ft_set_s(void)
 													&g_c.t[4].e);
 }
 
-int ft_exit(int i)
+int		ft_exit(int i)
 {
-	if(g_c.mlx && g_c.img.im && g_c.mlx_win)
+	if (g_c.mlx && g_c.img.im && g_c.mlx_win)
 	{
 		mlx_destroy_image(g_c.mlx, g_c.img.im);
 		mlx_destroy_window(g_c.mlx, g_c.mlx_win);
@@ -88,6 +88,7 @@ int ft_exit(int i)
 		free(g_c.s);
 	exit(i);
 }
+
 void	ft_err(char *message)
 {
 	ft_putstr_fd(message, 1);

@@ -6,7 +6,7 @@
 /*   By: sbarka <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/15 17:22:49 by sbarka            #+#    #+#             */
-/*   Updated: 2020/12/18 12:15:01 by sbarka           ###   ########.fr       */
+/*   Updated: 2020/12/20 10:24:35 by sbarka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,6 @@ void	ft_check_file_ex(char *filename)
 		ft_err("file extension must be (.cub)");
 }
 
-
-
 int		main(int argc, char *argv[])
 {
 	int	fd;
@@ -60,10 +58,9 @@ int		main(int argc, char *argv[])
 	ft_read(fd);
 	if (argc == 3 && ft_strncmp(argv[2], "--save", 7) == 0)
 		ft_save();
-	//system("leaks cub3D");
 	mlx_put_image_to_window(g_c.mlx, g_c.mlx_win, g_c.img.im, 0, 0);
 	mlx_hook(g_c.mlx_win, 2, 0, ft_deal_key, (void *)0);
-	mlx_hook(g_c.mlx_win, 17, 0, ft_exit,EXIT_SUCCESS);
+	mlx_hook(g_c.mlx_win, 17, 0, ft_exit, EXIT_SUCCESS);
 	mlx_loop(g_c.mlx);
 	return (0);
 }
