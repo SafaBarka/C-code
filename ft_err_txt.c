@@ -22,7 +22,7 @@ void	ft_err_ea(char **str)
 		ft_err("redefining 'EA' in file");
 	if (ft_nbr_split(str) == 1)
 		ft_err("'EA' parameters are not valid");
-	tmp = ft_strtrim(g_c.line + 3, " ");
+	tmp = ft_strtrim(g_c.line, " ");
 	g_c.ea = ft_strtrim(tmp + 3, " ");
 	free(tmp);
 	g_c.nbrv++;

@@ -56,6 +56,7 @@ int		main(int argc, char *argv[])
 	fd = ft_op_f(argv[1]);
 	ft_init();
 	ft_read(fd);
+
 	if (argc == 3 && ft_strncmp(argv[2], "--save", 7) == 0)
 		ft_save();
 	mlx_put_image_to_window(g_c.mlx, g_c.mlx_win, g_c.img.im, 0, 0);
