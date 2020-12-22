@@ -6,7 +6,7 @@
 /*   By: sbarka <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/15 17:22:49 by sbarka            #+#    #+#             */
-/*   Updated: 2020/12/20 10:24:35 by sbarka           ###   ########.fr       */
+/*   Updated: 2020/12/21 11:06:35 by sbarka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@ void	ft_check_file_ex(char *filename)
 	int i;
 
 	i = ft_strlen(filename);
+	if (i == 4 && ft_strncmp(".cub", filename + (i - 4), 5) == 0)
+		ft_err("file name must be in format (*.cub)");
 	if (i < 4 || (ft_strncmp(".cub", filename + (i - 4), 5) != 0))
 		ft_err("file extension must be (.cub)");
 }
@@ -56,7 +58,6 @@ int		main(int argc, char *argv[])
 	fd = ft_op_f(argv[1]);
 	ft_init();
 	ft_read(fd);
-
 	if (argc == 3 && ft_strncmp(argv[2], "--save", 7) == 0)
 		ft_save();
 	mlx_put_image_to_window(g_c.mlx, g_c.mlx_win, g_c.img.im, 0, 0);
