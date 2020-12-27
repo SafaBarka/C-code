@@ -35,18 +35,23 @@ void	ft_set_r(char **str)
 	mlx_get_screen_size(g_c.mlx, &screenw, &screenh);
 	g_c.nbrv++;
 	diffz = ft_differnt_zero(str[1]);
-	if (ft_strlen(diffz) > 4)
+	if (ft_strlen(diffz) == 4 && ft_atoi(str[1]) < screenw)
+		g_c.w= ft_atoi(str[1]);
+	else if (ft_strlen(diffz) == 4 && ft_atoi(str[1] > screenw))
+		g_c.w = screenw;
+	else if (diffz == 4 && ft_strlen(diffz) > 4)
 		g_c.w = screenw;
 	else
 		g_c.w = ft_atoi(str[1]);
 	diffz = ft_differnt_zero(str[2]);
-	if (ft_strlen(diffz) > 4)
+	if (ft_strlen(diffz) >= 4)
 		g_c.h = screenh;
 	else
 		g_c.h = ft_atoi(str[2]);
 	g_c.nbrr = (int)(g_c.w);
 	if (!(g_c.rays = (t_ray *)malloc(sizeof(t_ray) * g_c.nbrr)))
 		ft_err("memory problem");
+	//printf("g_c.h == %d / g_c.w == %d\n",g_c.h,g_c.w);
 }
 
 void	ft_err_r(char **str)

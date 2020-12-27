@@ -44,8 +44,8 @@ void	ft_init_play(void)
 	g_c.player.n = 0;
 	g_c.player.s = 0;
 	g_c.player.rad = 1;
-	g_c.player.mvs = 25;
-	g_c.player.rots = 15 * (M_PI / 180);
+	g_c.player.mvs = 20;
+	g_c.player.rots = 10 * (M_PI / 180);
 	g_c.player.turn = 0;
 	g_c.player.walk = 0;
 }
