@@ -31,27 +31,27 @@ void	ft_set_r(char **str)
 	int		screenw;
 	int		screenh;
 	char	*diffz;
+	int		len;
 
 	mlx_get_screen_size(g_c.mlx, &screenw, &screenh);
 	g_c.nbrv++;
 	diffz = ft_differnt_zero(str[1]);
-	if (ft_strlen(diffz) == 4 && ft_atoi(str[1]) < screenw)
-		g_c.w= ft_atoi(str[1]);
-	else if (ft_strlen(diffz) == 4 && ft_atoi(str[1] > screenw))
+	len = ft_strlen(diffz);
+	if (len > 4 || (len == 4 && ft_atoi(str[1]) > screenw))
 		g_c.w = screenw;
-	else if (diffz == 4 && ft_strlen(diffz) > 4)
-		g_c.w = screenw;
-	else
+	else if (len < 4 || (len == 4 && ft_atoi(str[1]) < screenw))
 		g_c.w = ft_atoi(str[1]);
 	diffz = ft_differnt_zero(str[2]);
-	if (ft_strlen(diffz) >= 4)
+	len = ft_strlen(diffz);
+	if (len > 4 || (len == 4 && ft_atoi(str[2]) > screenh))
 		g_c.h = screenh;
-	else
+	if (len < 4 || (len == 4 && ft_atoi(str[2]) < screenh))
 		g_c.h = ft_atoi(str[2]);
 	g_c.nbrr = (int)(g_c.w);
 	if (!(g_c.rays = (t_ray *)malloc(sizeof(t_ray) * g_c.nbrr)))
 		ft_err("memory problem");
-	//printf("g_c.h == %d / g_c.w == %d\n",g_c.h,g_c.w);
+		printf("width = %d\n",g_c.w);
+		printf("height = %d\n",g_c.h);
 }
 
 void	ft_err_r(char **str)

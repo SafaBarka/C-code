@@ -1,4 +1,6 @@
-R 1000 1000 
+
+
+R 50 50
 NO texture/no.xpm
 SO texture/so.xpm
 WE texture/we.xpm
@@ -6,7 +8,6 @@ EA texture/ea.xpm
 S texture/s.xpm
 F 00071,00071,0
 C 00071,30,0
-
 
          1111111111111111111111111
          1222222222112222222222221

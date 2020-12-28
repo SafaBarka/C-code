@@ -60,8 +60,7 @@ void	ft_initialize_ray(t_ray *ray)
 	ray->a = ft_normalize_angle(ray->a);
 	ray->d = ray->a >= 0 && ray->a <= M_PI;
 	ray->u = !ray->d;
-	ray->r = (ray->a >= 0 && ray->a <= M_PI / 2)
-		|| (ray->a >= 3 * (M_PI / 2) && ray->a <= 2 * M_PI);
+	ray->r = ray->a < 0.5 * M_PI || ray->a > 3 * M_PI/2;
 	ray->l = !ray->r;
 	ray->fh = 0;
 	ray->hx = 0;
