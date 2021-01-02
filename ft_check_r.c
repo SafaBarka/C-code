@@ -50,8 +50,6 @@ void	ft_set_r(char **str)
 	g_c.nbrr = (int)(g_c.w);
 	if (!(g_c.rays = (t_ray *)malloc(sizeof(t_ray) * g_c.nbrr)))
 		ft_err("memory problem");
-		printf("width = %d\n",g_c.w);
-		printf("height = %d\n",g_c.h);
 }
 
 void	ft_err_r(char **str)
