@@ -6,20 +6,18 @@
 /*   By: sbarka <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/16 11:15:22 by sbarka            #+#    #+#             */
-/*   Updated: 2020/12/17 13:12:31 by sbarka           ###   ########.fr       */
+/*   Updated: 2021/01/05 10:59:02 by sbarka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
-
-
 
 void	ft_initialize_save(void)
 {
 	g_c.bitm.w = g_c.w;
 	g_c.bitm.he = g_c.h;
 	g_c.bitm.bc = 32;
-	g_c.bitm.imgs = g_c.bitm.w * g_c.bitm.he *4;
+	g_c.bitm.imgs = g_c.bitm.w * g_c.bitm.he * 4;
 	g_c.bitm.bs = 40;
 	g_c.bitm.bob = 54;
 	g_c.bitm.fs = 54 + g_c.bitm.imgs;
@@ -32,10 +30,11 @@ void	ft_initialize_save(void)
 
 int		ft_save(void)
 {
-	ft_initialize_save();
-	ft_header();
 	int *pixel;
 	int pos;
+
+	ft_initialize_save();
+	ft_header();
 	g_c.bitm.fd = open("cub3d.bmp", O_WRONLY | O_CREAT, 0644);
 	write(g_c.bitm.fd, g_c.bitm.h, 54);
 	while (g_c.bitm.ro > -1)

@@ -6,7 +6,7 @@
 /*   By: sbarka <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/26 14:16:25 by sbarka            #+#    #+#             */
-/*   Updated: 2020/12/16 16:41:41 by sbarka           ###   ########.fr       */
+/*   Updated: 2021/01/05 10:58:38 by sbarka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void	ft_initialize_ray(t_ray *ray)
 	ray->a = ft_normalize_angle(ray->a);
 	ray->d = ray->a >= 0 && ray->a <= M_PI;
 	ray->u = !ray->d;
-	ray->r = ray->a < 0.5 * M_PI || ray->a > 3 * M_PI/2;
+	ray->r = ray->a < 0.5 * M_PI || ray->a > 3 * M_PI / 2;
 	ray->l = !ray->r;
 	ray->fh = 0;
 	ray->hx = 0;
